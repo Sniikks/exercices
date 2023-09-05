@@ -1,11 +1,38 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Cours HTML</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <p> Bonjour je suis de bonne humeur! </p>
-</body>
-</html>
+<!DOCTYPE html> <!-- Je défini le type de documment -->
+<html lang="fr"> <!-- J'ouvre le fichier HTML'--> <!-- lang="FR" pour le référencement de la page -->
+
+<!-- Je créer ma balise html, qui va contenir toute ma page  -->
+<!-- J'ouvre et créer la balise de l'entête c'est tout ce qui n'est pas visuels -->
+    <head>  
+        <meta charset="utf-8">  <!-- On défini l'encodage de notre page -->
+        <title> Cours HTML </title> <!-- Définir le titre de la page internet dans le navigateur -->
+        <link rel="stylesheet" href="./style.css">
+        <script src= "./script.js"> </script>
+    </head> <!-- Je ferme la balise de l'entête'-->
+
+<!-- J'ouvre et créer le corps de la page -->
+<!-- Ce sont les éléments visuels -->
+    <body>  
+        <p> Je suis un paragraphe </p>
+        <p> <b></b> Je suis un paragraphe en gras</b>  </p> <!-- <em> pour définir un texte en gras -->
+        <p> <strong> Je suis un paragraphe en gras aussi</strong>  </p> <!-- <em> pour définir un texte en italique -->
+        <p> <em> Je suis un paragraphe en italique</em>  </p> <!-- <em> pour définir un texte en italique -->
+        
+            <br>   <!-- <br> (break ligne) permet de saute une ligne -->
+        <p> <u> Je suis un paragraphe souligné </u> </p> <!-- <u> permet de surligner du texte -->
+        <p> <s> Je suis un paragraphe barré </s> </p> <!-- Ne pas refaire en règle général c'est un exemple -->
+        <p style="color:green;"> Je suis vert </p> <!-- Ne pas refaire en règle général c'est un exemple -->
+        <p id="Orange"> Je suis orange </p> <!-- Id="choix de l'id" permet de définir un id à un paragraphe ou autre -->
+        <p class="Rouge"> Je suis rouge </p> <!-- Class="permet de définir plusieurs id et appliquer le paramètre à plusieurs class -->
+        <p class="Fuchsia"> Je suis fuchsia</p>
+
+            <br> 
+        <!-- Permet de définir la police d'écriture du plus grand au plus petit -->
+        <h1> Je suis un gros titre</h1>
+        <h2> Je suis un titre</h2>
+        <h3> Je suis un titre</h3>
+        <h4> Je suis un titre</h4>
+        <h5> Je suis un titre</h5>
+        <h6> Je suis un titre</h6>
+    </body>
+</html> <!-- Je ferme le fichier HTML -->

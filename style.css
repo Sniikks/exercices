@@ -1,3 +1,7 @@
-Riz{
-    color:aliceblue
-}
+/* Pour définit la couleur du texte classique */
+p{color: orangered}
+/* # Pour définir la couleur d'1 seul et unique ID */
+#Orange {color: orange;}
+/* . Pour définir la couleur d'un groupe de classe */
+.Rouge {color: red;}
+.Fuchsia {color: fuchsia;}

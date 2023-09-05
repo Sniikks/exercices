@@ -50,4 +50,4 @@ function horloge2() {
     }
 }
 
-setInterval(horloge2, 2000)
+setInterval(horloge2, 2000)  

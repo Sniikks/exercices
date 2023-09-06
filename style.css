@@ -39,3 +39,8 @@ tr:nth-child(3) {
 .test999 tr {
     background-color: blueviolet;
 }
+
+/*Quand je suis sur le mot: animal mon curseur change */
+#animal:hover {
+    cursor: pointer
+}

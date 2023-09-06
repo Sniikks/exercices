@@ -52,6 +52,7 @@ function horloge2() {
 
 setInterval(horloge2, 2000)  
 
+
 //Array = Tableau
 // Type de variable qui est elle même un tableau.
 var tab = [10, "bonjour", 7.5, null]
@@ -59,14 +60,19 @@ var tab = [10, "bonjour", 7.5, null]
 //console.log(tab[1])
 //console.log(tab[3])
 
-
 // Je voudrais un tableau qui ce nomme: Chilbik qui comporte 5 valeurs de type string, et 5 valeurs int ou float.
 let Chmiblik = ["un", "deux", "trois", "quatre", "cinq", 1.1, 2.1, 3.1, 4.1, 5.1]
 console.log(Chmiblik)
 console.log(Chmiblik.lenght)
 
+
+let animal = "Autruche"
+let temp = ""
 // getEleentById séléctionne un élément qui a l'id défibir sur animal.
 // addEventListener créer une écoute d'événement.
 document.getElementById('animal').addEventListener('click', function () {
-    document.getElementById('animal').innerHTML = "Autruche"
+    //Je modifie le texte qui ce trouve dans cette élément par la valeur de la variable animal.
+   temp = document.getElementById('animal').innerHTML
+   document.getElementById('animal').innerHTML = animal
+   animal = temp
 })

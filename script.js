@@ -56,5 +56,17 @@ setInterval(horloge2, 2000)
 // Type de variable qui est elle même un tableau.
 var tab = [10, "bonjour", 7.5, null]
 // Cette variable est un tableau qui contient 4 valeurs, représenté dans l'ordre.
-console.log(tab[1])
-console.log(tab[3])
+//console.log(tab[1])
+//console.log(tab[3])
+
+
+// Je voudrais un tableau qui ce nomme: Chilbik qui comporte 5 valeurs de type string, et 5 valeurs int ou float.
+let Chmiblik = ["un", "deux", "trois", "quatre", "cinq", 1.1, 2.1, 3.1, 4.1, 5.1]
+console.log(Chmiblik)
+console.log(Chmiblik.lenght)
+
+// getEleentById séléctionne un élément qui a l'id défibir sur animal.
+// addEventListener créer une écoute d'événement.
+document.getElementById('animal').addEventListener('click', function () {
+    document.getElementById('animal').innerHTML = "Autruche"
+})

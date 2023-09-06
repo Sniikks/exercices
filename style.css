@@ -18,8 +18,10 @@ p{color: orangered}
 /* Permet de mettre un rectangle noir de 1 pixel autour des mots */
 tr, td, th, table {
     border: 1px solid black;
+    /* border-collapse: collapse; */
     border-color: orange; 
-    border-collapse: collapse;
+    border-radius: 28px;
+    border-spacing: 0px;
     font-family: 'Courier New', Courier, monospace;
 }
 

@@ -5,7 +5,7 @@
 <!-- J'ouvre et créer la balise de l'entête c'est tout ce qui n'est pas visuels -->
     <head>  
         <meta charset="utf-8">  <!-- On défini l'encodage de notre page -->
-        <title> Cours HTML </title> <!-- Définir le titre de la page internet dans le navigateur -->
+        <title> Index HTML </title> <!-- Définir le titre de la page internet dans le navigateur -->
         <link rel="stylesheet" href="./style.css">
         <script src= "./script.js"> </script>
     </head> <!-- Je ferme la balise de l'entête'-->
@@ -34,5 +34,126 @@
         <h4> Je suis un titre</h4>
         <h5> Je suis un titre</h5>
         <h6> Je suis un titre</h6>
+
+    <!-- TABLEAUX -->
+    <div>
+        <table> 
+            <tr>
+                <!-- TH et TD ont le même rôle, ils servent à ajouter des colonnes sur ma ligne -->
+                <th class="colorbackground"> Name </th> <!-- Le texte sera en gras-->
+                <td class="colorbackground"> Age </td> <!-- Le texte ne sera pas en gras-->
+                <td class="colorbackground"> Country  </td>
+            </tr>
+            <tr>
+                <!-- Ici on regroupe les deux ensembles pour faire en sorte qu'ils subissent la même couleur -->
+                <td> Harry Depp </td>
+                <td>  28 </td>
+                <td> Britain </td>
+            </tr>
+            <tr>
+                <!-- Ici on regroupe les deux ensembles pour faire en sorte qu'ils subissent la même couleur -->
+                <td> John Smith </td>
+                <td> 35 </td>
+                <td> USA </td>
+            </tr>
+            <tr>
+                <!-- Ici on regroupe les deux ensembles pour faire en sorte qu'ils subissent la même couleur -->
+                <td> Ram Krishna </td>
+                <td>  19 </td>
+                <td> Nepal </td>
+            </tr>
+        </table>
+
+            <br><br>
+
+            <!-- Permet d'afficher une grosse case de gauche à droite -->
+            <table>
+                <tr>
+                    <td class="colorbackground"; colspan="2">Language and Famwork</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Django</td>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td>React.js</td>
+                </tr>
+                <tr>
+                    <td>Ruby</td>
+                    <td>Ruby and Rails</td>
+                </tr>
+            </table>
+
+            <br><br>
+
+
+            <!-- Permet d'afficher une grosse case de haut en bas -->
+            <table>
+                <tr>
+                    <td class="colorbackground"; rowspan="4">Language and Famwork</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Django</td>
+                    <td>Rio</td>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td>React.js</td>
+                    <td>Django</td>
+                </tr>
+                <tr>
+                    <td>Ruby</td>
+                    <td>Ruby and Rails</td>
+                    <td>Django</td>
+                </tr>    
+            </table>
+
+            <br><br>
+
+            <table>
+                <tr>
+                    <td class="colorbackground"; colspan="7">Time Table</td>
+                </tr>
+                <tr>
+                    <td class="colorbackground2"; rowspan="6">Hours</td>
+                    <td class="colorbackground2">Mon</td>
+                    <td class="colorbackground2">Tue</td>
+                    <td class="colorbackground2">Wed</td>
+                    <td class="colorbackground2">Thu</td>
+                    <td class="colorbackground2">Fri</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td>Arts</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>History</td>
+                    <td>English</td>
+                    <td>Social</td>
+                    <td>Sports</td>
+                </tr>
+                <tr>
+                    <td class="colorbackground"; colspan="5">Lunch</td>
+                <tr>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td rowspan="2">Project</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>History</td>
+                    <td>English</td>
+                    <td>Social</td>
+                </tr>
+        </table>
+    </div>
     </body>
 </html> <!-- Je ferme le fichier HTML -->

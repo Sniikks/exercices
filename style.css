@@ -6,4 +6,16 @@ p{color: orangered}
 .Rouge {color: red;}
 .Fuchsia {color: fuchsia;}
 
+/* Permet de mettre un rectangle noir de 1 pixel autour des mots */
+tr, td, th, table {
+    border: 1px solid black;
+    border-color: orange; 
+}
 
+/* Permet d'aligner le texte au centre de la case */
+tr td {
+    text-align: center
+}
+
+.colorbackground {color: black; background-color: gray;}
+.colorbackground2 {color: black; background-color: darkorange;}

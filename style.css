@@ -1,3 +1,9 @@
+/*COULEURS*/
+
+/*Définir le background de la page*/
+body {
+    background-color: black;
+  }
 /* Pour définit la couleur du texte classique */
 p{color: orangered}
 /* # Pour définir la couleur d'1 seul et unique ID */
@@ -6,10 +12,15 @@ p{color: orangered}
 .Rouge {color: red;}
 .Fuchsia {color: fuchsia;}
 
+.colorbackground {color: black; background-color: gray;}
+.colorbackground2 {color: black; background-color: darkorange;}
+
 /* Permet de mettre un rectangle noir de 1 pixel autour des mots */
 tr, td, th, table {
     border: 1px solid black;
     border-color: orange; 
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Permet d'aligner le texte au centre de la case */
@@ -17,5 +28,12 @@ tr td {
     text-align: center
 }
 
-.colorbackground {color: black; background-color: gray;}
-.colorbackground2 {color: black; background-color: darkorange;}
+/* Permet de mettre de la couleur sur le 3ème enfant.*/
+tr:nth-child(3) {
+    background-color: brown;
+}
+
+/* Défini une classe spécialement pour TR */
+.test999 tr {
+    background-color: blueviolet;
+}

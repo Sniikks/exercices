@@ -21,8 +21,8 @@ var Ventilo = null
 let Phrase = "J'aime l' " + Autruche + " mais pas les " + Perche
 var Calcul = Heure + NombreStagiaire // * + - % 
 // Permet d'afficher la console afin d'afficher nos données sur le net.
-console.log(Phrase)
-console.log(Calcul)
+//console.log(Phrase)
+//console.log(Calcul)
 
 
 // Je crée une fonction sans paramètre.        
@@ -34,7 +34,7 @@ function horloge() {
         // J'additionne 1 à ma variable temps.
         //temps++ //temps--
         //temps += 1 // temps -*
-        console.log(temps)
+        //console.log(temps)
     }
 }
 
@@ -46,8 +46,15 @@ var temps2 = 50
 function horloge2() { 
     if (temps2 != 0) {
         temps2 = temps2 - 1
-        console.log(temps2)
+        //console.log(temps2)
     }
 }
 
 setInterval(horloge2, 2000)  
+
+//Array = Tableau
+// Type de variable qui est elle même un tableau.
+var tab = [10, "bonjour", 7.5, null]
+// Cette variable est un tableau qui contient 4 valeurs, représenté dans l'ordre.
+console.log(tab[1])
+console.log(tab[3])

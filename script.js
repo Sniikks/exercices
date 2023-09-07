@@ -96,7 +96,7 @@ for(var i=0; i < Chmiblik.length; i++) {
 }
 
 do {
-    // Elle s'exécute une fois même si la condition est fausse, et elle continuede s'exécuter si la condition est vrai.
+// Elle s'exécute une fois même si la condition est fausse, et elle continuede s'exécuter si la condition est vrai.
     console.log('BONJOUR')
 } while (false);
 
@@ -108,4 +108,46 @@ for (index in Chmiblik) {
 var tab_assoc = {"ami": "Chien", "cafe": "Caféine"}
 for (index in tab_assoc) {
     console.log(index)
+}
+
+let test11 = [
+"Il reste 10 ligne(s) dans la console",
+"Il reste 9 ligne(s) dans la console",
+"Il reste 8 ligne(s) dans la console", 
+"Il reste 7 ligne(s) dans la console",
+"Il reste 6 ligne(s) dans la console",
+"Il reste 5 ligne(s) dans la console",
+"Il reste 4 ligne(s) dans la console",
+"Il reste 3 ligne(s) dans la console",
+"Il reste 2 ligne(s) dans la console",
+"Il reste 1 ligne(s) dans la console",
+"Il reste 0 ligne(s) dans la console",]
+//console.log(test11)
+
+do {
+} while (false);
+
+for(var i=10; i >= 0; i--) {
+    ////console.log(`IL reste ${i} ligne${i <= 1 ? '' : 's'} à écrire`)
+    if (i <= 1) { //Si vrai 
+        //console.log(`Il reste ${i} ligne à écrire`)
+    } else { //Sinon faux
+        //console.log(`Il reste ${i} lignes à écrire`)
+    }
+}
+
+function diviseur(n) {
+    var i = 2;
+    var temp = '1';
+    while (i <= n) {
+        if (n % i == 0) {
+            temp = temp + ', ' + i;
+        }
+        i++;
+    }
+    return temp
+}
+
+for (let index = 1; index <= 19; index++) {
+    //console.log(`Les diviseurs de ${index} sont: ${diviseur(index)}`)
 }

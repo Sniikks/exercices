@@ -26,7 +26,8 @@
         <p class="Rouge"> Je suis rouge </p> <!-- Class="permet de définir plusieurs id et appliquer le paramètre à plusieurs class -->
         <p class="Fuchsia"> Je suis fuchsia</p>
 
-            <br> 
+        <br><br>
+
         <!-- Permet de définir la police d'écriture du plus grand au plus petit -->
         <h1> Je suis un gros titre</h1>
         <h2> Je suis un titre</h2>
@@ -34,6 +35,8 @@
         <h4> Je suis un titre</h4>
         <h5> Je suis un titre</h5>
         <h6> Je suis un titre</h6>
+
+        <br><br><br>
 
     <!-- TABLEAUX -->
     <div>
@@ -157,12 +160,17 @@
         </table>
     </div> 
     
-    <p id="animal"> Test</p>
+    <br><br>
 
+    <p id="animal"> ! Clique moi dessus ! </p>
+
+    <br><br><br>
 
     <!-- DEMANDES D'INFOS-->
     <div>
     <form action="">
+        <fieldset>
+        <legend> Mon formulaire </legend>
         <label for ="name"> Nom: </label>
         <input type="text" name="name" id="name">
         <br>
@@ -176,14 +184,19 @@
         <label for="masclin"> Masculin </label>
         <input type="radio" name="sexe" id="feminin">
         <label for="feminin"> Feminin </label>
-        <input type="radio" name="sexe" id="casse couille">
+        <input type="radio" name="sexe" id="casse couille" checked>
         <label for="casse couille"> Casse couille </label>
         <br>
         <input type="checkbox" name="me">
         <label for="me"> Je suis moi?</label>
         <br>
+        <textarea name="message" placeholder="Test" id="message" cols="30" rows="10"> </textarea>       
+        <br> 
         <input type="submit" value="Envoyé">
+        </fieldset>
     </form>
+
+    <br><br><br>
 
     <h1> HTML form </h1>
 
@@ -205,6 +218,53 @@
         <br><br>
         <input type="submit" value="submit">
         <input type="reset" value="reset">
+    </form>
+
+    <br><br><br>
+
+    <form action="">
+        <fieldset class=tableau11>
+        <legend> Selection options list </legend>
+        <br>
+        <label for="checkbox"> Checkbox</label>
+        <input type="checkbox" name="checkbox">
+        <br>
+        <label for="radiob1"> Radio B1 </label>
+        <input type="radio" name="radio1" id="radiob1">
+        <br>
+        <label for="radiob2"> Radio B2 </label>
+        <input type="radio" name="radio1" id="radiob2">
+        <br>
+        </fieldset>
+        <fieldset class=tableau11>
+        <legend> Input text</legend>
+        <label for ="loginid"> Login id: </label>
+        <input type="text" name="loginid" id="loginid">
+        <br>
+        <label for="password"> Password </label>
+        <input type="text" name="password" id="password">
+        </fieldset>
+        <fieldset class=tableau11>
+        <legend> Employee Designation </legend>
+        <br>
+        <input type="radio" name="designation" id="softwareengineer">
+        <label for="softwareengineer"> Software Engineer </label> 
+        <br>
+        <input type="radio" name="designation" id="dataanalyst">
+        <label for="dataanalyst"> Data Analyst </label> 
+        <br>
+        <input type="radio" name="designation" id="webdevelopper">
+        <label for="webdevelopper"> Web Developper </label> 
+        <br>
+        <input type="radio" name="designation" id="senioranalyst">
+        <label for="senioranalyst"> Senior Analyst </label> 
+        <br>
+        </fieldset>
+        <fieldset class=tableau12>
+        <br> 
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+        </fieldset>
     </form>
     </div>  
 

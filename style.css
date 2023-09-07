@@ -51,23 +51,25 @@ tr:nth-child(3) {
 }
 
 /* Change la taille des boutons (ici de type reset et submit */  
-input[type="submit"], input[type="reset"] {
+input[type="submit"][value="Submit"], input[type="reset"] {
     font-size: 1.40em;
     border-radius: 25%;
 }
 
-/* Permet de bloquer l'encadrement de texte. */
+/* Permet de bloquer l'encadrement de texte du chat box. */
 #message {
     resize: none;
     background-color: green;
     border-color: orange;
 }
 
+/* Permet de mettre un message dans un chat box. */
 ::placeholder{
     font-size: 30px;
     color: aliceblue;
 }
 
+/* Permet de modifier l'encadrement des bordures. */
 .tableau11 {
     border-color: orange; 
     border-radius: 28px;
@@ -75,9 +77,43 @@ input[type="submit"], input[type="reset"] {
     width: 300px;
 }
 
+/* Permet de modifier l'encadrement des bordures. */
 .tableau12 {
     border-left: 0px;
     border-top: 0px;
     border-right: 0px;
     border-width: 0px;
+}
+
+@keyframes animationimg {
+    0% {
+        transform: scaleX(-1);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+#img1 {
+    border: 3px dashed green;
+    border-radius: 80px;
+    height: auto;
+    /* Je rends mons image recursive/responsive. */
+    max-width: 100%; 
+    /* Je choisis la transparence de l'image. */
+    opacity: 70%;
+    /* Permet de rendre l'image flou. */
+    filter: blur(1px);
+    /* Je dis que l'élément IMG joue l'animation qu'elle doit durée 10s en fonctionnant en ease-in et elle ce joue à l'infini. */
+    animation: animationimg 10.0s ease-in infinite;
+}
+
+/* Permet de faire rotate l'image de gauche à droite */
+img:hover {
+    transform: scaleX(-1);
+    /* Permet de faire rotate l'image de gauche à droite */
+    /* transform: scaleY(-1); */
 }

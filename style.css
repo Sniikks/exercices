@@ -2,7 +2,7 @@
 
 /*Définir le background de la page*/
 body {
-    background-color: black;
+    background-color: rgba(97, 128, 139, 0.699);
   }
 /* Pour définit la couleur du texte classique */
 p{color: orangered}
@@ -27,20 +27,57 @@ tr, td, th, table {
 
 /* Permet d'aligner le texte au centre de la case */
 tr td {
-    text-align: center
+    text-align: center;
 }
 
 /* Permet de mettre de la couleur sur le 3ème enfant.*/
 tr:nth-child(3) {
-    background-color: brown;
+    background-color: green;
 }
 
 /* Défini une classe spécialement pour TR */
 .test999 tr {
-    background-color: blueviolet;
+    background-color: rgba(207, 252, 141, 0.521);
 }
 
-/*Quand je suis sur le mot: animal mon curseur change */
+/* Quand je suis sur le mot: animal mon curseur change */
 #animal:hover {
-    cursor: pointer
+    cursor: pointer;
+}
+
+/* Augmente la taille d'animal */
+#animal{
+    font-size: 30px;
+}
+
+/* Change la taille des boutons (ici de type reset et submit */  
+input[type="submit"], input[type="reset"] {
+    font-size: 1.40em;
+    border-radius: 25%;
+}
+
+/* Permet de bloquer l'encadrement de texte. */
+#message {
+    resize: none;
+    background-color: green;
+    border-color: orange;
+}
+
+::placeholder{
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.tableau11 {
+    border-color: orange; 
+    border-radius: 28px;
+    border-spacing: 0px;
+    width: 300px;
+}
+
+.tableau12 {
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-width: 0px;
 }

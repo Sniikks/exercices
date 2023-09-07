@@ -66,6 +66,7 @@ console.log(Chmiblik)
 console.log(Chmiblik.lenght)
 
 
+
 let animal = "Autruche"
 let temp = ""
 // getEleentById séléctionne un élément qui a l'id défibir sur animal.
@@ -76,3 +77,35 @@ document.getElementById('animal').addEventListener('click', function () {
    document.getElementById('animal').innerHTML = animal
    animal = temp
 })
+
+
+while (false) {} // Tandis que ce qu'il faut dans les parenthèses.
+// est vrai elle tourne
+
+// Je défini une variable i qui s'incrémente de 1 à chaque tour, grâce ) i++. Et je lui demande de tourner jusqu'à ce qu'elle soit supérieur à 10.
+for(var i=1; i <= 10; i++) {
+    console.log(i)
+}
+
+// LA boucle tourne jusqu'à la taille du tableau.
+for(var i=0; i < Chmiblik.length; i++) {
+    console.log(Chmiblik[i])
+    if (i == 3) {
+        break
+    }
+}
+
+do {
+    // Elle s'exécute une fois même si la condition est fausse, et elle continuede s'exécuter si la condition est vrai.
+    console.log('BONJOUR')
+} while (false);
+
+for (index in Chmiblik) {
+    console.log(index)
+}
+
+// Tableau associatif
+var tab_assoc = {"ami": "Chien", "cafe": "Caféine"}
+for (index in tab_assoc) {
+    console.log(index)
+}

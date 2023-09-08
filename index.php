@@ -204,16 +204,24 @@
         <input type="radio" name="sexe" id="feminin" value="female">
         <label for="feminin"> Feminin
         <input type="radio" name="sexe" id="other" value="other">
-        <label for="other"> other </label>
+        <label for="other"> Other </label>
         <br>
         <input type="submit" value="Envoyé">
 
     </form>
 
     <?php
+    // Si method post est rentrer dans le formulaire il faut utiliser $_POST.
+    // Sinon si la mehod get est rentrer dans le formulaire il faut utiliser $_GET
+    // La fonction isset sert à regarder si la variable qui lui est donner est bien défini dans ce cas si elle regarde
+    // si la variable $_POST est défini
         if (isset($_POST)) {
             echo '<pre>'; var_dump($_POST); echo '</pre>';
             echo $_POST['firstname'];
+            // SHAL Hash le mot c'est à dire le compléxifier et le rend illisible.
+            // sha1 / md5
+            echo sha1($_POST['password']). "<br>";
+            echo md5($_POST['password']);
         }
 
     ?>

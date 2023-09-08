@@ -203,8 +203,8 @@
         <label for="masclin"> Masculin
         <input type="radio" name="sexe" id="feminin" value="female">
         <label for="feminin"> Feminin
-        <input type="radio" name="sexe" id="casse couille" value="casse couille">
-        <label for="casse couille"> Casse couille </label>
+        <input type="radio" name="sexe" id="other" value="other">
+        <label for="other"> other </label>
         <br>
         <input type="submit" value="Envoyé">
 

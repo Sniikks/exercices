@@ -148,6 +148,6 @@ function diviseur(n) {
     return temp
 }
 
-for (let index = 1; index <= 19; index++) {
+for (let index = 1; index <= 19; index++) { 
     //console.log(`Les diviseurs de ${index} sont: ${diviseur(index)}`)
 }

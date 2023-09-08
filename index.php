@@ -1,4 +1,4 @@
-<!-- http://localhost/cours_php/index.php -->
+<!--  localhost/cours_php/Sniikks.github.io/index.php -->
  
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +120,7 @@
     
     echo "<pre>"; 
     var_dump($tab_assoc);
-     "</pre>";
+    echo "</pre>";
 
 
 
@@ -172,8 +172,42 @@
     } else { 
         echo "<p> Tu es basique donc tu es nul. </p>". "<br>";
     }
+ /* Je ferme la balise PHP */ 
+ ?>
+    <form action="">
+    <legend><h1> Register </h1></legend>
+        <pre>
+        <label for ="name"> First Name: </label>
+        <br>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="prénom"> Last Name: </label>
+        <br>
+        <input type="text" name="prénom" id="prénom">
+        <br>
+        <label for="email"> Email: </label>
+        <br>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="password"> Password </label>
+        <br>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="passwordconfirm"> Confirm Password: </label>
+        <br>
+        <input type="password" name="password" id="password>
+        </pre>
+        <legend> Gender: </legend>
+        <input type="radio" name="sexe" id="masculin">
+        <label for="masclin"> Masculin
+        <input type="radio" name="sexe" id="feminin">
+        <label for="feminin"> Feminin
+        <input type="radio" name="sexe" id="casse couille" checked>
+        <label for="casse couille"> Casse couille </label>
+        <br>
+        <input type="submit" value="Envoyé">
 
+    </form>
 
-    ?>
 </body>
 </html>

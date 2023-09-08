@@ -166,7 +166,7 @@
     ];
 
     if($tab_associatif['bras'] == false && $tab_associatif['jambe'] == "0") {
-        echo "<p> Tu es un e-tronc!. </p>". "<br>";
+        echo "<p> Tu es un e-tronc. </p>". "<br>";
     } else if ($tab_associatif['bras'] == false) { 
         echo "<p> Pas de bras pas de chocolat. </p>". "<br>";
     } else { 
@@ -174,16 +174,17 @@
     }
  /* Je ferme la balise PHP */ 
  ?>
-    <form action="">
+
+    <form action="" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
     <legend><h1> Register </h1></legend>
         <pre>
-        <label for ="name"> First Name: </label>
+        <label for ="firstname"> First Name: </label>
         <br>
-        <input type="text" name="name" id="name">
+        <input type="text" name="firstname" id="firstname">
         <br>
-        <label for="prénom"> Last Name: </label>
+        <label for="lastname"> Last Name: </label>
         <br>
-        <input type="text" name="prénom" id="prénom">
+        <input type="text" name="lastname" id="lastname">
         <br>
         <label for="email"> Email: </label>
         <br>
@@ -195,19 +196,28 @@
         <br>
         <label for="passwordconfirm"> Confirm Password: </label>
         <br>
-        <input type="password" name="password" id="password>
+        <input type="password" name="password" id="password">
         </pre>
         <legend> Gender: </legend>
-        <input type="radio" name="sexe" id="masculin">
+        <input type="radio" name="sexe" id="masculin" value="male">
         <label for="masclin"> Masculin
-        <input type="radio" name="sexe" id="feminin">
+        <input type="radio" name="sexe" id="feminin" value="female">
         <label for="feminin"> Feminin
-        <input type="radio" name="sexe" id="casse couille" checked>
+        <input type="radio" name="sexe" id="casse couille" value="casse couille">
         <label for="casse couille"> Casse couille </label>
         <br>
         <input type="submit" value="Envoyé">
 
     </form>
+
+    <?php
+        if (isset($_POST)) {
+            echo '<pre>'; var_dump($_POST); echo '</pre>';
+            echo $_POST['firstname'];
+        }
+
+    ?>
+
 
 </body>
 </html>

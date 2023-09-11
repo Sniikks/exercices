@@ -117,3 +117,26 @@ img:hover {
     /* Permet de faire rotate l'image de gauche à droite */
     /* transform: scaleY(-1); */
 }
+
+.conteneur {
+    width: 100%; /* Pends toute la largeur de la page */
+    display: flex;
+}
+
+.rouge {
+    background-color: red;
+    width: 25%;
+    height: 75px;
+}
+
+.vert {
+    background-color: green;
+    width: 25%;
+    height: 75px;
+}
+
+.orange {
+    background: orange;
+    width: 25%;
+    height: 75px;
+}

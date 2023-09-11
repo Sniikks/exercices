@@ -120,7 +120,7 @@ img:hover {
 
 .conteneur {
     background-color: black;
-    height: 200px;
+    height: 300px;
     width: 100%; /* Pends toute la largeur de la page */
     display: flex;
     /*justify-content: space-around;*/

@@ -119,24 +119,31 @@ img:hover {
 }
 
 .conteneur {
+    background-color: black;
+    height: 200px;
     width: 100%; /* Pends toute la largeur de la page */
     display: flex;
+    /*justify-content: space-around;*/
+    /*justify-content: space-between;*/
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
 }
 
 .rouge {
     background-color: red;
-    width: 25%;
-    height: 75px;
+    width: 6%;
+    height: 100px;
 }
 
 .vert {
     background-color: green;
-    width: 25%;
-    height: 75px;
+    width: 6%;
+    height: 100px;
 }
 
 .orange {
-    background: orange;
-    width: 25%;
-    height: 75px;
+    background-color: orange;
+    width: 6%;
+    height: 100px;
 }

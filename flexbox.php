@@ -11,6 +11,13 @@
         <div class="rouge"></div>
         <div class="vert"></div>
         <div class="orange"></div>
+        <div class="vert"></div>
+        <div class="rouge"></div>
+        <div class="rouge"></div>
+        <div class="vert"></div>
+        <div class="orange"></div>
+        <div class="vert"></div>
+        <div class="rouge"></div>
     </div>
 </body>
 </html>

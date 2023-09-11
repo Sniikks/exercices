@@ -238,7 +238,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'al
 
     <?php
 
-    if (isset($_POST)) {
+    if (isset($_POST) && !empty($_POST)) {
 
     $insert = $bdd->prepare('INSERT INTO test(name, mail, message, number) VALUES (?, ?, ?, ?)');
     $insert->execute(array(

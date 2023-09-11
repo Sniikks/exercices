@@ -180,7 +180,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'al
  /* Je ferme la balise PHP */ 
  ?>
 
-    <form action="" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
+    <form action="validation.php" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
     <legend><h1> Register </h1></legend>
         <pre>
         <label for ="firstname"> First Name: </label>
@@ -204,42 +204,51 @@ $bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'al
         <input type="password" name="password" id="password">
         </pre>
         <legend> Gender: </legend>
-        <input type="radio" name="sexe" id="masculin" value="male">
+        <input type="radio" name="gender" id="masculin" value="male">
         <label for="masclin"> Masculin
-        <input type="radio" name="sexe" id="feminin" value="female">
+        <input type="radio" name="gender" id="feminin" value="female">
         <label for="feminin"> Feminin
-        <input type="radio" name="sexe" id="other" value="other">
+        <input type="radio" name="gender" id="other" value="other">
         <label for="other"> Other </label>
         <br>
         <input type="submit" value="Envoyé">
 
     </form>
 
-    <?php
-    // Si method post est rentrer dans le formulaire il faut utiliser $_POST.
-    // Sinon si la mehod get est rentrer dans le formulaire il faut utiliser $_GET
-    // La fonction isset sert à regarder si la variable qui lui est donner est bien défini dans ce cas si elle regarde
-    // si la variable $_POST est défini
-        if (isset($_POST)) {
-            echo '<pre>'; var_dump($_POST); echo '</pre>';
-            echo $_POST['firstname'];
-            // SHAL Hash le mot c'est à dire le compléxifier et le rend illisible.
-            // sha1 / md5
-            //echo sha1($_POST['password']). "<br>";
-            //echo md5($_POST['password']);
-        
-        $insert = $bdd->prepare('INSERT INTO utilisateur(firstname, lastname, email, password, gender) VALUES (?, ?, ?, ?, ?)');
-        $insert->execute(array(
-        $_POST['firstname'], 
-        $_POST['lastname'], 
-        $_POST['email'], 
-        md5($_POST['password']), 
-        $_POST['sexe']
-        ));
-    }
-    
-    ?>
+    <form action="" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
+        <label for ="name2"> Name: </label>
+        <br>
+        <input type="text" name="name" id="name2">
+        <br>
+        <label for="mail2"> Mail: </label>
+        <br>
+        <input type="email" name="mail" id="mail2">
+        <br>
+        <label for="message2"> Message</label>
+        <br>
+        <textarea name="message" placeholder="Test" id="message2" cols="30" rows="10"> </textarea>     
+        <br>
+        <label for ="number2"> Number: </label>
+        <br>
+        <input type="number" name="number" id="number2">
+        <br>
+        <input type="submit" value="Envoyé">
 
+    </form>  
+
+    <?php
+
+    if (isset($_POST)) {
+
+    $insert = $bdd->prepare('INSERT INTO test(name, mail, message, number) VALUES (?, ?, ?, ?)');
+    $insert->execute(array(
+        $_POST['name'], 
+        $_POST['mail'], 
+        $_POST['message'], 
+        $_POST['number']
+        ));
+    };
+?>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
  // Connexion à une nouvelle base de donnée: mysql, hébérgement en localhost, dans le fichier, en type de caractère: texte.
 $bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'alaji')
 
-?>;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -225,10 +225,19 @@ $bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'al
             echo $_POST['firstname'];
             // SHAL Hash le mot c'est à dire le compléxifier et le rend illisible.
             // sha1 / md5
-            echo sha1($_POST['password']). "<br>";
-            echo md5($_POST['password']);
-        }
-
+            //echo sha1($_POST['password']). "<br>";
+            //echo md5($_POST['password']);
+        
+        $insert = $bdd->prepare('INSERT INTO utilisateur(firstname, lastname, email, password, gender) VALUES (?, ?, ?, ?, ?)');
+        $insert->execute(array(
+        $_POST['firstname'], 
+        $_POST['lastname'], 
+        $_POST['email'], 
+        md5($_POST['password']), 
+        $_POST['sexe']
+        ));
+    }
+    
     ?>
 
 

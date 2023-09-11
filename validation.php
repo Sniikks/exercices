@@ -1,4 +1,8 @@
 <?php
+require_once('db.php');
+?>
+
+<?php
     // Si method post est rentrer dans le formulaire il faut utiliser $_POST.
     // Sinon si la mehod get est rentrer dans le formulaire il faut utiliser $_GET
     // La fonction isset sert à regarder si la variable qui lui est donner est bien défini dans ce cas si elle regarde
@@ -20,6 +24,7 @@
         md5($_POST['password']), 
         $_POST['gender']
         ));
+        header('Location: index.php');
 
     
     // Permet de selectionné dans la base de donnée, les valeurs de l'utilisateur ayant comme genre male.

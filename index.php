@@ -1,8 +1,6 @@
-<!--  localhost/cours_php/Sniikks.github.io/index.php -->
+<!-- Quand le fichier est lu on veux que  le fichier db soit lu aussi -->
  <?php
- // Connexion à une nouvelle base de donnée: mysql, hébérgement en localhost, dans le fichier, en type de caractère: texte.
-$bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'alaji')
-
+require_once('db.php');
 ?>
 
 <!DOCTYPE html>
@@ -212,36 +210,41 @@ $bdd = new PDO('mysql:host=localhost;dbname=cours;charset=utf8;', 'Sniikks', 'al
         <label for="other"> Other </label>
         <br>
         <input type="submit" value="Envoyé">
+        <input type="reset" value="Reset">
 
     </form>
 
+    <br><br><br><br>
+
     <form action="" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
-        <label for ="name2"> Name: </label>
+        <label for ="name"> Name: </label>
         <br>
-        <input type="text" name="name" id="name2">
+        <input type="text" name="name" id="name">
         <br>
-        <label for="mail2"> Mail: </label>
+        <label for="mail"> Mail: </label>
         <br>
-        <input type="email" name="mail" id="mail2">
+        <input type="email" name="mail" id="mail">
         <br>
-        <label for="message2"> Message</label>
+        <label for="message"> Message</label>
         <br>
-        <textarea name="message" placeholder="Test" id="message2" cols="30" rows="10"> </textarea>     
+        <textarea name="message" placeholder="Test" id="message" cols="30" rows="10"> </textarea>     
         <br>
-        <label for ="number2"> Number: </label>
+        <label for ="number"> Number: </label>
         <br>
-        <input type="number" name="number" id="number2">
+        <input type="number" name="number" id="number">
         <br>
         <input type="submit" value="Envoyé">
+        <input type="reset" value="Reset">
 
     </form>  
 
     <?php
 
     if (isset($_POST) && !empty($_POST)) {
+        settype($_POST['number'], 'integer');
 
-    $insert = $bdd->prepare('INSERT INTO test(name, mail, message, number) VALUES (?, ?, ?, ?)');
-    $insert->execute(array(
+    $newmessage= $bdd->prepare('INSERT INTO test(name, mail, message, number) VALUES (?, ?, ?, ?)');
+    $newmessage->execute(array(
         $_POST['name'], 
         $_POST['mail'], 
         $_POST['message'], 

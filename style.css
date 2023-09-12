@@ -120,30 +120,39 @@ img:hover {
 
 .conteneur {
     background-color: black;
-    height: 300px;
+    height: 600px; 
     width: 100%; /* Pends toute la largeur de la page */
-    display: flex;
-    /*justify-content: space-around;*/
+    display: flex; /* L'affichage se met en mode flex
+    /* justify-content: joue avecc la largeur quand le flex-direction est en row, quand flex-direction est en column il joue en hauteur */
     /*justify-content: space-between;*/
+    /* justify-content: space-evenly; */
+    justify-content: space-around;
+    /* align-items fait la même chose que justify-content mais inversé, c'est à dire qu'il joue avec la hauuteur quand flex-direction est en row et en largeur quand il est en column*/
     align-items: center;
-    justify-content: space-evenly;
+    align-content: space-around;
+    /* flex-direction: row; */
     flex-direction: row;
+    /*Le flex-wrap sert à remettre à la ligne quand les éléments n'ont lus de place dans la largeur quand il est en mode wrap (par défaut il est en mode nowrap)*/
+    flex-wrap: wrap;
 }
 
 .rouge {
     background-color: red;
-    width: 6%;
+    width: 10%;
     height: 100px;
+    border: 3px solid rgb(255, 0, 195);
 }
 
 .vert {
     background-color: green;
-    width: 6%;
+    width: 10%;
     height: 100px;
+    border: 3px solid rgb(32, 236, 181);
 }
 
 .orange {
     background-color: orange;
-    width: 6%;
+    width: 10%;
     height: 100px;
+    border: 3px solid yellow;
 }

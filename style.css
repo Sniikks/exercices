@@ -1,9 +1,15 @@
+@font-face {
+    font-family: Oswald;
+    src: url(./Oswald-VariableFont_wght.ttf);
+}
+
 /*COULEURS*/
 
 /*Définir le background de la page*/
 body {
     background-color: rgba(122, 138, 143, 0.485);
   }
+
 /* Pour définit la couleur du texte classique */
 p{color: orangered}
 /* # Pour définir la couleur d'1 seul et unique ID */
@@ -239,7 +245,7 @@ img:hover {
     font-size: 4em;
     color: antiquewhite;
     font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Oswald';
 }
 
 .cote_gauche {

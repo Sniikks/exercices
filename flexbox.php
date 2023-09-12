@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
     <div class="conteneur">
         <div class="orange"></div>
         <div class="rouge"></div>
@@ -32,5 +33,17 @@
         <div class="rouge"></div>
         <div class="orange"></div>
     </div>
+
+    <div class="grandconteneur">
+        <div class="conteneur2">
+           <h1>Flexbox</h1>
+        </div>
+        <div class="conteneur2">
+            <div class="moyenconteneur"></div>
+            <div class="petitconteneur"></div>
+            <div class="petitconteneur"></div>
+            <div class="moyenconteneur"></div>
+    </div>
+
 </body>
 </html>

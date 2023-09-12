@@ -106,7 +106,7 @@ input[type="submit"][value="Submit"], input[type="reset"] {
     /* Je choisis la transparence de l'image. */
     opacity: 70%;
     /* Permet de rendre l'image flou. */
-    filter: blur(1px);
+    filter: blur(1px); 
     /* Je dis que l'élément IMG joue l'animation qu'elle doit durée 10s en fonctionnant en ease-in et elle ce joue à l'infini. */
     animation: animationimg 10.0s ease-in infinite;
 }
@@ -123,16 +123,16 @@ img:hover {
     height: 600px; 
     width: 100%; /* Pends toute la largeur de la page */
     display: flex; /* L'affichage se met en mode flex
-    /* justify-content: joue avecc la largeur quand le flex-direction est en row, quand flex-direction est en column il joue en hauteur */
+    /* justify-content: joue avec la largeur quand le flex-direction est en row, quand flex-direction est en column il joue en hauteur */
     /*justify-content: space-between;*/
     /* justify-content: space-evenly; */
     justify-content: space-around;
-    /* align-items fait la même chose que justify-content mais inversé, c'est à dire qu'il joue avec la hauuteur quand flex-direction est en row et en largeur quand il est en column*/
+    /* align-items fait la même chose que justify-content mais inversé, c'est à dire qu'il joue avec la hauteur quand flex-direction est en row et en largeur quand il est en column*/
     align-items: center;
     align-content: space-around;
     /* flex-direction: row; */
     flex-direction: row;
-    /*Le flex-wrap sert à remettre à la ligne quand les éléments n'ont lus de place dans la largeur quand il est en mode wrap (par défaut il est en mode nowrap)*/
+    /*Le flex-wrap sert à remettre à la ligne quand les éléments n'ont plus de place dans la largeur quand il est en mode wrap (par défaut il est en mode nowrap)*/
     flex-wrap: wrap;
 }
 
@@ -155,4 +155,32 @@ img:hover {
     width: 10%;
     height: 100px;
     border: 3px solid yellow;
+}
+
+.grandconteneur {
+    background-color: rgb(95, 80, 80);
+    height: 400px; 
+    width: 75%;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conteneur2 {
+    background-color: aquamarine;
+    height: 90%;
+    width: 45%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.conteneur2 h1 {
+    color: rebeccapurple;
+    font-size: 3em; 
+    margin: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.moyenconteneur {
+    
 }

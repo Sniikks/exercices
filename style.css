@@ -1,3 +1,5 @@
+/* Permet d'importer un fichier de police, pour pouvoir prendre celle-ci et le mettre dans nos textes*/
+
 @font-face {
     font-family: Oswald;
     src: url(./Oswald-VariableFont_wght.ttf);

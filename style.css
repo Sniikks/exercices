@@ -230,6 +230,16 @@ img:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.flexbox h1 {
+    display: block;
+    margin: 2px;
+    font-size: 4em;
+    color: antiquewhite;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .cote_gauche {
@@ -272,7 +282,62 @@ img:hover {
 /* ---------------------------------------------------- */
 
 .cote_droit {
-    background-color: aqua;
     width: 40%;
     height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cote_droit .gauche {
+    width: 45%;
+    height: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cote_droit .gauche .petite1 {
+    width: 100%;
+    height: 35%;
+}
+
+.cote_droit .gauche .petite2 {
+    width: 100%;
+    height: 20%;
+}
+
+.cote_droit .gauche .petite3 {
+    width: 100%;
+    height: 35%;
+}
+
+/* ---------------------------------------------------- */
+
+.cote_droit .droite {
+    width: 45%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cote_droit .droite .petite1 {
+    width: 100%;
+    height: 40%;
+}
+
+.cote_droit .droite .petite2 {
+    width: 100%;
+    height: 30%;
+}
+
+.cote_droit .droite .petite3 {
+    width: 100%;
+    height: 25%;
+}
+
+.cote_droit .long {
+    height: 30%,
 }

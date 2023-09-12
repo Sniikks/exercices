@@ -159,7 +159,7 @@ img:hover {
 
 .grandconteneur {
     background-color: rgb(95, 80, 80);
-    height: 400px; 
+    height: 500px; 
     width: 75%;
     display: flex; 
     justify-content: space-around;
@@ -181,6 +181,22 @@ img:hover {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+
+#secondconteneur2 {
+ background-color: transparent;
+ align-items: space-between;
+ justify-content: space-between;
+ flex-wrap: wrap;  
+}
+
 .moyenconteneur {
-    
+    background-color: aquamarine;
+    height: 30%;
+    width: 100%;
+}
+
+.petitconteneur {
+    background-color: aquamarine;
+    height: 30%;
+    width: 45%;
 }

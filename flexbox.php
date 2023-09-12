@@ -38,11 +38,12 @@
         <div class="conteneur2">
            <h1>Flexbox</h1>
         </div>
-        <div class="conteneur2">
+        <div class="conteneur2" id="secondconteneur2">
             <div class="moyenconteneur"></div>
             <div class="petitconteneur"></div>
             <div class="petitconteneur"></div>
             <div class="moyenconteneur"></div>
+        </div>
     </div>
 
 </body>

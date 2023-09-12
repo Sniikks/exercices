@@ -36,13 +36,32 @@
 
     <div class="grandconteneur">
         <div class="conteneur2">
-           <h1>Flexbox</h1>
+            <h1> Flexbox </h1>
         </div>
         <div class="conteneur2" id="secondconteneur2">
             <div class="moyenconteneur"></div>
             <div class="petitconteneur"></div>
             <div class="petitconteneur"></div>
             <div class="moyenconteneur"></div>
+        </div>
+    </div>
+
+    <div class="conteneurg">
+        <div class="conteneurb1" id="conteneurbis1">
+            <div class="cont01"></div>
+                <div class="contopen02"></div>
+                    <div class="cont02bis"></div>
+                    <div class="cont02bisbis"></div>
+                <div class="cont03"></div>
+        </div>
+        <div class="conteneurb1" id="conteneurbis2">
+            <div class="cont1"></div>
+            <div class="cont2"></div>
+            <div class="cont3"></div>
+            <div class="cont4"></div>
+            <div class="cont5"></div>
+            <div class="cont6"></div>
+            <div class="cont7"></div>
         </div>
     </div>
 

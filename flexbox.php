@@ -4,7 +4,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Cours FlexBox</title>
+    <title>Flexbox.php</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>

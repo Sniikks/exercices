@@ -9,11 +9,12 @@
 <body>
     <!-- Faite une horloge sois numérique sois analogique, on doit pouvoir changer l'heure avec un formulaire-->
 
-    
+<h3> Date et Horaire du jour </h3>
 <?php
-echo 'Il est actuellement ' .date("h:i:s A") .' et nous sommes le ' .date("d-m-Y");
+echo 'Nous sommes le ' .date("d/m/Y") .', il est actuellement ' .date("h:i:s") ;
 ?> 
 
+<h3> Horaire du jour </h3>
 <form action="" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
     <label for ="heures"> Heures: </label>
     <input type="number" name="heures" min="0" max="23" required>
@@ -35,16 +36,13 @@ $secondes= $_POST["secondes"];
 if (empty($minutes) && empty($minutes) && empty($secondes)) {
 echo 'Il est ' .date("h:i:s");
 } else {
-echo 'Il est ' .$heures .":" .$minutes .":" .$secondes .date("A");
+echo 'Il est ' .$heures .":" .$minutes .":" .$secondes;
 }
 ?>
 
-
-
-
-
 <!-- ------------------------------ -->
 
+<h3> Chronomètre </h3>
 <form action="" method="post"> 
         <label for="jours"> Jours :</label>
         <input type="number" id="jours" name="jours" min="0" value="0">

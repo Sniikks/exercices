@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox.php</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
@@ -75,10 +75,6 @@
         </div>  
         <h1> CSS FLEXBOX </h1>
     </div>
-
-    <!--  --------------------------------------------------  -->
-
-
 
 </body>
 </html>

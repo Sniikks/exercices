@@ -13,7 +13,7 @@ body {
   }
 
 /* Pour définit la couleur du texte classique */
-p{color: orangered}
+p {color: rgb(0, 0, 0)}
 /* # Pour définir la couleur d'1 seul et unique ID */
 #Orange {color: orange;}
 /* . Pour définir la couleur d'un groupe de classe */
@@ -59,7 +59,7 @@ tr:nth-child(3) {
 }
 
 /* Change la taille des boutons (ici de type reset et submit */  
-input[type="submit"][value="Submit"], input[type="reset"] {
+input[type="submit"][value="Submit"], input[type="reset"][value="Reset"], [value="Stop"],[value="Start"] {
     font-size: 1.40em;
     border-radius: 25%;
 }
@@ -352,7 +352,7 @@ img:hover {
 
 /* ---------------------------------------------------- */
 
-.minuteur {
-    font-size: 6em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#minuteur {
+    font-size: 1em;
+    font-family: '00054';
 }

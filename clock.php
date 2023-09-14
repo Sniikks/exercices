@@ -5,8 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Clock.php</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+<h3> Chrono </h3>
 
 <p id="minuteur">00: 00: 00</p>
 <form action="" method="post">
@@ -53,7 +56,46 @@ echo '<script>
 echo 'Nous sommes le ' .date("d/m/Y") .', il est actuellement ' .date("h:i:s") ;
 ?> 
 
+<!-- ------------------------------ -->
+
+<p id="dateEtHoraire">Date et Horaire du jour</p>
+
+<script>
+    function actualiserDateEtHeure() {
+        var dateActuelle = new Date();
+        var heure = dateActuelle.getHours();
+        var minute = dateActuelle.getMinutes();
+        var seconde = dateActuelle.getSeconds();
+
+        // Formatage pour ajouter des zéros devant les valeurs < 10
+        var heureFormat = (heure < 10 ? "0" : "") + heure;
+        var minuteFormat = (minute < 10 ? "0" : "") + minute;
+        var secondeFormat = (seconde < 10 ? "0" : "") + seconde;
+
+        var dateEtHeure = "Nous sommes le " + dateActuelle.toLocaleDateString("fr-FR") + ", il est actuellement " + heureFormat + ":" + minuteFormat + ":" + secondeFormat;
+
+        document.getElementById("dateEtHoraire").textContent = dateEtHeure;
+    }
+
+    actualiserDateEtHeure(); // Appel initial de la fonction
+    setInterval(actualiserDateEtHeure, 1000); // Actualise la date et l'heure toutes les secondes
+</script>
+
+<!-- ------------------------------ -->
+
 <h3> Horaire du jour </h3>
+
+<?php
+$heures= $_POST["heures"];
+$minutes= $_POST["minutes"];
+$secondes= $_POST["secondes"];
+if (empty($minutes) && empty($minutes) && empty($secondes)) {
+echo 'Il est ' .date("h:i:s");
+} else {
+echo 'Il est ' .$heures .":" .$minutes .":" .$secondes;
+}
+?>
+
 <form action="" method="post">     <!-- method="post" permet de cacher les données dans la barre de recherche du navigateur quand on s'inscrit via un formulaire.-->
     <label for ="heures"> Heures: </label>
     <input type="number" name="heures" min="0" max="23" required>
@@ -68,20 +110,13 @@ echo 'Nous sommes le ' .date("d/m/Y") .', il est actuellement ' .date("h:i:s") ;
     <input type="reset" value="Reset">
 </form>
 
-<?php
-$heures= $_POST["heures"];
-$minutes= $_POST["minutes"];
-$secondes= $_POST["secondes"];
-if (empty($minutes) && empty($minutes) && empty($secondes)) {
-echo 'Il est ' .date("h:i:s");
-} else {
-echo 'Il est ' .$heures .":" .$minutes .":" .$secondes;
-}
-?>
 
 <!-- ------------------------------ -->
 
 <h3> Chronomètre </h3>
+
+<div id="timer">00:00:00:00</div>
+
 <form action="" method="post"> 
         <label for="jours"> Jours :</label>
         <input type="number" id="jours" name="jours" min="0" value="0">
@@ -99,8 +134,6 @@ echo 'Il est ' .$heures .":" .$minutes .":" .$secondes;
         <input type="button" value="Stop" onclick="stopchrono()">
         <input type="reset" value="Reset">
     </form>
-
-    <div id="timer">00:00:00:00</div>
 
     <script>
         let interval;

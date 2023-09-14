@@ -59,7 +59,7 @@ tr:nth-child(3) {
 }
 
 /* Change la taille des boutons (ici de type reset et submit */  
-input[type="submit"][value="Submit"], input[type="reset"][value="Reset"], [value="Stop"],[value="Start"] {
+input[type="submit"][value="Submit"], input[type="reset"][value="Reset"], [value="Stop"], [value="Start"], [value="Pause"] {
     font-size: 1.40em;
     border-radius: 25%;
 }
@@ -354,5 +354,4 @@ img:hover {
 
 #minuteur {
     font-size: 1em;
-    font-family: '00054';
 }

@@ -11,7 +11,7 @@
 
 <h3> Chrono </h3>
 
-<p id="minuteur">00: 00: 00</p>
+<p id="minuteur">00:00:00</p>
 <form action="" method="post">
     <label for="heure"> Heure(s) :</label>
     <input type="number" name="heure" id="heure" value="0" min="0" max="9999999">
@@ -20,7 +20,9 @@
     <label for="seconde"> Seconde(s) :</label>
     <input type="number" name="seconde" id="seconde" value="0" min="0" max="59" maxlength="2">
     <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
+    <button type="button" id="play">Start</button>
+    <button type="button" id="pause" onclick="PauseTimer()">Pause</button>
+    <button type="button" id="reset" onclick="ResetTimer()">Reset</button>
 </form>
 
 <?php
@@ -28,12 +30,12 @@ echo '<script>
     var heure =' . (!empty($_POST["heure"]) ? $_POST["heure"] : '0') . ';
     var minute =' . (!empty($_POST["minute"]) ? $_POST["minute"] : '0') . ';
     var seconde =' . (!empty($_POST["seconde"]) ? $_POST["seconde"] : '0') . ';
-    setInterval(function() {
-        document.getElementById("minuteur").innerHTML = 
-        `${(heure < 10 ? "0" : "") + heure}:
-         ${(minute < 10 ? "0" : "") + minute}:
-         ${(seconde < 10 ? "0" : "") + seconde}`;
-        if (seconde <= 0 && minute <= 0 && heure <= 0) return;
+    function timer() {
+        document.getElementById("minuteur").innerHTML = `${(heure < 10 ? "0" : "") + heure}:${(minute < 10 ? "0" : "") + minute}:${(seconde < 10 ? "0" : "") + seconde}`;
+        if (seconde <= 0 && minute <= 0 && heure <= 0) {
+            clearInterval(interval);
+            return;
+        }
         seconde--;
         if (seconde < 0) {
             seconde = 59;
@@ -43,8 +45,39 @@ echo '<script>
                 heure--;
             }
         }
-    }, 1000);
+    }
+    var interval = setInterval(timer, 1000);
     
+    function pauseTimer() {
+        clearInterval(interval);
+        interval = null;
+        document.getElementById("minuteur").style.opacity = "0.5";
+    }
+
+    function resetTimer() {
+        clearInterval(interval);
+        interval = null;
+        document.getElementById("minuteur").innerHTML = "00:00:00";
+        document.getElementById("heure").value = "0";
+        document.getElementById("minute").value = "0";
+        document.getElementById("seconde").value = "0";
+        document.getElementById("minuteur").style.opacity = "1";
+        heure = 0;
+        minute = 0;
+        seconde = 0;
+    }
+    
+    function playTimer() {
+        if (interval === null) {
+            interval = setInterval(timer, 1000);
+            document.getElementById("minuteur").style.opacity = "1";
+        }
+    }
+    
+    document.getElementById("play").addEventListener("click", playTimer);
+    document.getElementById("pause").addEventListener("click", pauseTimer);
+    document.getElementById("reset").addEventListener("click", resetTimer);
+
 </script>';
 
 ?>

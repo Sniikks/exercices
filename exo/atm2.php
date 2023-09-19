@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ATM</title>
-    <link rel="stylesheet" href="../style/atm2.css">
+    <link rel="stylesheet" href="../style/atm.css">
 </head>
 <body>
     <section>
@@ -21,12 +21,24 @@
             <div class="num" id="erase">Effacer<p class="yellow"></p></div>
             <div class="num">7</div>
             <div class="num">8</div>
-            <div class="num">9</div>            
+            <div class="num" id='b'>9</div>            
             <button type="submit" class="num">Entrez<p class="green"></p></button>
             <div class="num">-</div>
             <div class="num">0</div>
             <div class="num">+</div>
         </form>
     </section>
+
+    <script>
+        var button = document.getElementsByClassName('num')
+
+        for (let index = 0; index < button.length; index++) {
+            if (button[index].id.length > 0 || button[index].type == 'submit') continue
+            button[index].addEventListener(function() {
+                button[index].innerHTML
+            })
+            
+        }
+    </script>
 </body>
 </html>

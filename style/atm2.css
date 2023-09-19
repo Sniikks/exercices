@@ -48,6 +48,8 @@ div.num:hover, button.num:hover {
     border: 2px ridge black;
     background-color: transparent;
     border-radius: 12px;
+    outline: none;
+    cursor: default;
 }
 
 #reject p, #erase p, button[type='submit'] p {

@@ -2,7 +2,7 @@
 
 <!-- Quand le fichier est lu on veux que  le fichier db soit lu aussi -->
  <?php
-require_once('./function/db.php');
+require_once('../function/db.php');
 ?>
 
 <!DOCTYPE html>

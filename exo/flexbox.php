@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox.php</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 

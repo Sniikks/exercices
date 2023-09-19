@@ -2,7 +2,7 @@
 
 <!-- Quand le fichier est lu on veux que  le fichier db soit lu aussi -->
  <?php
-require_once('db.php');
+require_once('./function/db.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,13 +11,9 @@ require_once('db.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index.php</title>
-    <link rel="stylesheet" href="./Projet.Phoenix/style.css">
-
-    
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-
-
 
   <!-- On ouvre la balise PHP. -->
     <?php 

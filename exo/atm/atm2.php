@@ -1,12 +1,12 @@
 <?php 
-require_once('../function/db.php');
+require_once('../../function/db.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>ATM</title>
-    <link rel="stylesheet" href="../style/atm2.css">
+    <link rel="stylesheet" href="./atm.css">>
 </head>
 <body>
     <section>
@@ -78,7 +78,7 @@ require_once('../function/db.php');
 
     <!-- 
         Faite un formulaire qui va permettre d'inscrire de nouveau code 
-        dans la base de donnée vous devez mettre le nom de prénom 
+        dans la base de donnée vous devez mettre le nom et prénom et aussi utilisateur
         Si le nom de la personne est déja existant il n'y pas possible d'être intégrer                
      -->
 </body>

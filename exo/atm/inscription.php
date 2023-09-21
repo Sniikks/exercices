@@ -1,68 +1,52 @@
+<?php
+require_once('../../function/db.php')
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="color.css">
     <title>Inscription</title>
+    <link rel="stylesheet" href="./atm.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Inscription</h1>
-        <form action="inscription.php" method="post">
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required>
-            
-            <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" required>
-
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" value="S'inscrire">
-        </form>
-    </div>
-
-
+    <form action="" method="post">
+        <pre>
+            <label for="name">Prénom :</label>
+            <input type="text" name="name" id="name" required>
+            <label for="lastname">Nom :</label>
+            <input type="text" name="lastname" id="lastname" required>
+            <label for="username">Pseudo :</label>
+            <input type="text" name="username" id="username" required>
+            <label for="password">Code :</label>
+            <input type="password" name="password" id="password" required pattern="^[0-9]{4}" maxlength=10>
+            <label for="confirm_password">Confirmation du code :</label>
+            <input type="password" name="confirm_password" id="confirm" onchange="modifyPassword()" required pattern="^[0-9]{4}" maxlength=4>
+            <br>
+            <input type="submit" value="Créer l'utilisateur">
+        </pre>
+    </form>
     <?php
-    // Permet d'aller chercher le fichier ou se trouve la base de données.
-    require_once('../function/db.php');
-
-    // Récupérer les données du formulaire
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $mot_de_passe = password_hash($_POST['password'], PASSWORD_DEFAULT);; // Hachage du mot de passe
-
-    // Préparer la requête SQL d'insertion
-    $sql = "INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe) VALUES (?, ?, ?, ?)";
-
-    // Préparer la déclaration SQL
-    $stmt = $connexion->prepare($sql);
-
-    // Vérifier si la préparation a réussi
-    if ($stmt === false) {
-        die("Erreur de préparation de la requête : " . $connexion->error);
-    }
-
-    // Lier les paramètres et exécuter la requête
-    $stmt->bind_param("ssss", $nom, $prenom, $email, $mot_de_passe);
-
-    if ($stmt->execute()) {
-        // L'inscription a réussi
-        echo "Inscription réussie !";
-    } else {
-    // Erreur lors de l'inscription
-        echo "Erreur lors de l'inscription : " . $stmt->error;
-    }
-
-    // Fermer la connexion
-    $stmt->close();
-    $connexion->close();
-?>
-    
+        if (isset($_POST) && !empty($_POST)) {
+            $select = $bdd->prepare('SELECT * FROM atm WHERE username=?');
+            $select->execute(array( $_POST['username']));
+            $select = $select->fetchAll();
+            if (count($select) <= 0) {
+                $insert = $bdd->prepare('INSERT INTO atm(prenom, nom, username, code) VALUES (?, ?, ?, ?)');
+                $insert->execute(array(
+                    $_POST['name'],
+                    $_POST['lastname'],
+                    $_POST['username'],
+                    $_POST['password']
+                ));
+            } else {
+                echo "<script> alert('Le nom d\'utilisateur est déjà utilisé') </script>";
+            }      
+        }
+    ?>
+    <script>
+        function modifyPassword() {
+            
+        }
+    </script>
 </body>
 </html>

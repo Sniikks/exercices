@@ -1,0 +1,280 @@
+<!-- http://localhost/cours_php/Sniikks.github.io/-->
+
+<!DOCTYPE html> <!-- Je défini le type de documment -->
+<html lang="fr"> <!-- J'ouvre le fichier HTML'--> <!-- lang="FR" pour le référencement de la page -->
+
+<!-- Je créer ma balise html, qui va contenir toute ma page  -->
+<!-- J'ouvre et créer la balise de l'entête c'est tout ce qui n'est pas visuels -->
+    <head>  
+        <meta charset="utf-8">  <!-- On défini l'encodage de notre page -->
+        <title> Index.html </title> <!-- Définir le titre de la page internet dans le navigateur -->
+        <link rel="stylesheet" href="../style/style.css">
+        
+    </head> <!-- Je ferme la balise de l'entête'-->
+
+<!-- J'ouvre et créer le corps de la page -->
+<!-- Ce sont les éléments visuels -->
+    <body>  
+        <p> Je suis un paragraphe </p>
+        <p> <b> Je suis un paragraphe en gras</b>  </p> <!-- <em> pour définir un texte en gras -->
+        <p> <strong> Je suis un paragraphe en gras aussi</strong>  </p> <!-- <em> pour définir un texte en italique -->
+        <p> <em> Je suis un paragraphe en italique</em>  </p> <!-- <em> pour définir un texte en italique -->
+        
+            <br>   <!-- <br> (break ligne) permet de saute une ligne -->
+        <p> <u> Je suis un paragraphe souligné </u> </p> <!-- <u> permet de surligner du texte -->
+        <p> <s> Je suis un paragraphe barré </s> </p> <!-- Ne pas refaire en règle général c'est un exemple -->
+        <p style="color:green;"> Je suis vert </p> <!-- Ne pas refaire en règle général c'est un exemple -->
+        <p id="Orange"> Je suis orange </p> <!-- Id="choix de l'id" permet de définir un id à un paragraphe ou autre -->
+        <p class="Rouge"> Je suis rouge </p> <!-- Class="permet de définir plusieurs id et appliquer le paramètre à plusieurs class -->
+        <p class="Fuchsia"> Je suis fuchsia</p>
+
+        <br><br>
+
+        <!-- Permet de définir la police d'écriture du plus grand au plus petit -->
+        <h1> Je suis un gros titre</h1>
+        <h2> Je suis un titre</h2>
+        <h3> Je suis un titre</h3>
+        <h4> Je suis un titre</h4>
+        <h5> Je suis un titre</h5>
+        <h6> Je suis un titre</h6>
+
+        <br><br><br>
+
+    <!-- TABLEAUX -->
+    <div>
+        <!-- Ici on défini TR dans une classe pour appliquer un background seulement pour TABLE -->
+        <table class="test999"> 
+            <tr>
+                <!-- TH et TD ont le même rôle, ils servent à ajouter des colonnes sur ma ligne -->
+                <th class="colorbackground"> Name </th> <!-- Le texte sera en gras-->
+                <td class="colorbackground"> Age </td> <!-- Le texte ne sera pas en gras-->
+                <td class="colorbackground"> Country  </td>
+            </tr>
+            <tr>
+                <!-- Ici on regroupe les deux ensembles pour faire en sorte qu'ils subissent la même couleur -->
+                <td> Harry Depp </td>
+                <td>  28 </td>
+                <td> Britain </td>
+            </tr>
+            <tr>
+                <!-- Ici on regroupe les deux ensembles pour faire en sorte qu'ils subissent la même couleur -->
+                <td> John Smith </td>
+                <td> 35 </td>
+                <td> USA </td>
+            </tr>
+            <tr>
+                <!-- Ici on regroupe les deux ensembles pour faire en sorte qu'ils subissent la même couleur -->
+                <td> Ram Krishna </td>
+                <td>  19 </td>
+                <td> Nepal </td>
+            </tr>
+        </table>
+
+            <br><br>
+
+            <!-- Permet d'afficher une grosse case de gauche à droite -->
+            <table>
+                <tr>
+                    <td class="colorbackground"; colspan="2">Language and Famwork</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Django</td>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td>React.js</td>
+                </tr>
+                <tr>
+                    <td>Ruby</td>
+                    <td>Ruby and Rails</td>
+                </tr>
+            </table>
+
+            <br><br>
+
+
+            <!-- Permet d'afficher une grosse case de haut en bas -->
+            <table>
+                <tr>
+                    <td class="colorbackground"; rowspan="4">Language and Famwork</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Django</td>
+                    <td>Rio</td>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td>React.js</td>
+                    <td>Django</td>
+                </tr>
+                <tr>
+                    <td>Ruby</td>
+                    <td>Ruby and Rails</td>
+                    <td>Django</td>
+                </tr>    
+            </table>
+
+            <br><br>
+
+            <table>
+                <tr>
+                    <td class="colorbackground"; colspan="7">Time Table</td>
+                </tr>
+                <tr>
+                    <td class="colorbackground2"; rowspan="6">Hours</td>
+                    <td class="colorbackground2">Mon</td>
+                    <td class="colorbackground2">Tue</td>
+                    <td class="colorbackground2">Wed</td>
+                    <td class="colorbackground2">Thu</td>
+                    <td class="colorbackground2">Fri</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td>Arts</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>History</td>
+                    <td>English</td>
+                    <td>Social</td>
+                    <td>Sports</td>
+                </tr>
+                <tr>
+                    <td class="colorbackground"; colspan="5">Lunch</td>
+                <tr>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Maths</td>
+                    <td rowspan="2">Project</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>History</td>
+                    <td>English</td>
+                    <td>Social</td>
+                </tr>
+        </table>
+    </div> 
+    
+    <br><br>
+
+    <p id="animal"> ! Clique moi dessus ! </p>
+
+    <br><br><br>
+
+    <!-- CREATION DE FORMULAIRE-->
+    <div>
+    <form action="">
+        <fieldset class=tableau11> 
+        <legend> Mon formulaire </legend>
+        <label for ="name"> Nom: </label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="prénom"> Prénom </label>
+        <input type="text" name="prénom" id="prénom">
+        <br>
+        <label for="age"> Age: </label>
+        <input type="number" name="age" id="age">
+        <br>
+        <input type="radio" name="sexe" id="masculin">
+        <label for="masclin"> Masculin </label>
+        <input type="radio" name="sexe" id="feminin">
+        <label for="feminin"> Feminin </label>
+        <input type="radio" name="sexe" id="other" checked>
+        <label for="other"> Othor </label>
+        <br>
+        <input type="checkbox" name="me">
+        <label for="me"> Je suis moi?</label>
+        <br>
+        <textarea name="message" placeholder="Test" id="message" cols="30" rows="10"> </textarea>       
+        <br> 
+        <input type="submit" value="Envoyé">
+        </fieldset>
+    </form>
+
+    <br><br><br>
+
+    <h1> HTML form </h1>
+
+    <form action="">
+        <fieldset class=tableau11>
+        <label for ="firstname"> First name: </label>
+        <input type="text" name="firstname" id="firstname">
+        <br><br>
+        <label for="lastname"> Last name </label>
+        <input type="text" name="lastname" id="lastname">
+        <br><br>
+        <label for="email"> E-mail </label>
+        <input type="email" name="email" id="email">
+        <br><br>
+        <input type="radio" name="sexe" id="masculin">
+        <label for="masclin"> Masculin </label>
+        <br>
+        <input type="radio" name="sexe" id="feminin">
+        <label for="feminin"> Feminin </label>
+        <br><br>
+        </fieldset>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <br><br><br>
+
+    <form action="">
+        <fieldset class=tableau11>
+        <legend> Selection options list </legend>
+        <br>
+        <label for="checkbox"> Checkbox</label>
+        <input type="checkbox" name="checkbox">
+        <br>
+        <label for="radiob1"> Radio B1 </label>
+        <input type="radio" name="radio1" id="radiob1">
+        <br>
+        <label for="radiob2"> Radio B2 </label>
+        <input type="radio" name="radio1" id="radiob2">
+        <br>
+        </fieldset>
+        <fieldset class=tableau11>
+        <legend> Input text</legend>
+        <label for ="loginid"> Login id: </label>
+        <input type="text" name="loginid" id="loginid">
+        <br>
+        <label for="password"> Password </label>
+        <input type="password" name="password" id="password">
+        </fieldset>
+        <fieldset class=tableau11>
+        <legend> Employee Designation </legend>
+        <br>
+        <input type="checkbox" name="designation" id="softwareengineer">
+        <label for="softwareengineer"> Software Engineer </label> 
+        <br>
+        <input type="checkbox" name="designation" id="dataanalyst">
+        <label for="dataanalyst"> Data Analyst </label> 
+        <br>
+        <input type="checkbox" name="designation" id="webdevelopper">
+        <label for="webdevelopper"> Web Developper </label> 
+        <br>
+        <input type="checkbox" name="designation" id="senioranalyst">
+        <label for="senioranalyst"> Senior Analyst </label> 
+        <br>
+        </fieldset>
+        <fieldset class=tableau12>
+        <br> 
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+    </div>  
+
+    <!-- Mettre une image dans le doc -->
+    <img id="img1" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/04/wwf.jpg?auto=format&q=60&fit=max&w=930" alt="mots clés pour la recherche">
+
+    <script src= "./script.js"> </script>
+    </body>
+</html> <!-- Je ferme le fichier HTML -->

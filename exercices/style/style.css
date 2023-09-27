@@ -1,0 +1,357 @@
+/* Permet d'importer un fichier de police, pour pouvoir prendre celle-ci et le mettre dans nos textes*/
+
+@font-face {
+    font-family: Oswald;
+    src: url(./Oswald-VariableFont_wght.ttf);
+}
+
+/*COULEURS*/
+
+/*Définir le background de la page*/
+body {
+    background-color: rgba(122, 138, 143, 0.485);
+  }
+
+/* Pour définit la couleur du texte classique */
+p {color: rgb(0, 0, 0)}
+/* # Pour définir la couleur d'1 seul et unique ID */
+#Orange {color: orange;}
+/* . Pour définir la couleur d'un groupe de classe */
+.Rouge {color: red;}
+.Fuchsia {color: fuchsia;}
+
+.colorbackground {color: black; background-color: gray;}
+.colorbackground2 {color: black; background-color: darkorange;}
+
+/* Permet de mettre un rectangle noir de 1 pixel autour des mots */
+tr, td, th, table {
+    border: 1px solid black;
+    /* border-collapse: collapse; */
+    border-color: orange; 
+    border-radius: 28px;
+    border-spacing: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Permet d'aligner le texte au centre de la case */
+tr td {
+    text-align: center;
+}
+
+/* Permet de mettre de la couleur sur le 3ème enfant.*/
+tr:nth-child(3) {
+    background-color: green;
+}
+
+/* Défini une classe spécialement pour TR */
+.test999 tr {
+    background-color: rgba(207, 252, 141, 0.521);
+}
+
+/* Quand je suis sur le mot: animal mon curseur change */
+#animal:hover {
+    cursor: pointer;
+}
+
+/* Augmente la taille d'animal */
+#animal{
+    font-size: 30px;
+}
+
+/* Change la taille des boutons (ici de type reset et submit */  
+input[type="submit"][value="Submit"], input[type="reset"][value="Reset"], [value="Stop"], [value="Start"], [value="Pause"] {
+    font-size: 1.40em;
+    border-radius: 25%;
+}
+
+/* Permet de bloquer l'encadrement de texte du chat box. */
+#message {
+    resize: none;
+    background-color: green;
+    border-color: orange;
+}
+
+/* Permet de mettre un message dans un chat box. */
+::placeholder{
+    font-size: 30px;
+    color: aliceblue;
+}
+
+/* Permet de modifier l'encadrement des bordures. */
+.tableau11 {
+    border-color: orange; 
+    border-radius: 28px;
+    border-spacing: 0px;
+    width: 300px;
+}
+
+/* Permet de modifier l'encadrement des bordures. */
+.tableau12 {
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-width: 0px;
+}
+
+@keyframes animationimg {
+    0% {
+        transform: scaleX(-1);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+#img1 {
+    border: 3px dashed green;
+    border-radius: 80px;
+    height: auto;
+    /* Je rends mons image recursive/responsive. */
+    max-width: 100%; 
+    /* Je choisis la transparence de l'image. */
+    opacity: 70%;
+    /* Permet de rendre l'image flou. */
+    filter: blur(1px); 
+    /* Je dis que l'élément IMG joue l'animation qu'elle doit durée 10s en fonctionnant en ease-in et elle ce joue à l'infini. */
+    animation: animationimg 10.0s ease-in infinite;
+}
+
+/* Permet de faire rotate l'image de gauche à droite */
+img:hover {
+    transform: scaleX(-1);
+    /* Permet de faire rotate l'image de gauche à droite */
+    /* transform: scaleY(-1); */
+}
+
+/* ---------------------------------------------------- */
+
+.conteneur {
+    background-color: black;
+    height: 600px; 
+    width: 100%; /* Pends toute la largeur de la page */
+    display: flex; /* L'affichage se met en mode flex
+    /* justify-content: joue avec la largeur quand le flex-direction est en row, quand flex-direction est en column il joue en hauteur */
+    /*justify-content: space-between;*/
+    /* justify-content: space-evenly; */
+    justify-content: space-around;
+    /* align-items fait la même chose que justify-content mais inversé, c'est à dire qu'il joue avec la hauteur quand flex-direction est en row et en largeur quand il est en column*/
+    align-items: center;
+    align-content: space-around;
+    /* flex-direction: row; */
+    flex-direction: row;
+    /*Le flex-wrap sert à remettre à la ligne quand les éléments n'ont plus de place dans la largeur quand il est en mode wrap (par défaut il est en mode nowrap)*/
+    flex-wrap: wrap;
+}
+
+.rouge {
+    background-color: red;
+    width: 10%;
+    height: 100px;
+    border: 3px solid rgb(255, 0, 195);
+}
+
+.vert {
+    background-color: green;
+    width: 10%;
+    height: 100px;
+    border: 3px solid rgb(32, 236, 181);
+}
+
+.orange {
+    background-color: orange;
+    width: 10%;
+    height: 100px;
+    border: 3px solid yellow;
+}
+
+/* ---------------------------------------------------- */
+
+.grandconteneur {
+    background-color: rgb(95, 80, 80);
+    height: 500px; 
+    width: 75%;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conteneur2 {
+    background-color: aquamarine;
+    height: 90%;
+    width: 45%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.conteneur2 h1 {
+    color: rebeccapurple;
+    font-size: 3em; 
+    margin: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#secondconteneur2 {
+ background-color: transparent;
+ align-items: space-between;
+ justify-content: space-between;
+ flex-wrap: wrap;  
+}
+
+.moyenconteneur {
+    background-color: aquamarine;
+    height: 30%;
+    width: 100%;
+}
+
+.petitconteneur {
+    background-color: aquamarine;
+    height: 30%;
+    width: 45%;
+}
+
+/* ---------------------------------------------------- */
+
+.violet {
+    background-color: violet;
+}
+
+.oranget {
+    background-color: orange;
+}
+
+.bleu {
+    background-color: blue;
+}
+
+.red { 
+    background-color: rgb(255, 43, 43);
+}
+
+.flexbox {
+    width: 70%;
+    height: 600px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flexbox h1 {
+    display: block;
+    margin: 2px;
+    font-size: 4em;
+    color: antiquewhite;
+    font-weight: bolder;
+    font-family: 'Oswald';
+}
+
+.cote_gauche {
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.long { 
+    width: 100%;
+    height: 20%;
+}
+
+.cote_gauche .gauche {
+    width: 45%; 
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.cote_gauche .droite {
+    width: 45%; 
+    height: 75%;
+}
+
+.cote_gauche .gauche .petite {
+    width: 100%;
+    height: 65%;
+}
+
+.cote_gauche .gauche .trespetite {
+    width: 100%;
+    height: 30%;
+}
+
+/* ---------------------------------------------------- */
+
+.cote_droit {
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cote_droit .gauche {
+    width: 45%;
+    height: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cote_droit .gauche .petite1 {
+    width: 100%;
+    height: 35%;
+}
+
+.cote_droit .gauche .petite2 {
+    width: 100%;
+    height: 20%;
+}
+
+.cote_droit .gauche .petite3 {
+    width: 100%;
+    height: 35%;
+}
+
+/* ---------------------------------------------------- */
+
+.cote_droit .droite {
+    width: 45%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cote_droit .droite .petite1 {
+    width: 100%;
+    height: 40%;
+}
+
+.cote_droit .droite .petite2 {
+    width: 100%;
+    height: 30%;
+}
+
+.cote_droit .droite .petite3 {
+    width: 100%;
+    height: 25%;
+}
+
+.cote_droit .long {
+    height: 30%,
+}
+
+/* ---------------------------------------------------- */
+
+#minuteur {
+    font-size: 1em;
+}

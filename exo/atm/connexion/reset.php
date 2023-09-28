@@ -7,13 +7,12 @@ if (isset($_GET) && !empty($_GET)) {
         $_GET['token']
     ));
     $select = $select->fetchAll();
-    if (empty($select))
+    if (empty($select)) 
         header('Location: login.php');
 } else 
     header('Location: login.php');
 
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

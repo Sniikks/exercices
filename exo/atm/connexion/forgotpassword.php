@@ -3,7 +3,7 @@ require_once('../../../function/db.php');
 require_once('./mail.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,8 @@ require_once('./mail.php');
                 $_POST['email'],
                 $select[0]['id']
             ));
-            SendEmail($select[0]['id'], $token, $_POST['email'], 'Ok mec', 'Votre compte à été bloquer', 'Je suis une personne');
+            $msg = "Lien pour réinitialiser votre mot de passe : http://localhost/exercices/exo/atm/connexion/reset.php?id=" . $select[0]['id'] . "&token=$token";  
+            SendEmail($_POST['email'], $msg, 'Réinitialisation du mot de passe', 'DWWM');
         }
     }
     

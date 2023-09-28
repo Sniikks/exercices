@@ -33,7 +33,7 @@ require_once('./mail.php');
                 $_POST['email'],
                 $select[0]['id']
             ));
-            SendEmail($select[0]['id'], $token, $_POST['email']);
+            SendEmail($select[0]['id'], $token, $_POST['email'], 'Ok mec', 'Votre compte à été bloquer', 'Je suis une personne');
         }
     }
     

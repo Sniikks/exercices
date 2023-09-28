@@ -56,25 +56,24 @@ require_once('mail.php')
             $token = GenerateToken(50);
             $msg = "Lien pour vérifier votre adresse mail : http://localhost/exercices/exo/atm/connexion/verify.php?=$token"; 
             SendEmail($_POST['email'], $msg, "Validation Adresse Mail", 'DWWM');
+            
             header("Location: login.php");
         } else 
             echo '<script> alert("Ce pseudo ou l\'addresse email sont déja utilisé donc vous devez en utiliser un autre qui ne soit pas le même mais qui ne comporte pas de caractère spécial parce que ca ne peux pas fonctionner et donc si vous ne faite pas ca ne pourra toujours pas fonctioner parce que vous êtes vraiment nul !") </script>';
-
-
-    }
-    ?>
-    <br><br><br><br><br><br><br><br><br><br>
-    <script>
-        function ChangeValue() {
-            let Password = document.getElementById('password')
-            let confirmPassword = document.getElementById('confirm_password')
-            
-            if (Password.value == confirmPassword.value)                
-                confirmPassword.setCustomValidity('')
-            else                 
-                confirmPassword.setCustomValidity('Les mots de passe doivent être identique')      
         }
-    </script>        
-
-</body>
-</html>
+        ?>
+        <br><br><br><br><br><br><br><br><br><br>
+        <script>
+            function ChangeValue() {
+                let Password = document.getElementById('password')
+                let confirmPassword = document.getElementById('confirm_password')
+                
+                if (Password.value == confirmPassword.value)                
+                    confirmPassword.setCustomValidity('')
+                else                 
+                    confirmPassword.setCustomValidity('Les mots de passe doivent être identique')      
+            }
+        </script>        
+    
+    </body>
+    </html>

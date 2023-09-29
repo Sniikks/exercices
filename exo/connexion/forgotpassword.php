@@ -1,5 +1,5 @@
 <?php
-require_once('../../../function/db.php');
+require_once('../../function/db.php');
 require_once('./mail.php');
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ require_once('./mail.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mot de passe oublié</title>
-    <link rel="stylesheet" href="./connexion.css">
+    <link rel="stylesheet" href="../../style/connexion.css">
 </head>
 <body>
     <form action="" method="post">
@@ -33,12 +33,10 @@ require_once('./mail.php');
                 $_POST['email'],
                 $select[0]['id']
             ));
-            $msg = "Lien pour réinitialiser votre mot de passe : http://localhost/exercices/exo/atm/connexion/reset.php?id=" . $select[0]['id'] . "&token=$token";  
+            $msg = "Lien pour réinitialiser votre mot de passe : http://localhost/exercices/exo/connexion/reset.php?id=" . $select[0]['id'] . "&token=$token";  
             SendEmail($_POST['email'], $msg, 'Réinitialisation du mot de passe', 'DWWM');
         }
     }
-    
-    
     ?>
 </body>
 </html>

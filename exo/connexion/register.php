@@ -1,5 +1,5 @@
 <?php
-require_once('../../../function/db.php');
+require_once('../../function/db.php');
 require_once('mail.php')
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ require_once('mail.php')
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
-    <link rel="stylesheet" href="./connexion.css">
+    <link rel="stylesheet" href="../../style/connexion.css">
 </head>
 <body>
     <form action="" method="post">
@@ -44,38 +44,36 @@ require_once('mail.php')
         $select->execute(array($_POST['username'], $_POST['email']));
         $select = $select->fetchAll();
         if (empty($select)) {
-            $token = GenerateToken(50);
-
-            $insert = $bdd->prepare('INSERT INTO users(prenom, nom, email, username, genre, password, token) VALUE (?, ?, ?, ?, ?, ?, ?);');
+            $insert = $bdd->prepare('INSERT INTO users(prenom, nom, email, username, genre, password) VALUE (?, ?, ?, ?, ?, ?);');
             $insert->execute(array(
                 $_POST['firstname'],
                 $_POST['lastname'],
                 $_POST['email'],
                 $_POST['username'],                
                 $_POST['genre'],
-                sha1($_POST['password']),
-                $token
+                sha1($_POST['password'])
             ));
-            
-            $msg = "Lien pour vérifier votre adresse mail : http://localhost/exercices/exo/atm/connexion/verify.php?=$token"; 
-                SendEmail($_POST['email'], $msg, "Validation Adresse Mail", 'DWWM');
+            $token = GenerateToken(50);
+            $msg = "Lien pour vérifier votre adresse mail : http://localhost/exercices/exo/connexion/verify.php?token=$token";
+            SendEmail($_POST['email'], $msg, "Validation Adresse Mail", 'DWWM');
 
-                header("Location: login.php?username=" . $_POST['username']);
-            } else 
-                echo '<script> alert("Ce pseudo ou l\'adresse email sont déja utilisé donc vous devez en utiliser un autre qui ne soit pas le même mais qui ne comporte pas de caractères spéciaux.") </script>';
+            header("Location: login.php");
+        } else 
+            echo '<script> alert("Ce pseudo ou l\'addresse email sont déja utilisé donc vous devez en utiliser un autre qui ne soit pas le même mais qui ne comporte pas de caractère spécial parce que ca ne peux pas fonctionner et donc si vous ne faite pas ca ne pourra toujours pas fonctioner parce que vous êtes vraiment nul ! Mais sinon pourquoi vous voulez vous créer un compte alors que le site est nul et même pas encore fini mais t\'es con ou QUOI LA ???? Mais alors t\'aurai pas un zob dans le cul et aussi t\'aurai une chmère et aussi un snikkers puis aussi un coca cherry ? Mais du-coup tu répond ?") </script>';
+    }
+    ?>
+    <br><br><br><br><br><br><br><br><br><br>
+    <script>
+        function ChangeValue() {
+            let Password = document.getElementById('password')
+            let confirmPassword = document.getElementById('confirm_password')
+            
+            if (Password.value == confirmPassword.value)                
+                confirmPassword.setCustomValidity('')
+            else                 
+                confirmPassword.setCustomValidity('Les mots de passe doivent être identique')      
         }
-        ?>
-        <br><br><br><br><br><br><br><br><br><br>
-        <script>
-            function ChangeValue() {
-                let Password = document.getElementById('password')
-                let confirmPassword = document.getElementById('confirm_password')
-                
-                if (Password.value == confirmPassword.value)                
-                    confirmPassword.setCustomValidity('')
-                else                 
-                    confirmPassword.setCustomValidity('Les mots de passe doivent être identique')      
-            }
-        </script>        
-    
-    </body>
+    </script>        
+
+</body>
+</html>

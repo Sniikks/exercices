@@ -25,7 +25,6 @@ function SendEmail($email, $msg, $objet, $name) {
 
     $mail = new PHPMailer();        
 
-    $mail->SMTPDebug = 2;
     $mail->isSMTP();
     $mail->SMTPAuth = true;
 

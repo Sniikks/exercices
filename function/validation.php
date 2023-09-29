@@ -13,8 +13,8 @@ require_once('db.php');
                 // SHAL Hash le mot c'est à dire le compléxifier et le rend illisible.
                 // sha1 / md5
             
-            echo sha1($_POST['password']). "<br>";
-            echo md5($_POST['password']);
+            //echo sha1($_POST['password']). "<br>";
+            //echo md5($_POST['password']);
         
         $insert = $bdd->prepare('INSERT INTO utilisateur(firstname, lastname, email, password, gender) VALUES (?, ?, ?, ?, ?)');
         $insert->execute(array(

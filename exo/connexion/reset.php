@@ -1,5 +1,5 @@
 <?php 
-require_once('../../../function/db.php');
+require_once('../../function/db.php');
 
 if (isset($_GET) && !empty($_GET)) {
     $select = $bdd->prepare('SELECT * FROM users WHERE id=? AND token=?');
@@ -45,7 +45,7 @@ if (isset($_GET) && !empty($_GET)) {
             ));
             $update = $update->rowCount();
             if ($update > 0) 
-                header('Location: login.php');
+                header('Location: login.php?success=reset');
             else
                 echo 'Une erreur c\'est produite ';
         }

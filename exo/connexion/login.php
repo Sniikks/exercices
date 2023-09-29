@@ -1,13 +1,10 @@
 
 <?php
-require_once('../../../function/db.php');
+require_once('../../function/db.php');
 session_start();
-if (!empty($_SESSION)) {
-    header('Location: index.php');
-    exit(); // Assurez-vous de quitter le script après la redirection
-}
-if (isset($_GET['success']) && $_GET['success'] == 'reset') {
-    echo '<script> alert("Votre mot de passe a été modifié") </script>';
+if (!empty($_SESSION)) header('Location: index.php');
+if (!empty($_GET)) {
+    if ($_GET['success'] == 'reset') echo '<script> alert("Votre mot de passe à été modifié") </script>';
 }
 ?>
 <!DOCTYPE html>
@@ -15,7 +12,7 @@ if (isset($_GET['success']) && $_GET['success'] == 'reset') {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
-    <link rel="stylesheet" href="./connexion.css">
+    <link rel="stylesheet" href="../../style/connexion.css">
 </head>
 <body>
     <form action="" method="post">
@@ -47,6 +44,5 @@ if (isset($_GET['success']) && $_GET['success'] == 'reset') {
             echo "<script> alert('Le mot de passe ou le pseudo n\'est pas bon') </script>";
     }
     ?>
-
 </body>
 </html>

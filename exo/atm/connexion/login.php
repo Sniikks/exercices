@@ -2,7 +2,13 @@
 <?php
 require_once('../../../function/db.php');
 session_start();
-if (!empty($_SESSION)) header('Location: index.php');
+if (!empty($_SESSION)) {
+    header('Location: index.php');
+    exit(); // Assurez-vous de quitter le script après la redirection
+}
+if (isset($_GET['success']) && $_GET['success'] == 'reset') {
+    echo '<script> alert("Votre mot de passe a été modifié") </script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -41,5 +47,6 @@ if (!empty($_SESSION)) header('Location: index.php');
             echo "<script> alert('Le mot de passe ou le pseudo n\'est pas bon') </script>";
     }
     ?>
+
 </body>
 </html>

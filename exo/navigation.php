@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="../style/navigation.css">
 </head>
 <body>
-    <nav>
-        <ol>
-            <li><a href="./tableau.php"><box-icon name='table'></box-icon></a></li>
-            <li><a href="./flexbox.php"><box-icon name='checkbox' type='solid'></box-icon></a></li>
-            <li><a href="./clock.php"><box-icon type='solid' name='hourglass'></box-icon></a></li>
-        </ol>
+    <nav class="exo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#"><box-icon name='search' color="#fff"></box-icon></a></li>
+        </ul>
     </nav>
 </body>
 </html>

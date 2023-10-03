@@ -29,7 +29,14 @@
         let menu = document.getElementById('menu')
         menu.addEventListener('click', function() {
             let list = document.getElementById('slide')
-            list.style.display = 'flex';
+            console.log(list.style.display.length)
+            if (list.style.display.length == 0 || list.style.display  == 'none') {
+                list.style.display = 'flex';
+                list.style.animation = 'slideBottom 1s 1 linear'
+            } else {
+                list.style.animation = '1s linear 1s 1 reverse slideBottom '
+                list.style.display = 'none'
+            }
         })
 
     </script>

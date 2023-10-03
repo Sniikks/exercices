@@ -20,22 +20,37 @@
         <box-icon id="menu" name="menu" size="25px"></box-icon>
     </nav>
     <ul id="slide">
-        <li><a href="">Pages</a></li>
-        <li><a href="">Account</a></li>
-        <li><a href="">Blocks</a></li>
-        <li><a href="">Docs</a></li>
+        <li class="slideli"><a href="">Pages</a></li>
+        <li class="slideli"><a href="">Account</a></li>
+        <li class="slideli"><a href="">Blocks</a></li>
+        <li class="slideli"><a href="">Docs</a></li>
     </ul>
     <script>
         let menu = document.getElementById('menu')
         menu.addEventListener('click', function() {
             let list = document.getElementById('slide')
-            console.log(list.style.display.length)
-            if (list.style.display.length == 0 || list.style.display  == 'none') {
+            let li = document.getElementsByClassName('slideli')
+
+            if (list.style.display.length == 0 || list.style.display == 'none') {
                 list.style.display = 'flex';
-                list.style.animation = 'slideBottom 1s 1 linear'
+                // list.style.animation = 'slideBottom 1s 1 linear'
+
+                let interval = setInterval(function() {
+                    for (let index = 0; index < li.length; index++) {
+                        li[index].style.opacity = 1  
+                        li[index].style.display = 'block'                 
+                
+                    }
+                    clearInterval(interval)
+                },950)
+                
             } else {
-                list.style.animation = '1s linear 1s 1 reverse slideBottom '
-                list.style.display = 'none'
+                list.style.animation = '1.3s linear 1.3s 1 reverse slideBottom'
+                let interval = setInterval(function() {
+                    list.style.display = 'none'
+                    clearInterval(interval)
+                },1000)
+                
             }
         })
 

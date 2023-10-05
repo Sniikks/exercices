@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">    
     <link rel="stylesheet" href="../style/footer.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <title>Footer</title>
 </head>
 <body>
@@ -17,6 +18,12 @@
             <li><a href="#">Dromadaire</a></li>
             <li><a href="#">Peruche</a></li>
         </ul>
+        <div>
+            <box-icon border='circle' type='solid' name='baguette' animation='tada' size="75px"></box-icon>
+            <box-icon border='circle' name='cctv'  size="75px" animation='tada'></box-icon>
+            <box-icon border='circle' name='tux' type='logo' animation='tada' size="75px"></box-icon>
+            <box-icon border='circle' type='logo' name='facebook' animation='tada' size="75px"></box-icon>
+        </div>
     </footer>
 </body>
 </html>

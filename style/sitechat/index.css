@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(60,100,165);
+    background-color: rgb(255, 212, 120);
     margin: 0;
     padding: 0;
 }
@@ -13,6 +13,7 @@ nav {
     justify-content: space-between;
     padding: 0 60px;
     border-bottom: 1px solid gray;
+    height: 33px;
 }
 nav span {
     color: gray;
@@ -36,12 +37,14 @@ nav ul li a {
     font-family: cursive;
 }
 nav ul button {
-    background-color:rgb(232, 0, 144);
-    padding: 15px;
+    background-color: rgb(255, 212, 120);
+    padding: 2px;
     color: white;
     border: 1px solid gray;
     border-radius: 10px;
 }
+
+/* ----------------------------------- */
 
 footer {
     background-color: #161616e6 ;
@@ -56,7 +59,7 @@ footer div:first-child {
 footer .signup {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 10px;
     flex-direction: column;
     color: #eed7d7;
     padding-left: 35px;
@@ -76,7 +79,7 @@ footer .signup p {
     width: 75%;
 }
 footer .signup button {
-    background-color:rgb(24, 130, 236);
+    background-color:rgb(255, 146, 4);
     padding: 15px;
     color: white;
     width: 35%;
@@ -95,7 +98,7 @@ footer ul li:first-child {
 }
 
 footer ul li {
-    margin: 10px;
+    margin: 5px;
 }
 
 footer ul li a {
@@ -129,3 +132,4 @@ footer .logo .page {
     display: flex;
     justify-content: space-around;
 }
+

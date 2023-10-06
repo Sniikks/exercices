@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(255, 212, 120);
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    border-bottom: 1px solid gray;
+    height: 33px;
+}
+nav span {
+    color: gray;
+    font-size: 1.7em;
+    display: flex;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+nav ul li {
+    margin: 0 0 0 25px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: cursive;
+}
+nav ul button {
+    background-color: rgb(255, 212, 120);
+    padding: 2px;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.container {
+    background-color: transparent;
+    max-width: 100vh;
+    max-height: 100vh; /* Ajustez la hauteur selon vos besoins */
+	margin-top: 5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Pour centrer horizontalement */
+}
+
+.container1 {
+    background-color: transparent;
+    max-width: 100vh;
+    max-height: 100vh; /* Ajustez la hauteur selon vos besoins */
+	margin-top: 5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Pour centrer horizontalement */
+    display: flex;
+    flex-direction: column; /* Afficher les éléments en colonne (verticalement) */
+}
+
+.item {
+    margin-bottom: 20px; /* Espacement entre chaque paire image-texte */
+    display: flex; /* Afficher les éléments en ligne (horizontalement) */
+    align-items: center; /* Aligner verticalement au centre des éléments */
+}
+
+.text {
+    background-color: transparent;
+    width: 200px;
+}
+
+.photo {
+    max-width: 200px;
+}
+
+.text {
+    margin-left: 20px; /* Espacement entre l'image et le texte à droite */
+}
+
+button {
+    margin-left: 10em;
+}

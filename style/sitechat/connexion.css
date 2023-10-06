@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(255, 212, 120);
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    background: none;
+    border: 3px ridge black;
+    border-radius: 10px;
+    margin: 2px;
+    outline: none;
+}
+
+input:required:valid {
+    background-color: chartreuse;
+}
+input:required:invalid {
+    background-color: red;
+}
+
+nav {
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    border-bottom: 1px solid gray;
+}
+nav span {
+    color: gray;
+    font-size: 1.7em;
+    display: flex;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

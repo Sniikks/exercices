@@ -1,5 +1,5 @@
 <?php
-require_once('../../function/dbchat.php');
+require_once('../function/dbchat.php');
 session_start();
 if (!empty($_SESSION)) header('Location: ../index.php');
 if (!empty($_GET)) {

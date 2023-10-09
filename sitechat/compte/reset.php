@@ -1,5 +1,5 @@
 <?php 
-require_once('../../function/dbchat.php');
+require_once('../function/dbchat.php');
 
 if (isset($_GET) && !empty($_GET)) {
     $select = $bdd->prepare('SELECT * FROM users WHERE id=? AND token=?');

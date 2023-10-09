@@ -1,5 +1,5 @@
 <?php
-require_once('../../function/dbchat.php');
+require_once('../function/dbchat.php');
 require_once('./mail.php');
 ?>
 <!DOCTYPE html>

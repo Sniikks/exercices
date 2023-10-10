@@ -1,5 +1,11 @@
 <?php 
-require_once('../../function/dbCat.php');
+require_once('../../function/dbCat.php');    
+session_start();
+if (!empty($_SESSION)) {
+    session_unset();
+    session_destroy();
+    header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,7 +15,10 @@ require_once('../../function/dbCat.php');
     <title>Connexion</title>
 </head>
 <body>
-    <?php include 'inc/header.php'; ?>
+    <?php 
+        $_GET['page'] = 'login';
+        include 'inc/header.php'; 
+    ?>
     <br><br><br><br>
 
     <form method='post'>
@@ -33,7 +42,6 @@ require_once('../../function/dbCat.php');
         $select = $select->fetch(PDO::FETCH_ASSOC);
 
         if (!empty($select) && password_verify($_POST['password'], $select['password'])) {
-            session_start();
             $_SESSION = $select;
             header('Location: index.php');
         } else {

@@ -37,7 +37,7 @@ if (!empty($_SESSION)) {
         <input type="text" name="color" id="color" required>
         <label for="photo">Photo :</label>
         <input type="file" name="photo" id="photo" accept="image/png, image/jpeg" required>
-        <label for="description">Déscription :</label>
+        <label for="description">Description :</label>
         <textarea name="desc" id="desc" cols="30" rows="10" required></textarea>
         <label for="male">Male</label>
         <input type="radio" name="sexe" id="sexe" value="m" required>

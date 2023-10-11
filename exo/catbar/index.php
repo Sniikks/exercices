@@ -28,14 +28,19 @@ session_start();
                 <label for="cat">Chat :</label>
                 <select name="cat" id="catSelect" required>
                     <?php
-                        $select = $bdd->prepare('SELECT * FROM cat WHERE reserver=0 AND veto=0 AND transfer=0'); 
-                        // Je séléctionne toute les colonnes et les lignes qui on la colonne reserver, veto et transfer à 0
-                        $select->execute();
-                        $select = $select->fetchAll();
-                        if (!empty($select)) { // Je vérifie que j'ai des lignes qui ont était récuperer
-                            for ($i=0; $i < count($select); $i++) { // Je fait une boucle qui tourne le nombre de ligne récupérer
-                                echo "<option value='" . $select[$i]['id'] . "'>" . $select[$i]['prenom'] . "</option>";
-                            }
+                        $selectCat = $bdd->prepare('SELECT * FROM cat WHERE veto=0 AND transfer=0'); 
+                        // Je séléctionne toute les colonnes et les lignes qui on la colonne veto et transfer à 0
+                        $selectCat->execute();
+                        $selectCat = $selectCat->fetchAll();
+                        if (!empty($selectCat)) { // Je vérifie que j'ai des lignes qui ont était récuperer
+                            $selectRes = $bdd->prepare('SELECT * FROM reservation');
+                            $selectRes->execute();
+                            $selectRes = $selectRes->fetchAll();
+
+                            
+                            // for ($i=0; $i < count($select); $i++) { // Je fait une boucle qui tourne le nombre de ligne récupérer
+                            //     echo "<option value='" . $select[$i]['id'] . "'>" . $select[$i]['prenom'] . "</option>";
+                            // }
                         }
                     ?>
                 </select>
@@ -68,21 +73,26 @@ session_start();
                         } else {
                             Element.setCustomValidity('')
                         }
-                        let tab = [
-                            00,
-                            15,
-                            30,
-                            45
-
+                        let theo = [
+                            '00',
+                            '15',
+                            '30',
+                            '45'
                         ]
                         // let heure  = temporaire[1].split(':')[0]
                         let minute = temporaire[1].split(':')[1]
-                        let date = new Date(); // new Date est défini par JavaScript est récupère toute
-                        // les informations du moment et d'aujourd'hui
-                        if ( (date.getMinutes()+15) !== minute ) {
-                            
-                        }
+                        // let date = new Date(); // new Date est défini par JavaScript est récupère toute
+                        // // les informations du moment et d'aujourd'hui
 
+                        theo.forEach(function(lavabo) {
+                            if (minute === lavabo) {
+                                
+                            }
+                        })
+
+
+                        
+                
                     }
                 </script>
                 <label for="comment">Commentaire :</label>
@@ -103,10 +113,7 @@ session_start();
                 $_POST['comment'],
                 (int)$_POST['table']
             ));
-            $update = $bdd->prepare('UPDATE cat SET reserver=1 WHERE id=?');
-            $update->execute(array(
-                (int)$_POST['cat']
-            ));
+ 
             header('Location: index.php');
         }
         ?>
@@ -118,3 +125,6 @@ session_start();
     <?php include 'inc/footer.php'; ?>
 </body>
 </html>
+
+
+

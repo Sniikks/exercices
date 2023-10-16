@@ -29,7 +29,44 @@
         }
 
         echo RemplacerLesLettres('Comment tou tou pelle');
+        echo RemplacerLesLettres('Je s\'appel groot');
+        echo RemplacerLesLettres('Bonjour robert');
 
+
+        # Créer une fonction  en PHP qui se nomme DernierElementTableau elle aura comme paramètre un tableau 
+        # Et si le tableau n'est pas vide elle devra retourner la dernière valeur du tableau sinon
+        # Retourne null
+
+        function DernierElementTableau($tab) {
+            if (!empty($tab)) {
+                # La fonction end sert à récupèrer la dernière valeur d'un tableau 
+                return end($tab);
+                // return $tab[count($tab)-1];
+            }
+            return null;
+            # La condition return est une condition de PHP qui envoie l'élément
+            # Que on lui donne à l'endroit ou on à appelé la fonction 
+            # Il stop aussi la fonction
+        }
+
+        $tab = ["J'ai dit 10 tes mort !", 10, 47.6579, 'cléopatre', 'autruche' ];
+
+        echo DernierElementTableau($tab);
+
+        # Créer une fonction en PHP !! qui se nomme PremierElementTableau Elle aura comem paramètre un
+        # Tableau si le tableau est vide elle envoie null sinon elle envoie le premier element du tableau
+    
+        function PremierElementTableau($tab) {
+            if (!empty($tab)) {
+                return $tab[0];
+            }
+            return null;
+            # La condition return est une condition de PHP qui envoie l'élément
+            # Que on lui donne à l'endroit ou on à appelé la fonction 
+            # Il stop aussi la fonction
+        }
+        echo PremierElementTableau($tab);
     ?>
+
 </body>
 </html>

@@ -37,7 +37,14 @@
         =< =>       => Je vérifie si c'est egal ou supérieur ou inférieur
         &&          => et puis
         ||          => Ou 
-        !=          => Different de
+        != !        => Different de
+        -=          => Variable1 = Variable1 - Variable2
+        +=          => Variable1 = Variable1 + Variable2
+        *=          => Variable1 = Variable1 * Variable2
+        /=          => Variable1 = Variable1 / Variable2
+        .=          => Concaténation String = String . String
+        La concaténation est le terme pour dire que je rajoute une chaine de caractère à la fin de la
+        chaine de caractère juste avant 
      -->
 </body>
 </html>

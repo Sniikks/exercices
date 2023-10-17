@@ -11,7 +11,7 @@
         function MajourOuMinour($age) {
             return $age < 18 ? 'Tou es minour' : 'Tou es majour';
         } 
-        echo MajourOuMinour(14);
+        echo MajourOuMinour(14) . "<br>";
 
         # Créer une fonction EN PHP qui s'appel RemplacerLesLettres avec un paramètre qui s'appel phrase
         # Exemple : Comment tou tou pelle => C0mment t0u t0u p3ll3 
@@ -28,9 +28,9 @@
             // return str_replace('o', '0', str_replace('e', '3', str_replace('i', '1', $phrase)));
         }
 
-        echo RemplacerLesLettres('Comment tou tou pelle');
-        echo RemplacerLesLettres('Je s\'appel groot');
-        echo RemplacerLesLettres('Bonjour robert');
+        echo RemplacerLesLettres('Comment tou tou pelle') . "<br>";
+        echo RemplacerLesLettres('Je s\'appel groot') . "<br>";
+        echo RemplacerLesLettres('Bonjour robert') . "<br>";
 
 
         # Créer une fonction  en PHP qui se nomme DernierElementTableau elle aura comme paramètre un tableau 
@@ -52,7 +52,7 @@
         #               0                   1   2           3             4
         $tab = ["J'ai dit 10 tes mort !", 10, 47.6579, 'cléopatre', 'autruche' ];
 
-        echo DernierElementTableau($tab);
+        echo DernierElementTableau($tab) . "<br>";
 
         # Créer une fonction en PHP !! qui se nomme PremierElementTableau Elle aura comem paramètre un
         # Tableau si le tableau est vide elle envoie null sinon elle envoie le premier element du tableau
@@ -103,7 +103,7 @@
         
         // Exemple d'utilisation de la fonction :
         $capitale = Capital("France");
-        echo "La capitale est : " . $capitale;
+        echo "La capitale est : " . $capitale . "<br>";
 
         # Créer une fonction qui ce nomme VerifyPassword qui prendra comme paramètre password de type string
         # Et elle devra envoie un type booléan qui vaut true si 
@@ -136,7 +136,7 @@
         # N = (n * n-1) + (n* n-2) + ....
 
         function Factorio($nombre) {
-            if ($nombre < 0) return 'Ta gueule btrd';
+            if ($nombre < 0) return 'Ta gueule btrd' . "<br>";
             $temporaire = 1;
             for ($i = $nombre; $i > 0 ; $i--) { 
                 $temporaire *= $i; 
@@ -189,9 +189,72 @@
         };
 
         echo InverseString('Bonjour tout le monde') . "<br>";
-        echo InverseString('Je s\'appel groot');
-    ?>
+        echo InverseString('Je s\'appel groot') . "<br>";
 
+        # Créer une fonction qui ce nomme Acronyme qui a comme paramètre une chaine de caractère 
+        # Et qui envoie que les initial des mot de la phrase
+
+        function Acronyme($phrase) {
+            $resultat = "";
+            $tab_phrase = explode(" ", $phrase);
+
+            foreach($tab_phrase as $mot) {
+                $resultat = $resultat . strtoupper($mot[0]); 
+            }
+
+            return $resultat;
+        }
+
+        echo Acronyme("frambroise chien cou");
+
+
+        # Créer une fonction AffichageTableau qui prend en paramètre un tableau et qui va devoir afficher un
+        # tableau en html sur notre page
+
+        $tab = [
+            'mdupond' => [
+                'prenom' => 'Martin',
+                'nom' => 'Dupond',
+                'age' => 25,
+                'ville' => 'Paris'
+            ],
+            "mmatin" => [
+                'prenom' => 'Martin',
+                'nom' => 'Matin',
+                'age' => 34,
+                'ville' => 'Auchwitz'
+            ]
+        ];
+
+
+        function AffichageTableau($tableau) {
+            if (!is_array($tableau) || empty($tableau)) {
+                return;
+            }
+            echo "<table>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Ville</th>
+                </tr>";
+            foreach($tableau as $index => $ligne) {
+                $prenom = $ligne['prenom'];
+                $nom = $ligne['nom'];
+                $age = $ligne['age'];
+                $ville = $ligne['ville'];
+                echo "<tr id=$index> 
+                    <td>$prenom</td>
+                    <td>$nom</td>
+                    <td>$age</td>
+                    <td>$ville</td>
+                </tr>";
+            }
+            echo "</table>";
+        }
+
+        AffichageTableau($tab);
+    ?>
 
 </body>
 </html>

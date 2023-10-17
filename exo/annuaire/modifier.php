@@ -81,7 +81,7 @@
         <input type="text" id="prenom" name="prenom" value="<?php echo $row['prenom']; ?>" required><br><br>
 
         <label for="telephone">Téléphone*:</label>
-        <input type="number" id="telephone" name="telephone" value="<?php echo $row['telephone']; ?>" required><br><br>
+        <input type="telephone" id="telephone" name="telephone" value="<?php echo $row['telephone']; ?>" required><br><br>
 
         <label for="profession">Profession*:</label>
         <input type="text" id="profession" name="profession" value="<?php echo $row['profession']; ?>" required><br><br>
@@ -90,7 +90,7 @@
         <input type="text" id="ville" name="ville" value="<?php echo $row['ville']; ?>" required><br><br>
 
         <label for="codepostal">Code Postal*:</label>
-        <input type="number" id="codepostal" name="codepostal" value="<?php echo $row['codepostal']; ?>" required><br><br>
+        <input type="codepostal" id="codepostal" name="codepostal" value="<?php echo $row['codepostal']; ?>" required><br><br>
 
         <label for="adresse">Adresse*:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $row['adresse']; ?>" required><br><br>

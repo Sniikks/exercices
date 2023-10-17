@@ -14,13 +14,13 @@
 
         // Récupérer les données actuelles de l'enregistrement
         $sql = "SELECT * FROM Annuaire WHERE id_annuaire = ?";
-        $stmt = $bdd->prepare($sql);
+        $i = $bdd->prepare($sql);
 
-        if ($stmt) {
-            $stmt->bindParam(1, $id_annuaire, PDO::PARAM_INT);
+        if ($i) {
+            $i->bindParam(1, $id_annuaire, PDO::PARAM_INT);
 
-            if ($stmt->execute()) {
-                $row = $stmt->fetch();
+            if ($i->execute()) {
+                $row = $i->fetch();
             }
         }
 
@@ -46,29 +46,29 @@
         // Préparer la requête SQL pour mettre à jour l'enregistrement
         $sql = "UPDATE Annuaire SET nom = ?, prenom = ?, telephone = ?, profession = ?, ville = ?, codepostal = ?, adresse = ?, date_de_naissance = ?, sexe = ?, description = ? WHERE id_annuaire = ?";
 
-        $stmt = $bdd->prepare($sql);
+        $i = $bdd->prepare($sql);
 
-        if ($stmt) {
-            $stmt->bindParam(1, $nom, PDO::PARAM_STR);
-            $stmt->bindParam(2, $prenom, PDO::PARAM_STR);
-            $stmt->bindParam(3, $telephone, PDO::PARAM_INT);
-            $stmt->bindParam(4, $profession, PDO::PARAM_STR);
-            $stmt->bindParam(5, $ville, PDO::PARAM_STR);
-            $stmt->bindParam(6, $codepostal, PDO::PARAM_INT);
-            $stmt->bindParam(7, $adresse, PDO::PARAM_STR);
-            $stmt->bindParam(8, $date_naissance, PDO::PARAM_STR);
-            $stmt->bindParam(9, $sexe, PDO::PARAM_STR);
-            $stmt->bindParam(10, $description, PDO::PARAM_STR);
-            $stmt->bindParam(11, $id_annuaire, PDO::PARAM_INT);
+        if ($i) {
+            $i->bindParam(1, $nom, PDO::PARAM_STR);
+            $i->bindParam(2, $prenom, PDO::PARAM_STR);
+            $i->bindParam(3, $telephone, PDO::PARAM_INT);
+            $i->bindParam(4, $profession, PDO::PARAM_STR);
+            $i->bindParam(5, $ville, PDO::PARAM_STR);
+            $i->bindParam(6, $codepostal, PDO::PARAM_INT);
+            $i->bindParam(7, $adresse, PDO::PARAM_STR);
+            $i->bindParam(8, $date_naissance, PDO::PARAM_STR);
+            $i->bindParam(9, $sexe, PDO::PARAM_STR);
+            $i->bindParam(10, $description, PDO::PARAM_STR);
+            $i->bindParam(11, $id_annuaire, PDO::PARAM_INT);
 
-            if ($stmt->execute()) {
+            if ($i->execute()) {
                 echo "L'enregistrement a été mis à jour avec succès.";
             } else {
-                echo "Erreur lors de la mise à jour de l'enregistrement : " . $stmt->errorInfo()[2];
+                echo "Erreur lors de la mise à jour de l'enregistrement : " . $i->errorInfo()[2];
             }
 
             // Fermer la déclaration SQL
-            $stmt->closeCursor();
+            $i->closeCursor();
         }
     }
     ?>

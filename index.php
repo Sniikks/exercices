@@ -5,14 +5,103 @@
     <title>Index OF</title>
 </head>
 <body>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px; /* Largeur maximale du contenu */
+            margin: 0 auto; /* Centrer le contenu horizontalement */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        h2 {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px;
+        }
+
+        ul li:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+        ul li:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
     <ul>
-        <h2>Exo</h2>
-        <li><a href="exo/flexbox.php">Exo FlexBox</a></li>
-        <li><a href="exo/tableau.php">Exo Tableau JO</a></li>
-        <li><a href="exo/clock.php">Exo Minuteur</a></li>
-        <li><a href="exo/carte.php">Exo Carte Postal</a></li>
-        <li><a href="exo/atmbis.php">Exo ATM</a></li>
-    </ul>
+    <h2>Cours</h2>
+    <?php
+        $dir = './cours/';
+        $dossiers = scandir($dir);
+        echo '<ul>';
+        foreach ($dossiers as $lien) {
+            if ($lien != '.' && $lien != '..') {
+                echo "<li><a href='" . $dir . $lien . "'>" . $lien . "</a></li>";
+            }
+        }
+        echo '</ul>';
+    ?>
+
+
+    <h2>Exo</h2>
+    <?php
+        $dir = './exo/';
+        $dossiers = scandir($dir);
+        echo '<ul>';
+        foreach ($dossiers as $lien) {
+            if ($lien != '.' && $lien != '..') {
+                echo "<li><a href='" . $dir . $lien . "'>" . $lien . "</a></li>";
+            }
+        }
+        echo '</ul>';
+    ?>
+
+    <h2>Site Chat</h2>
+    <?php
+        $dir = './sitechat/';
+        $dossiers = scandir($dir);
+        echo '<ul>';
+        foreach ($dossiers as $lien) {
+            if ($lien != '.' && $lien != '..') {
+                echo "<li><a href='" . $dir . $lien . "'>" . $lien . "</a></li>";
+            }
+        }
+        echo '</ul>';
+    ?>
 
 
 

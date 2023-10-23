@@ -1,20 +1,20 @@
 <nav>
     <div>
-        <h1>FlexBox</h1>
+        <h1><a href=<?php
+            echo (getcwd() == '/var/www/html/cours_php/exercices/exo/flexbox/Vues' ? "../index.php" : "index.php")
+
+        ?>>FlexBox</a></h1>
     </div>
     
     <div>
-        <?php
-            echo getcwd();
-        ?>
         <a href=<?php
-            echo (getcwd() == '/var/www/html/cours_php/TamakiYagami.github.io/exo/flexbox/Vues' ? "audio.php" : "Vues/audio.php")
+            echo (getcwd() == '/var/www/html/cours_php/exercices/exo/flexbox/Vues' ? "audio.php" : "Vues/audio.php")
         ?>>Audio</a>
         <a href=<?php
-            echo (getcwd() == '/var/www/html/cours_php/TamakiYagami.github.io/exo/flexbox/Vues' ? "video.php" : "Vues/video.php")
-        ?>>Audio</a>>Video</a>
+            echo (getcwd() == '/var/www/html/cours_php/exercices/exo/flexbox/Vues' ? "video.php" : "Vues/video.php")
+        ?>>Video</a>
         <a href=<?php
-            echo (getcwd() == '/var/www/html/cours_php/TamakiYagami.github.io/exo/flexbox/Vues' ? "image.php" : "Vues/image.php")
+            echo (getcwd() == '/var/www/html/cours_php/exercices/exo/flexbox/Vues' ? "image.php" : "Vues/image.php")
         ?>>Image</a>
     </div>
 </nav>

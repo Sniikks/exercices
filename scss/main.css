@@ -77,25 +77,43 @@ div {
 }
 
 .social-facebook {
-  background-color: #3b5998;
+  color: #3b5998;
+  background-color: #4c70ba;
 }
 
 .social-flickr {
-  background-color: #0063db;
+  color: #0063db;
+  background-color: #0f7bff;
 }
 
 .social-linkedin {
-  background-color: #007bb6;
+  color: #007bb6;
+  background-color: #009de9;
 }
 
 .social-twitter {
-  background-color: #00aced;
+  color: #00aced;
+  background-color: #21c2ff;
 }
 
 .social-vimeo {
-  background-color: #aad450;
+  color: #aad450;
+  background-color: #bede79;
 }
 
 .social-youtube {
-  background-color: #bb0000;
+  color: #bb0000;
+  background-color: #ee0000;
+}
+
+.farfadet {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 170px;
+  width: 170px;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

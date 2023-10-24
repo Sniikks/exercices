@@ -1,0 +1,122 @@
+/* Reset CSS */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Header styles */
+.header {
+    background-color: #ffa600;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+
+    &__title {
+        font-size: 36px;
+    }
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+
+    &__list {
+        list-style: none;
+
+        &__item {
+            display: inline;
+
+            & + & {
+                margin-left: 20px;
+            }
+
+            &__link {
+                text-decoration: none;
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+/* Section styles */
+.section {
+    padding: 40px;
+    background-color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    &__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        font-size: 16px;
+    }
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-between; // Pour aligner les projets à gauche et à droite
+    flex-wrap: wrap; // Pour permettre le passage à la ligne en cas de petit écran
+}
+
+.project {
+    width: calc(50% - 10px); // Pour occuper 50% de la largeur avec une marge entre les projets
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+
+    img {
+        width:50%;
+        height: auto;
+    }
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.project a:hover .project-overlay {
+    opacity: 1;
+}
+
+
+/* Taille des logos*/
+.contact-logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}

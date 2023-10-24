@@ -1,0 +1,101 @@
+@charset "UTF-8";
+body[theme=jour] {
+  background-color: #fff;
+}
+
+body[theme=nuit] {
+  background-color: #000;
+}
+
+div {
+  background-color: aqua;
+}
+
+.fruit-banane {
+  width: 50%;
+}
+
+.fruit-cerise {
+  width: 50%;
+}
+
+.fruit-ananas {
+  width: 50%;
+}
+
+.fruit-pomme {
+  width: 50%;
+}
+
+.fruit-banane {
+  width: 50%;
+}
+
+.fruit-cerise {
+  width: 50%;
+}
+
+.fruit-ananas {
+  width: 50%;
+}
+
+.fruit-pomme {
+  width: 50%;
+}
+
+div {
+  border: 1px solid black;
+}
+
+.span {
+  border: 1000px solid green;
+}
+
+.ville-lyon {
+  display: block;
+  content: "Lyon";
+}
+
+.ville-paris {
+  display: block;
+  content: "Paris";
+}
+
+.ville-marseille {
+  display: block;
+  content: "Marseille";
+}
+
+.ville-rouen {
+  display: block;
+  content: "Rouen";
+}
+
+.ville-bourg-de-peage {
+  display: block;
+  content: "Bourg de péage";
+}
+
+.social-facebook {
+  background-color: #3b5998;
+}
+
+.social-flickr {
+  background-color: #0063db;
+}
+
+.social-linkedin {
+  background-color: #007bb6;
+}
+
+.social-twitter {
+  background-color: #00aced;
+}
+
+.social-vimeo {
+  background-color: #aad450;
+}
+
+.social-youtube {
+  background-color: #bb0000;
+}/*# sourceMappingURL=main.css.map */

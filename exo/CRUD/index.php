@@ -30,6 +30,36 @@
 
     
 -->
+
+<?php
+include("./controllers/config.php");
+
+// Récupérer les utilisateurs depuis la base de données
+$sql = "SELECT id, pseudo, description FROM users";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr><th>ID</th><th>Pseudo</th><th>Description</th><th>Action</th></tr>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["pseudo"] . "</td>";
+        echo "<td>" . $row["description"] . "</td>";
+        echo "<td><a href='./controllers/read_ctrl.php?id=" . $row["id"] . "'>Lire</a> | <a href='./controllers/update_ctrl.php?id=" . $row["id"] . "'>Modifier</a> | <a href='./controllers/delete_ctrl.php?id=" . $row["id"] . "'>Supprimer</a></td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "Aucun utilisateur trouvé.";
+}
+
+$conn->close();
+?>
+<a href="./controllers/create_ctrl.php">Créer un utilisateur</a>
+
     
 </body>
 </html>

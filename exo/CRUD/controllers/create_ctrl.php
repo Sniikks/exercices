@@ -22,3 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Description: <textarea name="description" rows="4" required></textarea><br>
     <input type="submit" value="Créer">
 </form>
+
+<?php
+        echo "<td><a href='../index.php" . "'>Retour</a>";
+?>

@@ -20,4 +20,5 @@ if (isset($_GET["id"])) {
 } else {
     echo "ID de l'utilisateur non spécifié.";
 }
+echo "<td><a href='../index.php" . "'>Retour</a>";
 ?>

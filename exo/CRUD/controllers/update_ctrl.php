@@ -34,3 +34,7 @@ if (isset($_GET["id"])) {
     Description: <textarea name="description" rows="4" required><?php echo $row["description"]; ?></textarea><br>
     <input type="submit" value="Modifier">
 </form>
+
+<?php
+        echo "<td><a href='../index.php" . "'>Retour</a>";
+?>

@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
 
         if ($conn->query($deleteSql) === TRUE) {
             echo "Utilisateur supprimé avec succès.";
+            header("Location: ../index.php");
         } else {
             echo "Erreur lors de la suppression de l'utilisateur : " . $conn->error;
         }

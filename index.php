@@ -90,6 +90,19 @@
         echo '</ul>';
     ?>
 
+    <h2>Portefolio</h2>
+        <?php
+            $dir = './portefolio/';
+            $dossiers = scandir($dir);
+            echo '<ul>';
+            foreach ($dossiers as $lien) {
+                if ($lien != '.' && $lien != '..') {
+                    echo "<li><a href='" . $dir . $lien . "'>" . $lien . "</a></li>";
+                }
+            }
+            echo '</ul>';
+        ?>
+
     <h2>Site Chat</h2>
     <?php
         $dir = './sitechat/';

@@ -61,14 +61,11 @@ body {
 
 .project-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .project {
-  width: calc(50% - 10px);
   position: relative;
-  margin: 10px;
+  margin: 0;
   overflow: hidden;
 }
 .project img {

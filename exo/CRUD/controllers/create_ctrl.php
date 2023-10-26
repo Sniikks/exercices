@@ -1,28 +1,14 @@
 <?php
-include("config.php");
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $pseudo = $_POST["pseudo"];
-    $description = $_POST["description"];
-    $hashedPassword = password_hash($_POST["password"], PASSWORD_BCRYPT);
+require_once('../inc/db.php');
 
-    $sql = "INSERT INTO users (pseudo, password, description) VALUES ('$pseudo', '$hashedPassword', '$description')";
+if (isset($_POST) && !empty($_POST)) {
+    $insert = $bdd->prepare('INSERT INTO user (pseudo, mot_de_passe, description) VALUES (?, ?, ?)');
+    $insert->execute(array(
+        $_POST['pseudo'],
+        password_hash($_POST['password'], PASSWORD_ARGON2I),
+        $_POST['description']
+    ));
+    header('Location: ../index.php');
+};
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: ../index.php");
-    } else {
-        echo "Erreur : " . $conn->error;
-    }
-}
-?>
-
-<h2>Créer un utilisateur</h2>
-<form method="post">
-    Pseudo: <input type="text" name="pseudo" required><br>
-    Mot de passe: <input type="password" name="password" required><br>
-    Description: <textarea name="description" rows="4" required></textarea><br>
-    <input type="submit" value="Créer">
-</form>
-
-<?php
-        echo "<td><a href='../index.php" . "'>Retour</a>";
 ?>

@@ -2,23 +2,38 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Accueil</title>
+
+    <script>
+    $(document).ready(function() {
+        // Gestion du menu hamburger
+        $("#toggle-menu").click(function() {
+            $("#menuContent").slideToggle("fast");
+        });
+    });
+</script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <button id="toggle-menu" onclick="toggleMenu()">&#9776;</button>
-        <nav id="menuContent">
-            <ul>
-                <li><a href="home.php"><b>Home</b></a></li>
-                <li><a href="link1.php"><b>Link 1</b></a></li>
-                <li><a href="link2.php"><b>Link 2</b></a></li>
-                <li><a href="link3.php"><b>Link 3</b></a></li>
-                <li><a href="link4.php"><b>Link 4</b></a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav id="menuContent">
+        <div id="menuButton">
+            <box-icon name="menu" color="#fff" size="30px"></box-icon>
+        </div>
+        <ul>
+            <li><a href="#.php"><b>Home</b></a></li>
+            <li><a href="#.php"><b>Link 1</b></a></li>
+            <li><a href="#.php"><b>Link 2</b></a></li>
+            <li><a href="#.php"><b>Link 3</b></a></li>
+            <li><a href="#.php"><b>Link 4</a></li>
+        </ul>
+        <div>
+            <box-icon name="x" type="icon" color="#fff" size='30px'></box-icon>
+        </div>
+    </nav>
+</header>
 
     <!-- Contenu de la page -->
     <div class="content">
@@ -30,24 +45,62 @@
         <p><b>Lorem Ipsum</b></p>
     </div>
     <div class="text2">
-        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. 
-            Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux 
-            de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, 
-            sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, 
-            plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-        </p>
-        <img class="photoancre" src="./picture/ancre.png">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, iusto deserunt nobis deleniti qui nulla, 
+            soluta voluptates tempore, dignissimos quidem rem quisquam. Ducimus expedita, pariatur aliquam 
+            placeat dolor officia reprehenderit?</p>
+        <img class="photoancre" src="./ancre.png">
     </div>
 
     <script>
+    $(document).ready(function() {
         function toggleMenu() {
-            var menu = document.getElementById("menuContent");
-            if (menu.style.display === "block" || menu.style.display === "") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
+            var isHidden = $('nav ul').is(':hidden');
+            var menuButton = $('#menuButton box-icon[name="menu"]');
+            var closeButton = $('#menuButton box-icon[name="x"]');
+
+        if (isHidden) {
+            $('nav').animate({
+                bottom: 0,
+                backgroundColor: '#000D1A'
+            }, 1000, function() {
+                $('nav ul').css('display', 'flex');
+            });
+            $('nav').addClass('MenuNav');
+            menuButton.css('display', 'none');
+            closeButton.css('display', 'block');
+        } else {
+            $('nav').animate({
+                bottom: '93.5%',
+                backgroundColor: '#000'
+            }, 1000, function() {
+                $('nav').removeClass('MenuNav');
+                menuButton.css('display', 'block');
+                closeButton.css('display', 'none');
+            });
+            $('nav ul').hide();
         }
-    </script>
+    }
+
+    function checkWindowSize() {
+        if (window.innerWidth > 950) {
+            $('nav ul').css('display', 'flex');
+            $('#menuButton box-icon[name="menu"]').css('display', 'none');
+            $('#menuButton box-icon[name="x"]').css('display', 'none');
+        } else {
+            $('nav ul').css('display', 'none');
+            $('#menuButton box-icon[name="menu"]').css('display', 'block');
+            $('#menuButton box-icon[name="x"]').css('display', 'none');
+        }
+    }
+
+    checkWindowSize(); // Vérifiez la largeur de la fenêtre lors du chargement de la page
+        $('#menuButton').click(toggleMenu);
+        $('box-icon[name="x"]').click(toggleMenu);
+
+        $(window).on('resize', checkWindowSize);
+    });
+</script>
 </body>
 </html>
+
+

@@ -1,7 +1,8 @@
+/******************* NAV BAR *******************/
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff ;
+    background-color: #ffffff;
 }
 
 nav {
@@ -16,17 +17,6 @@ nav {
     background-color: rgb(255, 64, 39);
 }
 
-nav span {
-    font-size: 1.4em;
-    margin: 20px;
-}
-
-nav span {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
-}
 nav ul {
     display: flex;
     justify-content: flex-start; /* Alignez les boutons à gauche */
@@ -35,9 +25,11 @@ nav ul {
     margin: 0; /* Supprimez la marge extérieure */
     padding: 0; /* Supprimez le rembourrage extérieur */
 }
+
 nav ul li {
     margin-right: 10px; /* Ajustez la marge à droite entre les boutons selon vos préférences */
 }
+
 nav ul a {
     display: inline-block; /* Pour rendre les boutons rectangulaires */
     padding: 10px 20px; /* Ajustez les marges selon vos préférences */
@@ -47,12 +39,6 @@ nav ul a {
     text-decoration: none;
 }
 
-/* Définissez la couleur de fond pour les liens sélectionnés */
-nav ul a.selected {
-    background-color: white;
-    color: #000; /* Changer la couleur du texte pour les liens sélectionnés */
-    padding: 10px 15px; /* Ajustez le padding pour augmenter la taille de la zone blanche */
-}
 
 /******************* CONTENT DE L'INDEX *******************/
 /* Styles pour le contenu au milieu de la page */
@@ -67,28 +53,28 @@ nav ul a.selected {
     align-items: center;
 }
 
-/* Style du titre principal */
+/* Style gros titre */
 .content h1 {
     font-size: 2.5em;
-    color: #000; /* Couleur du texte du titre */
+    color: #000; 
     margin-bottom: 15px;
     margin-top: 70px;
 }
 
-/* Style du texte descriptif */
+/* Style du descriptif */
 .content p {
     font-size: 1.3em;
-    color: #333; /* Couleur du texte descriptif */
+    color: #333; 
     margin-bottom: 20px;
 }
 
-/* Style du bouton rectangulaire */
+/* Style du bouton rectangle */
 .rectangular-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: black;
-    border-radius: 0; /* Pour rendre le bouton rectangulaire */
-    color: #fff; /* Couleur du texte du bouton */
+    border-radius: 0; /* La forme du bouton */
+    color: #fff; 
     text-decoration: none;
     font-size: 1.3em;
 }
@@ -108,7 +94,7 @@ nav ul a.selected {
 }
 
 .text2 {
-    display: flex; /* Utilisez flexbox pour aligner le texte et l'image côte à côte */
+    display: flex; /* Aligner le texte et l'image côte à côte */
     flex-direction: row; /* Les éléments sont côte à côte */
     align-items: center; /* Centrez verticalement */
     text-align: justify; /* Justifiez le texte à la fois à gauche et à droite */
@@ -120,48 +106,51 @@ nav ul a.selected {
     color: black;
 }
 
-
 .photoancre {
     max-width: 10%; /* Ajuste la largeur de l'image à 100% de la largeur du conteneur */
     height: auto; /* Réinitialise la hauteur pour maintenir les proportions de l'image */
 }
 
 
-/* Styles pour les petits écrans (moins de 768px) */
-@media screen and (max-width: 768px) {
-    /* Masquer le menu par défaut sur les petits écrans */
-    #menuContent {
+/******************* MEDIA QUERY POUR MENU HAMBURGER *******************/
+box-icon[name='menu'], box-icon[name='x'] {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    nav ul {
         display: none;
     }
-
-    /* Styles pour le menu déroulant en mode mobile */
-    #menuContent {
-        background-color: rgba(243, 67, 54, 255);
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 100%;
-        padding: 10px;
-    }
-
-    /* Styles pour les éléments de la liste du menu en mode mobile */
-    #menuContent ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    #menuContent li {
-        margin-bottom: 10px;
-    }
-
-    #menuContent a {
-        display: block;
-        text-decoration: none;
-        color: white;
-        padding: 5px;
+    box-icon[name='menu'] {
+        display: contents;
     }
 }
 
+.MenuNav {
+    background-color: rgb(255, 64, 39);; /* Couleur de fond orange */
+    bottom: 0;
+}
+.MenuNav div box-icon, .MenuNav span {
+    display: none;
+}
+
+.MenuNav box-icon[name='x'] {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: block;
+}
+
+.MenuNav ul {
+    margin: 0 auto 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.MenuNav ul li {
+    margin: 15px 0;
+    font-size: 1.4em;
+}
 
 

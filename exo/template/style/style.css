@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff ;
+}
+
+nav {
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    padding: 0 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-bottom: 8px solid rgb(161, 43, 0);
+    background-color: rgb(255, 64, 39);
+}
+
+nav span {
+    font-size: 1.4em;
+    margin: 20px;
+}
+
+nav span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-start; /* Alignez les boutons à gauche */
+    align-items: center;
+    list-style-type: none;
+    margin: 0; /* Supprimez la marge extérieure */
+    padding: 0; /* Supprimez le rembourrage extérieur */
+}
+nav ul li {
+    margin-right: 10px; /* Ajustez la marge à droite entre les boutons selon vos préférences */
+}
+nav ul a {
+    display: inline-block; /* Pour rendre les boutons rectangulaires */
+    padding: 10px 20px; /* Ajustez les marges selon vos préférences */
+    background-color: rgb(255, 64, 39);
+    border-radius: 0; /* Pour rendre les boutons rectangulaires */
+    color: #000;
+    text-decoration: none;
+}
+
+/* Définissez la couleur de fond pour les liens sélectionnés */
+nav ul a.selected {
+    background-color: white;
+    color: #000; /* Changer la couleur du texte pour les liens sélectionnés */
+    padding: 10px 15px; /* Ajustez le padding pour augmenter la taille de la zone blanche */
+}
+
+/******************* CONTENT DE L'INDEX *******************/
+/* Styles pour le contenu au milieu de la page */
+.content {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(255, 64, 39);; /* Couleur de fond orange */
+    height: 40vh; /* Ajustez la hauteur en fonction de la quantité d'espace souhaitée */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style du titre principal */
+.content h1 {
+    font-size: 2.5em;
+    color: #000; /* Couleur du texte du titre */
+    margin-bottom: 15px;
+    margin-top: 70px;
+}
+
+/* Style du texte descriptif */
+.content p {
+    font-size: 1.3em;
+    color: #333; /* Couleur du texte descriptif */
+    margin-bottom: 20px;
+}
+
+/* Style du bouton rectangulaire */
+.rectangular-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    border-radius: 0; /* Pour rendre le bouton rectangulaire */
+    color: #fff; /* Couleur du texte du bouton */
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+
+/* Style texte*/
+.text1 p, .texte2 p {
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 40px;
+    display: flex;
+}
+
+.text1 p {
+    font-size: 2em;
+    color: black;
+}
+
+.text2 {
+    display: flex; /* Utilisez flexbox pour aligner le texte et l'image côte à côte */
+    flex-direction: row; /* Les éléments sont côte à côte */
+    align-items: center; /* Centrez verticalement */
+    text-align: justify; /* Justifiez le texte à la fois à gauche et à droite */
+    margin: 0 100px; /* Ajoutez de la marge pour espacer le texte et l'image */
+}
+
+.text2 p {
+    font-size: 1.3em;
+    color: black;
+}
+
+
+.photoancre {
+    max-width: 10%; /* Ajuste la largeur de l'image à 100% de la largeur du conteneur */
+    height: auto; /* Réinitialise la hauteur pour maintenir les proportions de l'image */
+}
+
+
+/* Styles pour les petits écrans (moins de 768px) */
+@media screen and (max-width: 768px) {
+    /* Masquer le menu par défaut sur les petits écrans */
+    #menuContent {
+        display: none;
+    }
+
+    /* Styles pour le menu déroulant en mode mobile */
+    #menuContent {
+        background-color: rgba(243, 67, 54, 255);
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Styles pour les éléments de la liste du menu en mode mobile */
+    #menuContent ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #menuContent li {
+        margin-bottom: 10px;
+    }
+
+    #menuContent a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+    }
+}
+
+
+

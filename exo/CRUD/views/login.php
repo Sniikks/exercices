@@ -25,6 +25,7 @@
                 $_POST['pseudo']
             ));
             $select = $select->fetch();
+            
             if (password_verify($_POST['password'], $select['mot_de_passe'])){
                 echo '<script> alert("Bon mot de passe") </script>';
             } else {

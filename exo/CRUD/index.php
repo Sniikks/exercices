@@ -14,8 +14,10 @@
     </style>
 </head>
 <body>
-    <!-- CRUD: CREATE, READ(SELECT), UPDATE, DELETE -->
-    <!-- Vous allez avoir plusieurs fichier 
+    <!-- CRUD: CREATE(INSERT INTO), READ(SELECT), UPDATE, DELETE
+
+    
+    Vous allez avoir plusieurs fichier 
     Dans un dossier 'Views' vous avez: create.php, read.php, update.php
     Dans un dossier 'Controllers' vous avez: create_ctrl.php, read_ctrl.php, update_ctrl.php, delete_ctrl.php 
 
@@ -37,7 +39,11 @@
     read.php afficher une liste à puce des informations de l'user
 
 -->
-    <form action="Views/create.php" method="post">
+    <form action="Views/create.php" method="post">        
+        <button type="submit">Ajouter utilisateur</button>
+        <a href="Views/login.php">Connexion</a>
+        <br><br><br><br>
+
         <table>
             <tr>
                 <th>ID :</th>
@@ -55,7 +61,7 @@
                     }
                     
                     echo "<td> 
-                        <button name='modify' value='$ligne->id' formaction='Controllers/update_ctrl.php'>Modifier</button> 
+                        <button name='modify' value='$ligne->id' formaction='Views/update.php'>Modifier</button> 
                         <button name='delete' value='$ligne->id' formaction='Controllers/delete_ctrl.php'>Supprimer</button> 
                     </td>";
 
@@ -63,8 +69,6 @@
                 }
             ?>
         </table>
-        <br><br><br><br>
-        <button type="submit">Ajouter utilisateur</button>
     </form>
 
 

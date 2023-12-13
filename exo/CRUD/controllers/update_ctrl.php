@@ -1,25 +1,40 @@
 <?php
-    require_once('../inc/db.php');
-    if (isset($_POST) && !empty($_POST)) {
-        $select = $bdd->prepare('SELECT * FROM user WHERE id=?');
-        $select->execute(array(
-            $_POST['modify']
-        ));
-        $select = $select->fetch(PDO::FETCH_ASSOC);  
+include("config.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST["id"];
+    $pseudo = $_POST["pseudo"];
+    $description = $_POST["description"];
 
-        if ($_POST['password'] == $select['mot_de_passe']) {
-            $pass = $select['mot_de_passe'];
-        } else {
-            $pass = password_hash($_POST['password'], PASSWORD_ARGON2I);
-        }
+    $sql = "UPDATE users SET pseudo='$pseudo', description='$description' WHERE id='$id'";
 
-        $update = $bdd->prepare('UPDATE user SET pseudo=?, mot_de_passe=?, description=? WHERE id=?');
-        $update->execute(array(
-            $_POST['pseudo'],
-            $pass,
-            $_POST['description'],
-            $_POST['modify']
-        ));
-        header('Location: ../index.php');
-    } 
+    if ($conn->query($sql) === TRUE) {
+        header("Location: ../index.php");
+    } else {
+        echo "Erreur : " . $conn->error;
+    }
+}
+
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $sql = "SELECT id, pseudo, description FROM users WHERE id='$id'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+    } else {
+        echo "Utilisateur non trouvé.";
+    }
+}
+?>
+
+<h2>Modifier l'utilisateur</h2>
+<form method="post">
+    <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+    Pseudo: <input type="text" name="pseudo" value="<?php echo $row["pseudo"]; ?>" required><br>
+    Description: <textarea name="description" rows="4" required><?php echo $row["description"]; ?></textarea><br>
+    <input type="submit" value="Modifier">
+</form>
+
+<?php
+        echo "<td><a href='../index.php" . "'>Retour</a>";
 ?>

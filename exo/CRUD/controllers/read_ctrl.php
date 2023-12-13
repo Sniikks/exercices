@@ -1,13 +1,24 @@
 <?php
+include("config.php");
 
-if (isset($_GET) && !empty($_GET['page'])) {
-    require_once('../inc/db.php');
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $sql = "SELECT id, pseudo, description FROM users WHERE id='$id'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        echo "<h2>Informations de l'utilisateur</h2>";
+        echo "<ul>";
+        echo "<li>ID: " . $row["id"] . "</li>";
+        echo "<li>Pseudo: " . $row["pseudo"] . "</li>";
+        echo "<li>Description: " . $row["description"] . "</li>";
+        echo "</ul>";
+    } else {
+        echo "Utilisateur non trouvé.";
+    }
 } else {
-    require_once('./inc/db.php');
+    echo "ID de l'utilisateur non spécifié.";
 }
-
-$Tableau = $bdd->prepare('SELECT * FROM user');
-$Tableau->execute();
-$Tableau = $Tableau->fetchAll(PDO::FETCH_CLASS);
-
+echo "<td><a href='../index.php" . "'>Retour</a>";
 ?>

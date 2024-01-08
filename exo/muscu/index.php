@@ -4,137 +4,51 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Accueil</title>
-
-    <script>
-    $(document).ready(function() {
-        // Gestion du menu hamburger
-        $("#toggle-menu").click(function() {
-            $("#menuContent").slideToggle("fast");
-        });
-    });
-</script>
+    <title>Sport Consxient</title>
 </head>
 <body>
-<header>
-    <nav id="menuContent">
+    <header>
+        <nav>
+            <ul>
+                <li><button>Running Club</button></li>
+                <li>Services</li>
+                <li>FAQ</li>
+                <li>Contact</li>
+                <li>Boutique</li>
+                <li>_</li>
+                <li id='icon'><box-icon name='menu' color='#fff'></box-icon></li>
+            </ul>
+        </nav>
         <div>
-            <box-icon name="x" type="icon" color="#fff" size='30px'></box-icon>
+            <img src="" alt="">
+            <h1>CORPS CONSCIENT</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto aliquid quam corporis neque ex dignissimos dolores dolor eius accusamus nobis? Ex nihil recusandae facilis adipisci aut cupiditate veniam placeat ipsum!</p>
+            <button>Rejoignez nos cours</button>
         </div>
-        <ul>
-            <li><a href="#.php"><b>RunningClub</b></a></li>
-            <li><a href="#.php"><b>Services</b></a></li>
-            <li><a href="#.php"><b>FAQ</b></a></li>
-            <li><a href="#.php"><b>Contact</b></a></li>
-            <li><a href="#.php"><b>Boutique</a></li>
-        </ul>
-        <div id="menuButton">
-            <box-icon name="menu" color="#fff" size="30px"></box-icon>
+    </header>
+    <section>
+        <div class='grand-boite'>
+            <img src="https://www.datocms-assets.com/44717/1620224596-gestion-dinstallation-sportive.jpg" alt="">
+            <img src="https://www.parisselectbook.com/wp-content/uploads/2023/02/lusine-saint-lazare-15-credit-teddy-bob.jpg" alt="">
+            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
+            <img src="https://gargenville.fr/sites/gargenville/files/styles/galerie_colorbox/public/image/musculation.jpg?itok=ejXGg6Ip" alt="">
         </div>
-    </nav>
-</header>
+        <div class='grand-boite'>
+            <h2>A propos de nous</h2>
+            <h3>Qui sommes-nous ?</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil veritatis incidunt fugiat, nulla ex error sed itaque perferendis maiores laudantium rerum magnam, ut ratione consectetur soluta labore eveniet nesciunt odit.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil veritatis incidunt fugiat, nulla ex error sed itaque perferendis maiores laudantium rerum magnam, ut ratione consectetur soluta labore eveniet nesciunt odit.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil veritatis incidunt fugiat, nulla ex error sed itaque perferendis maiores laudantium rerum magnam, ut ratione consectetur soluta labore eveniet nesciunt odit.</p>
 
-    <!-- Contenu de la page -->
-    <div class="content">
-    <img class="photomuscu" src="./muscu.png">
-        <h1><b>CORPS CONSCIENT</b></h1>
-        <p>Corps Conscient la salle qu'il te faut, car c'est nous les best</p>
-        <a href="#" class="rectangular-button">Rejoins nous dès maintenant</a>
-    </div>
- <div class="container">
-        <div class="left-side">
-        <img class="photomuscu1" src="./fond1.png">
-        <img class="photomuscu1" src="./fond1.png">
-        <img class="photomuscu1" src="./fond1.png">
-        <img class="photomuscu1" src="./fond1.png">
-        </div>
-        <div class="right-side">
-        <div class="text1">
-                <p><b>A propos de nous</b></p>
-            </div>
-            <div class="text2">
-                <p>Qui sommes-nous?</p>
-            </div>
-            <div class="text2">
-                <p>La muscu c'est de l'entraineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeemeeeeeeeeeent 
-                    La muscu c'est de l'entraineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeemeeeeeeeeeent 
-                    La muscu c'est de l'entraineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeemeeeeeeeeeent
-                    La muscu c'est de l'entraineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeemeeeeeeeeeent
-                    La muscu c'est de l'entraineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeemeeeeeeeeeent </p>
-            </div>
-            <div class="text2">
-                <p>Alooors reeeeejoiiiins la salle
-                    Alooors reeeeejoiiiins la salle
-                    Alooors reeeeejoiiiins la salle
-                    Alooors reeeeejoiiiins la salle
-                    Alooors reeeeejoiiiins la salle </p>
-            </div>
-            <div class="">
+            <div>
                 <p>Classes</p>
-            </div>
-            <div class="">
                 <p>Tous les niveaux</p>
             </div>
-            <div class="">
+            <div>
                 <p>Prix</p>
-            </div>
-            <div class="">
                 <p>Abordable</p>
             </div>
-    </div>
-
-    
-    <script>
-    $(document).ready(function() {
-        function toggleMenu() {
-            var isHidden = $('nav ul').is(':hidden');
-            var menuButton = $('#menuButton box-icon[name="menu"]');
-            var closeButton = $('#menuButton box-icon[name="x"]');
-
-        if (isHidden) {
-            $('nav').animate({
-                bottom: 0,
-                backgroundColor: '#000D1A'
-            }, 1000, function() {
-                $('nav ul').css('display', 'flex');
-            });
-            $('nav').addClass('MenuNav');
-            menuButton.css('display', 'none');
-            closeButton.css('display', 'block');
-        } else {
-            $('nav').animate({
-                bottom: '93.5%',
-                backgroundColor: '#000'
-            }, 1000, function() {
-                $('nav').removeClass('MenuNav');
-                menuButton.css('display', 'block');
-                closeButton.css('display', 'none');
-            });
-            $('nav ul').hide();
-        }
-    }
-
-    function checkWindowSize() {
-        if (window.innerWidth > 950) {
-            $('nav ul').css('display', 'flex');
-            $('#menuButton box-icon[name="menu"]').css('display', 'none');
-            $('#menuButton box-icon[name="x"]').css('display', 'none');
-        } else {
-            $('nav ul').css('display', 'none');
-            $('#menuButton box-icon[name="menu"]').css('display', 'block');
-            $('#menuButton box-icon[name="x"]').css('display', 'none');
-        }
-    }
-
-    checkWindowSize();
-        $('#menuButton').click(toggleMenu);
-        $('box-icon[name="x"]').click(toggleMenu);
-
-        $(window).on('resize', checkWindowSize);
-    });
-</script>
+        </div>
+    </section>
 </body>
 </html>
-
-

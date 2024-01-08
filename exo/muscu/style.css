@@ -1,164 +1,109 @@
-/******************* NAV BAR *******************/
-body {
+* {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+}
+header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(54, 54, 54, 0.5) 39.24%, rgba(28, 28 ,28 , 0.40)), url('https://magicform-bordeaux.fr/images/fitness/cross-training-crossfit-salle-de-sport-bordeaux.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 960px;
+    border-radius: 30px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin: 0 auto;
+}
+header nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-nav {
-    position: fixed;
-    top: 0; right: 0; left: 0;
-    padding: 0 0px;
+header nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    list-style: none;
+    margin: 35px 0px;
 }
-
-nav ul {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    list-style-type: none;
-    margin: 0; 
-    padding: 0; 
+header nav ul li {
+    margin: 0 10px;
+    color: aliceblue;
+    font-size: 1.7em;
 }
-
-nav ul li {
-    margin-right: 10px;
-}
-
-nav ul a {
-    display: inline-block; 
-    padding: 10px 20px;
-    border-radius: 0; 
-    color: #000;
-    text-decoration: none;
-}
-
-
-/******************* CONTENT DE L'INDEX *******************/
-/* Styles pour le contenu au milieu de la page */
-.content {
-    text-align: center;
-    padding: 20px;
-    background-image: url('fond1.png');
-    height: 50vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Style gros titre */
-.content h1 {
-    font-size: 2.5em;
-    color: #000; 
-    margin-bottom: 15px;
-    margin-top: 70px;
-}
-
-/* Style du descriptif */
-.content p {
-    font-size: 1.3em;
-    color: #333; 
-    margin-bottom: 20px;
-}
-
-/* Style du bouton rectangle */
-.rectangular-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: black;
-    border-radius: 0; 
-    color: #fff; 
-    text-decoration: none;
-    font-size: 1.3em;
-}
-
-/* Style texte*/
-.text1 p, .texte2 p {
-    text-align: left;
-    margin-left: 100px;
-    margin-top: 40px;
-    display: flex;
-}
-
-.text1 p {
-    font-size: 2em;
-    color: rgb(187, 0, 0);
-}
-
-.text2 {
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    text-align: justify;
-    margin: 0 100px; 
-}
-
-.text2 p {
-    font-size: 1.3em;
-    color: black;
-}
-
-.photomuscu {
-    max-width: 12%;
-    margin-top: 5%;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.left-side, .right-side {
-    width: 50%; 
-    padding: 10px;
-}
-
-.photomuscu1 {
-    max-width: 40%; 
-}
-
-/******************* MEDIA QUERY POUR MENU HAMBURGER *******************/
-box-icon[name='menu'], box-icon[name='x'] {
+header nav ul li:last-child {
     display: none;
 }
+header button {
+    padding: 10px;
+    font-size: 0.6em;
+    background-color: rgb(219, 86, 86);
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+}
+header div {
+    width: 100%;
+    padding-top: 280px;
+    text-align: center;
+}
+header div h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4.5em;
+    color: aliceblue;
+}
+header div p {
+    width: 25%;
+    color: aliceblue;
+    font-size: 1.2em;
+    margin: 30px auto;
+}
+header div button {
+    font-size: 1.2em
+}
 
-@media screen and (max-width: 950px) {
-    nav ul {
+section {
+    width: 70%;
+    margin: 0 auto;
+    height: 530px;
+    display: flex;
+    justify-content: space-around;
+}
+section .grand-boite {
+    height: 100%;
+    width: 45%;
+}
+section h2 {
+    margin: 40px 5px;
+    font-size: 2.2em;
+    color: crimson;
+}
+section h3 {
+    margin: 25px 5px;
+}
+section p {
+    margin: 15px 5px;
+}
+section .grand-boite:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+section .grand-boite:first-child img {
+    margin: 5px;
+    width: 31%;
+    height: 20%;
+}
+section .grand-boite:first-child img:first-child {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 860px) {
+    li {
         display: none;
     }
-    box-icon[name='menu'] {
-        display: contents;
+    #icon {
+        display: block;
     }
 }
-
-.MenuNav {
-    background-color: rgb(44, 44, 44);
-    bottom: 0;
-}
-.MenuNav div box-icon, .MenuNav span {
-    display: none;
-}
-
-.MenuNav box-icon[name='x'] {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    display: block;
-}
-
-.MenuNav ul {
-    margin: 0 auto 0 auto;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.MenuNav ul li {
-    margin: 15px 0;
-    font-size: 1.4em;
-}
-
 

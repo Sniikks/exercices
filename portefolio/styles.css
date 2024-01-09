@@ -69,7 +69,7 @@ body {
   overflow: hidden;
 }
 .project img {
-  width: 50%;
+  width: 100%; /* Ajustez la largeur de l'image à 100% pour qu'elle occupe toute la largeur du .project */
   height: auto;
 }
 
@@ -77,8 +77,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 100%;
+  width: 100%; /* Ajustez la largeur à 100% pour correspondre à la largeur de l'image */
+  height: 100%; /* Ajustez la hauteur à 100% pour correspondre à la hauteur de l'image */
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   opacity: 0;
@@ -90,18 +90,54 @@ body {
   text-align: center;
 }
 
+.project-overlay b {
+  margin-bottom: 10px; /* Ajout de marge en bas du texte en gras */
+}
+
 .project a:hover .project-overlay {
   opacity: 1;
 }
 
+/* Section Projets styles */
+#projets {
+  text-align: center;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project {
+  width: 48%; /* Ajustez la largeur selon vos besoins */
+  margin: 10px; /* Ajustez la marge selon vos besoins */
+  position: relative; /* Ajoutez cette propriété pour que .project-overlay soit positionné par rapport à ce .project */
+}
+
+/* Section contact */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 /* Taille des logos*/
+.contact-logos {
+  display: flex;
+  margin-top: 10px; /* Ajustez la marge selon vos besoins */
+}
+
 .contact-logo {
   width: 50px;
   height: 50px;
+  margin-right: 10px; /* Ajustez la marge selon vos besoins */
 }
 
 /* Footer styles */
-.footer {
+.copyright {
   background-color: #333;
   color: #fff;
   text-align: center;

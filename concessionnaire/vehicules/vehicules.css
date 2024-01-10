@@ -56,56 +56,48 @@ footer {
     padding: 1em;
 }
 
-
-/* INDEX.HTML */
-/* Style pour la mise en page en Flexbox */
-/* Flexbox pour la galerie + voiture du mois */
-.main-content {
+/* VEHICULE.HTML */
+.car-presentations {
     display: flex;
-    flex-wrap: wrap; 
-}
-
-/* Disposition pour la galerie  */
-.gallery-container {
-    flex: 2; /* Prend 2/3 de l'espace disponible */
-    padding: 1vh;
-}
-
-/* Disposition pour la voiture du mois  */
-.car-of-the-month {
-    flex: 1; /* Prend 1/3 de l'espace disponible */
-    padding: 2vh;
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    gap: 20px; 
+    max-width: 800px; 
+    margin: 20px auto; 
 }
 
-.car-of-the-month h2,
-.car-of-the-month p {
+.car-presentation {
     text-align: center;
 }
 
-.car-of-the-month img {
-    max-width: 52vh;
-    height: auto;
-    object-fit: cover; 
+.car-presentation img {
+    max-width: 100%; 
 }
 
-/* Styles pour le diaporama */
-.slideshow-container {
-    position: relative;
-    margin: auto;
+.car-presentation img {
+    max-width: 100%;
+    height: 20vh;
+    object-fit: contain;
 }
 
-.mySlides {
-    max-width: 150vh;
-    height: 50vh;
-    overflow: hidden;
+/* VEHICULES.HTML */
+/* Permet d'avoir l'ouverture de la fenêtre et la fermeture */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
-.mySlides img {
-    width: 150vh;
-    height: 50vh;
-    object-fit: cover; 
+/* Styles pour le bouton de fermeture */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }

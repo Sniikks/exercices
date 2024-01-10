@@ -88,9 +88,19 @@
     50% {
         top: -104px;
     }
+    65% {
+        top: -104px;
+    }
     75% {
         top: -104px;
     }
+    85% {
+        top: -104px;
+    }
+    95% {
+        top: -104px;
+    }
+
     100% {
         top: -104px;
     }
@@ -103,7 +113,7 @@
     position: absolute;
     top: -104px;
     right: -2px;
-    animation: descendrePaupiere 4s ease infinite 4s;
+    animation: descendrePaupiere 5s ease infinite 4s;
 }
 
 .boite .visage .oeilDroit {
@@ -134,7 +144,7 @@
     position: absolute;
     top: -104px;
     right: -2px;
-    animation: descendrePaupiere 4s ease infinite 4s;
+    animation: descendrePaupiere 5s ease infinite 4s;
 }
 
 .boite .visage .nez {
@@ -142,23 +152,27 @@
     width: 120px;
     background-color: pink;
     border-radius: 60px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    overflow: hidden;
     position: absolute;
     top: 52%;
     left: 39%;
 }
-.boite .visage .nez .narineGauche {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: black;
+.boite .grand-cheveux {
+    height: 0;
+    width: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 55px solid #4e4e4e;
+    position: absolute;
+    top: 15%;
+    left: 42%;
 }
-.boite .visage .nez .narineDroite {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: black;
+.boite .petit-cheveux {
+    height: 0;
+    width: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 55px solid #4e4e4e;
+    position: absolute;
+    top: 17%;
+    left: 50%;
 }

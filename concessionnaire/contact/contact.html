@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contactez-nous</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../img/logo.png" alt="Sniikkcension">
+            <ul>
+                <li><a href="../index.html">ACCUEIL</a></li>
+                <li><a href="../vehicules/vehicules.html">VEHICULES</a></li>
+                <li><a href="../services/services.html">SERVICES</a></li>
+                <li><a href="">PARTENAIRES</a></li>
+                <li class="selected"><a href="../contact/contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-header">
+        <h1>CONTACTEZ-NOUS</h1>
+        <p>Contactez-nous très simplement par email ou par téléphone, ou encore via le formulaire ci-dessous. Nous répondrons à votre demande dans les 48 heures suivant la réception de votre message.</p>
+    </section>
+
+    <section class="contact-info">
+        <div>
+            <h2>Sniikkssion</h2>
+            <p>Uniquement sur rendez-vous</p>
+            <p>10 rue du rêve</p>
+            <p>75000 Paris, France</p>
+            <p>Email: <a href="mailto:contact@sniikkssion.fr">contact@sniikkssion.fr</a></p>
+            <p>Tél. : +33 (0)0 00 00 00</p>
+            <p>Fax : +33 (0)1 00 00 00 00</p>
+        </div>
+    </section>
+
+        <!-- Formulaire de rendez-vous -->
+        <div class="appointment-form">
+            <h2>Prendre rendez-vous</h2>
+            <form action="traitement_rendezvous.php" method="post">
+                <label for="civilite">Civilité:</label>
+                <select id="civilite" name="civilite">
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+    
+                <label for="nom">Nom: *</label>
+                <input type="text" id="nom" name="nom" required>
+    
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom">
+    
+                <label for="codePostal">Code postal:</label>
+                <input type="text" id="codePostal" name="codePostal">
+    
+                <label for="ville">Ville: *</label>
+                <input type="text" id="ville" name="ville" required>
+    
+                <label for="telephone">Numéro de téléphone: *</label>
+                <input type="tel" id="telephone" name="telephone" required>
+    
+                <label for="email">Adresse mail: *</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message: *</label>
+                <textarea id="message" name="message" minlength="10" maxlength="500" required></textarea>
+    
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>    
+
+    <footer>
+        <p id="copyright"></p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Page du site par défaut */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 166vh; /* Ajout de cette ligne */
+    position: relative; /* Ajout de cette ligne */
+}
+
+/* Header */ 
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Texte + style du header */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a {
+    padding: 3vh;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Logo du header */
+header img {
+    max-width: 8vh;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Section Services */
+.service {
+    text-align: center;
+    padding: 2em;
+}
+
+.service h1 {
+    margin-bottom: 1em;
+}
+
+.service-item {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

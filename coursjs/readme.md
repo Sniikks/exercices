@@ -299,7 +299,9 @@ Permet de trier un tableau
 
 Exemple : 
 ```js
-
+TableauExemple.sort((chiffreActuel, chiffreSuivant) => chiffreActuel - chiffreSuivant)
+// Mon tableau va ce trier en sorte que le chiffre le plus petit soit en premier et les plus grand en dernier
+// Le sort n'est utilisé que pour les tableaux de nombre
 ```
 
 ## reverse()
@@ -369,3 +371,25 @@ Exemple :
 
 ## toFixed 
 Sert à mettre ou retirer des chiffres après la virgule
+
+## split
+Découpe une chaine de caractère avec un séparateur bien précis
+
+## replace
+Remplace tout ce qui correspond a une expression régulière par une chaîne de caractère donnée
+
+## parseFloat
+Convertit une chaîne de caractères en nombre décimal (à virgule)
+
+## parseInt
+Convertit une chaîne de caractères en entier 
+
+## toString
+Transforme un nombre en chaîne de caractère
+
+## slice
+Extrait une portion d’une chaîne et/ou d’un tableau. Retourne
+la sous-chaîne ou le sous-tableau demandé
+
+## indexOf
+Retourne l'index du premier caractère dans la chaîne qui correspond au paramètre donnée

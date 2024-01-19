@@ -14,7 +14,11 @@ var EcartGlobal = Infinity
 for (let i = 0; i < NombreChevaux; i++) {
     PuissanceCheval[i] = parseInt(readline());
 }
-PuissanceCheval.sort((Cheval1, Cheval2) => Cheval1 - Cheval2)
+function sort(cheval1, cheval2) {
+    return cheval1 - cheval2
+}
+// PuissanceCheval.sort((cheval1, cheval2) => cheval1 - cheval2);
+PuissanceCheval.sort(sort)
 
 for (let i = 0; i < NombreChevaux; i++) {
     const ChevalActuel = PuissanceCheval[i] // 5 // 8

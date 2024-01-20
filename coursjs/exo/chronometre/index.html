@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            margin: 0 auto;
+            background-color: aqua;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p class="Affichage">0 h : 0 min : 0 s : 0 ms</p>
+        <div>
+            <button id="startBtn" onclick="start()">Start</button>
+            <button id="stopBtn"  onclick="stop()">Stop</button>
+            <button id="resetBtn" onclick="reset()">Reset</button>
+        </div>
+    </section>
+</body>
+</html>

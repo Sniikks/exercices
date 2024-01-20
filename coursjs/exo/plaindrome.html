@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vérification de palindrome</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<label for="inputText">Entrez un texte :</label>
+<input type="text" id="inputText" placeholder="Saisissez un texte">
+
+<button onclick="checkPalindrome()">Valider</button>
+
+<div id="result"></div>
+
+<script>
+  function isPalindrome(str) {
+    // Supprimer les caractères non-alphanumériques et convertir en minuscules
+    const cleanedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+
+    // Comparer le texte original avec sa version inversée
+    return cleanedStr === cleanedStr.split('').reverse().join('');
+  }
+
+  function checkPalindrome() {
+    const inputText = document.getElementById('inputText').value;
+    const resultContainer = document.getElementById('result');
+
+    if (inputText.trim() === '') {
+      resultContainer.innerText = 'Veuillez saisir un texte.';
+    } else {
+      const isPalin = isPalindrome(inputText);
+
+      if (isPalin) {
+        resultContainer.innerText = "L'entrée est un palindrome.";
+      } else {
+        resultContainer.innerText = "L'entrée n'est pas un palindrome.";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

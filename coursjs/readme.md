@@ -248,7 +248,10 @@ Un tableau associatif est un tableau qui a besoin d'avoir des index définis par
 Exemple d'un tableau associatif :
 ```js
 // Les index défini    prenom               nom             
-let tableauAssocie = {"prenom" : "Pierre", "nom" : "GrandJean"}
+let tableauAssocie = {
+    "prenom" : "Pierre", 
+    "nom" : "GrandJean"
+}
 ```
 
 # Fonctions pour les Tableau
@@ -581,7 +584,38 @@ Exemple :
 ```js
 let monDiv = document.getElementById("monId") // Récupère l'élement en utiliser l'id monId et le stocke dans la variable monDiv
 ```
-#### 
+#### innerHTML / textContent
+Les deux permettent de modifier le texte contenu dans les balises séléctionner
+Exemple :
+```js
+let MonP = document.getElementById("monId")
+MonP.innerHTML = "Ceci est un test" 
+// ou
+MonP.textContent = "Ceci est un test"
+```
+
+#### style
+Permet de modifier le style de l'élément séléctionner
+Toute les modifications de style possible en JS (https://www.w3schools.com/jsref/dom_obj_style.asp)
+Exemple :
+```js
+let MonP = document.getElementById("monId")
+MonP.style.fontSize = "10em" // J'agrandi la taille du texte
+```
+
+#### addEventListener
+C'est une fonction qui permet de créer une écoute d'évenement bien précis
+Elle prend 2 arguments : L'événement que vous voulez écouter et La
+fonction à éxécuter lorsque cet événement se déclenche
+Liste des évenement possible (https://www.w3schools.com/jsref/dom_obj_event.asp)
+Exemple :
+```js
+let MonBouton = document.getElementById("monId")
+// Je veux ajouter une écoute quand je clique sur le bouton
+MonBouton.addEventListener('click', function() {
+    console.log("J'ai cliqué !")
+})
+```
 
 ### getElementsByClassName 
 Cela me permettra de selectionner plusieurs éléments en utilisant leur class. ATTENTION CETTE FONCTION RENVOIE UN TABLEAU D'ELEMENT
@@ -597,5 +631,97 @@ Exemple :
 let MonSpan = document.getElementsByTagName("span") // Récupère toute les balise span
 ``` 
 
+# Orienté Objet
+La programmation orienté objet en JS permet de classé de façon propre son code et de pouvoir le réutilisé comme on le veux à la demande 
+Une classe est une enorme boite
+Un objet est une petite boite
 
+- Les objets sont des instances de classes, ces classes définissent un ensemble de propriétés
+(attributs) et méthodes (fonctions).
+- Une classe peut être considérée comme une blueprint pour créer plusieurs objets.
+- Les objets ont accès aux propriétés et méthodes définies dans leur classe
+parente. Elles peuvent également avoir leurs propres propriétés et méthodes.
+
+## Création Simple d'un objet
+Un objet est créé avec l'instruction `new Object()`
+```js
+var MaBoite = new Object;
+// Mon objet est créer mais vide
+```
+### Création de variable dans mon objet
+```js
+var MaBoite = new Object;
+MaBoite.MaVariable = "Ok mec"
+// J'ai créer une Variable qui ce nomme MaVariable dans mon objet et elle contient la chaine de caractère
+// Ok mec
+```
+### Création d'une fonction dans mon objet
+```js
+var MaBoite = new Object;
+MaBoite.MaFonction = function() {
+    alert ("Je suis une fonction");
+}
+// J'ai créer une fonction qui ce nomme MaFonction qui ce trouve
+// dans la boite MaBoite 
+```
+### Appelé une fonction qui ce trouve dans mon objet
+```js
+MaBoite.MaFonction()
+// J'appele la fonction MaFonction qui ce trouve dans MaBoite
+```
+
+## Création d'un littéral objet 
+Cela permet de décrire plus rapidement qu'avec l'instruction `new Object()`. On utilise `{ }` pour délimiter les paires clé/valeur
+NE FONCTION PAS DANS LES ANCIERS NAVIGATEUR (Internet Explorer)
+Attention a ne pas confondre avec un tableau associatif
+
+Exemple: 
+```js
+var MaBoiteLitteral = {
+    MaVariable : "Ok mec",
+    MaFonction : function(){
+        alert("Je suis une fonction")
+    },
+}
+MaBoiteLitteral.MaFonction()
+```
+
+## Utilisation des fonction comme objet
+Une fonction peux être utiliser comme un objet 
+Exemple : 
+```js
+function MaFonctionObjet(TonPrenom, TonGenre, TaDate, Toncaractere) {
+    this.CePrenom = TonPrenom;
+    this.CeGenre = TonGenre;
+    this.CetteDateDeNaissance = TaDate;
+    this.CeCaractere = Toncaractere;
+}
+var Dylan = new MaFonctionObjet("Dylan", "oiseau", 2024, "Parle trop")
+console.log(Dylan.CeGenre) // Me retourne oiseau
+
+var Véronique = new MaFonctionObjet('Véronique', 'fomme', 1990, 'Trop conne')
+console.log(Véronique.CeCaractere) // Me retourne Trop conne
+```
+
+### Interdire la modification de certaine propriété 
+Il est possible pouvoir interdire de modifier les propriété d'une fonction orienté objet
+Exemple : 
+```js
+function MaFonctionInterdite(transmetteur, receveur, message, date){
+    this.LeMessage = message
+
+    this.getDate = function() {
+        return date
+    }
+    this.getTransmetteur = function() {
+        return transmetteur
+    }
+    this.getReceveur = function() {
+        return receveur
+    }
+}
+var Kévin = new MaFonctionInterdite("Didi", 'Kévin', "Tu viens au PMU ?", '15:00:00-22-01-2024')
+console.log(Kévin.getTransmetteur()) // Me retourne Didi
+Kévin.Lemessage = "Tu viens à l'apero ?"
+```
 

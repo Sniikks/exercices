@@ -82,3 +82,56 @@ console.log(getInt([1, 2, "3", "4", "5", 6]));
 console.log(getInt(["Vache", 20, "Cheval", 1, "Poule", 50]));
 console.log(getInt(["Str", false, 5.56, 6]));
 
+
+/*
+Créez une fonction qui prend un tableau associatif comme argument et renvoie 
+une chaîne de caractère qui représente une personne. 
+Les attributs de la personne devront être extraits des trois 
+propriétés du tableau :
+
+nom
+age
+adresse
+
+La chaîne doit avoir le format suivant: 
+
+X a Y ans. Il habite à Z. 
+(où X est le nom de la personne, Y est l’age et Z est l’adresse).
+
+Exemple : 
+let Tab = {
+    "nom": "Thomas", 
+    "age": "25", 
+    "adresse": "Paris"
+}
+formatPrs(Tab)
+➞ "Thomas a 25 ans. Il habite à Paris."
+
+Tab = {
+    "nom": "Emily", 
+    "age": "22", 
+    "adresse": "Nantes"
+}
+formatPrs(Tab)
+➞ "Emily a 22 ans. Il habite à Nantes."
+*/
+
+function formatPrs(personne) {
+    return `${personne.nom} a ${personne.age} ans. Il habite à ${personne.adresse}.`;
+}
+
+let Tab = {
+    "nom": "Thomas", 
+    "age": "25", 
+    "adresse": "Paris"
+};
+
+console.log(formatPrs(Tab));
+
+Tab = {
+    "nom": "Emily", 
+    "age": "22", 
+    "adresse": "Nantes"
+};
+
+console.log(formatPrs(Tab));

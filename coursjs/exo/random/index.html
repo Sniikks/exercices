@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script de Tirage au Sort</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    #listeContainer {
+      max-height: 200px;
+      overflow: auto;
+      display: flex;
+      justify-content: center; /* Centre la liste horizontalement */
+      align-items: center; /* Centre la liste verticalement */
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 5px;
+      font-size: 16px;
+      display: flex;
+      align-items: center; /* Centre le texte verticalement */
+    }
+
+    li span {
+      margin-left: 5px;
+      cursor: pointer;
+      color: red;
+    }
+
+    textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      overflow: hidden; /* Empêche le défilement */
+      white-space: nowrap; /* Empêche le passage à la ligne automatique */
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="listeNoms">Liste des Noms:</label>
+  <div id="listeContainer">
+    <ul id="listeNoms"></ul>
+  </div><br>
+
+  <button id="ajouterNom">Ajouter nom</button>
+  <button id="tirageAuSort">Tirage au sort</button>
+
+  <script>
+    let noms = [];
+
+    function ajouterNom() {
+      let nouveauNom = prompt("Entrez un nouveau nom :");
+
+      if (nouveauNom !== null && nouveauNom.trim() !== "") {
+        noms.push(nouveauNom);
+        mettreAJourListeNoms();
+      }
+    }
+
+    function supprimerNom(index) {
+      noms.splice(index, 1);
+      mettreAJourListeNoms();
+    }
+
+    function tirageAuSort() {
+      if (noms.length === 0) {
+        alert("La liste des noms est vide. Ajoutez des noms avant de tirer au sort.");
+        return;
+      }
+
+      let indexGagnant = Math.floor(Math.random() * noms.length);
+      let nomGagnant = noms[indexGagnant];
+
+      alert("Le nom gagnant est : " + nomGagnant);
+    }
+
+    function mettreAJourListeNoms() {
+      let listeNomsUl = document.getElementById("listeNoms");
+      // Supprimer les éléments existants
+      listeNomsUl.innerHTML = "";
+
+      // Ajouter les noms à la liste
+      for (let i = 0; i < noms.length; i++) {
+        let li = document.createElement("li");
+        li.innerHTML = `${noms[i]} <span onclick="supprimerNom(${i})">&#10006;</span>`;
+        listeNomsUl.appendChild(li);
+      }
+    }
+
+    document.getElementById("ajouterNom").addEventListener("click", ajouterNom);
+    document.getElementById("tirageAuSort").addEventListener("click", tirageAuSort);
+  </script>
+
+</body>
+</html>

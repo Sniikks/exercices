@@ -88,78 +88,95 @@ son prix
 Tout les attributs de l'objet Véhicule sont supposée être privés donc
 il faudra avoir des fonction get
 Ensuite les objets Voiture et Camion son hérité de Véhicule et 
-possède deux méthode démarrer et accélérer il affiche soit un message 
+possède deux (fonction) démarrer et accélérer il affiche soit un message 
 Démarrer ou Accélère
 
 Créer les objets Véhicule, Voiture et Camion
 
-
 */
 
-// Définition de l'objet Véhicule
-function Vehicule(matricule, annee, modele, prix) {
-    // Attributs privés
-    var _matricule = matricule;
-    var _annee = annee;
-    var _modele = modele;
-    var _prix = prix;
-  
-    // Méthodes pour accéder aux attributs privés
-    this.getMatricule = function () {
-      return _matricule;
-    };
-  
-    this.getAnnee = function () {
-      return _annee;
-    };
-  
-    this.getModele = function () {
-      return _modele;
-    };
-  
-    this.getPrix = function () {
-      return _prix;
-    };
+function Véhicule(matricule, annee, modèle, prix) {
+    this.getMatricule = function() {
+        return matricule;
+    }
+    this.getAnnee = function() {
+        return annee;
+    }
+    this.getModele = function() {
+        return modèle;
+    }
+    this.getPrix = function() {
+        return prix;
+    }
+    this.getAll = function() {
+        return [matricule, annee, modèle, prix]
+    }
+}
+
+function Voiture(matricule, annee, modèle, prix) {
+    Véhicule.call(this, matricule, annee, modèle, prix)
+
+    this.demarrer = function() {
+        return 'La voiture à démarrer'
+    }
+    this.accellerer = function() {
+        return 'La voiture a accéléré'
+    }
+}
+
+function Camion(matricule, annee, modèle, prix) {
+    Véhicule.call(this, matricule, annee, modèle, prix)
+
+    this.demarrer = function() {
+        return 'Le camion à démarrer'
+    }
+    this.accellerer = function() {
+        return 'Le camion a accéléré'
+    }
+}
+
+let Fiat = new Voiture('AB-1012', 2000, 'Panda', 1000)
+let Scania = new Camion('BC-7894', 2010, 'O', 100000)
+console.log(Fiat)
+console.log(Fiat.getAnnee(), Fiat.getPrix())
+console.log(Fiat.demarrer())
+console.log(Scania.demarrer())
+
+/*
+Définir un objet 'member' (membre) avec les attributs 'id' (identifiant), 'name' (nom) et 'grade' 
+et une méthode/fonction 'toString' personnalisée. Créer un objet 'team' qui contient des membres. Créer 
+une instance de 'secte' et y ajouter des membres. 
+Afficher les membres de 'secte' en utilisant la fonction 'toString' de 'member'.
+*/
+
+function member(id, name, grade) {
+  this.idMembre = id
+  this.nameMembre = name
+  this.gradeMembre = grade
+
+  this.toString = function() {
+      return `L'identifiant du membre est ${this.idMembre}, son nom est ${this.nameMembre} et il est gradé au grade ${this.gradeMembre}.`
   }
+}
+
+function secte() {
+  this.Membres = []
   
-  // Définition de l'objet Voiture, qui hérite de Véhicule
-  function Voiture(matricule, annee, modele, prix) {
-    // Appel du constructeur de Véhicule avec les arguments appropriés
-    Vehicule.call(this, matricule, annee, modele, prix);
-  
-    // Méthodes spécifiques à la Voiture
-    this.demarrer = function () {
-      return "La voiture démarre.";
-    };
-  
-    this.accelerer = function () {
-      return "La voiture accélère.";
-    };
+  this.add = function(nouveauMembre) {
+      this.Membres.push(nouveauMembre)
   }
-  
-  // Définition de l'objet Camion, qui hérite de Véhicule
-  function Camion(matricule, annee, modele, prix) {
-    // Appel du constructeur de Véhicule avec les arguments appropriés
-    Vehicule.call(this, matricule, annee, modele, prix);
-  
-    // Méthodes spécifiques au Camion
-    this.demarrer = function () {
-      return "Le camion démarre.";
-    };
-  
-    this.accelerer = function () {
-      return "Le camion accélère.";
-    };
+
+  this.toString = function() {
+      return this.Membres.join('\n')
   }
-  
-  // Exemples d'utilisation
-  var voiture1 = new Voiture("ABC123", 2022, "Sedan", 25000);
-  var camion1 = new Camion("XYZ456", 2021, "Cargo", 50000);
-  
-  console.log(voiture1.demarrer()); // Affiche : La voiture démarre.
-  console.log(camion1.accelerer()); // Affiche : Le camion accélère.
-  
-  // Accès aux attributs privés
-  console.log(voiture1.getMatricule()); // Affiche : ABC123
-  console.log(camion1.getPrix()); // Affiche : 50000
-  
+}
+
+let SecteDéveloppeur = new secte()
+
+let elodie = new member(1, "Elodie", 'naine')
+let Mohammed = new member(2, "Mohammed", 'bon barbier')
+console.log(elodie.toString())
+
+SecteDéveloppeur.add(elodie)
+SecteDéveloppeur.add(Mohammed)
+console.log(SecteDéveloppeur.toString())

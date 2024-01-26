@@ -819,3 +819,27 @@ if (Eleve.hasOwnProperty('age')) {
     console.log("La propriété 'age' n'existe pas.")
 }
 ```
+
+### -B Méthode Chaining
+Le chaining est utilisé pour executé plusieurs fonction a la fois
+Exemple: 
+```js
+let Ladder = {
+    step: 0,
+    up() {
+        this.step++
+        return this
+    },
+    down() {
+        this.step--
+        return this
+    },
+    show() {
+        console.log(this.step)
+    }
+}
+
+Ladder.up().up().down().down().up().show()
+```
+
+

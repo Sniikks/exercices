@@ -53,11 +53,11 @@ function Projet() {
     this.afficherTaches = function() {
         let Phrase = []
         this.listeDeTaches.forEach((tache) => {
-            Phrase.push(tache.afficherDetails())
+            Phrase.push(tache.afficherDetails() + ` <button type="button">Terminer</button> <button type="button">Annulée</button>`)
             console.log('---------------------------------')
             
         })
-        return Phrase.join('<br>')
+        return Phrase.join('<br><br>')
     }
 
 }
@@ -76,16 +76,18 @@ projet.afficherTaches()
 
 
 function CreateTache() {
-    let titre = document.getElementById('titre').value;
-    let description = document.getElementById('description').value;
+    let titre = document.getElementById('titre');
+    let description = document.getElementById('description');
     if (titre != "" && description != ""){
-        let nouvelleTache = new Tache(titre, description);
+        let nouvelleTache = new Tache(titre.value, description.value);
         ////
         projet.ajouterTache(nouvelleTache)
         // OU
-        projet.ajouterTache(new Tache(titre, description))
+        // projet.ajouterTache(new Tache(titre.value, description.value))
         ////
     }
+    titre = ""
+    description = ""
 }
 
 function ViewTaches() {

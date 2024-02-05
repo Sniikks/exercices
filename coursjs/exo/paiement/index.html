@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            margin: 20px;
+            width: 200px;
+            height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .description {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .Ajout {
+            width: 15%;
+            position: absolute;
+        }
+        .Ajout form {
+            margin-bottom: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="Ajout">
+        <form method="post">
+            <fieldset>
+                <legend>Ajout d'argent sur la carte kiwi</legend>
+                <label for="NbArgent">Nombre d'argent à rajouter :</label><br />
+                <input type="number" name="NbArgent" id="NbArgent" value="0"><br />
+                <button type="button" onclick="client.addMoney()">Rajouter argent</button>
+            </fieldset>
+        </form>
+        <form method="post">
+            <fieldset>
+                <legend>Ajout d'article</legend>
+                <label for="nom">Désignation de l'article :</label><br />
+                <input type="text" name="nom" id="nom"><br />
+                <label for="prix">Prix de l'article</label>
+                <input type="number" name="prix" id="prix"><br />
+                <button type="button" onclick="CreateArticle()">Ajouter article</button>
+            </fieldset>
+        </form>
+    </div>
+    <form method="post">
+        <p id="wallet">Votre portefeuille : <span></span> €</p>
+        <div class="description">Sélectionnez un fruit de l'inventaire pour l'ajouter à votre panier.</div>
+
+        <select id="inventaire" multiple onchange="Change()">
+        </select>
+
+        <button id="ajouter" type="button" disabled>Ajouter au panier</button>
+
+        <br>
+
+        <div class="description">Sélectionnez un fruit de votre panier pour le mettre dans l'inventaire.</div>
+
+        <!-- Donc ici j'ai mis le name en mode listB[] puisque on a plusieurs élément dans le select et on veux tous les récupèrer mais si on veux tous 
+        les récupérer il faut que on est un tableau -->
+        <select id="panier" name='listB[]' multiple onchange="Change()"></select>
+        <button id="supprimer" type="button" disabled>Retirer du panier</button>        
+        <br>        
+
+        <p id="total">Total : <span></span> €</p><br>
+        <p id="error"></p><br>
+
+        <button id="buy" type="button" disabled>Acheter !</button>
+
+    </form>
+</body>
+</html>

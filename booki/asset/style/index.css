@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* Permet d'avoir la barre et le positionnement de l'index */
+.container {
+    max-width: 210vh;
+    margin: 0 auto;
+    padding: 4vh;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container1 {
+    max-width: 210vh;
+    margin: 0 auto;
+    padding: 4vh;
+    background-color: rgb(0, 68, 255);
+}
+
+.index {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Garder l'espace entre les éléments */
+}
+
+/* Styles pour le champ de recherche */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search-icon {
+    margin-right: 10px;
+}
+
+.search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+#search {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Styles pour les filtres */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+}
+
+.filter img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.filter label {
+    cursor: pointer;
+}
+
+/* Change la couleur du titre */
+.index h1 {
+    color: #2e65ff;
+}
+
+/* Positionnement des boutons */
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligner les boutons sur la droite */
+}
+
+/* Création des deux boutons se connecter et s'inscrire */
+.button {
+    padding: 10px;
+    margin: 5px;
+    color: gray;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Permet d'avoir une autre couleur quand on passe la souris par dessus le bouton */
+.button:hover {
+    color: #2e65ff;
+}
+
+section.images-section {
+    background-color: pink;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0; /* Réinitialiser les marges */
+    margin-left: 2%; /* Déplacer l'affichage vers la gauche */
+    display: flex; /* Utilisation de flexbox */
+}
+
+section .grand-boite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Pour que les éléments commencent en haut */
+}
+
+section .grand-boite img {
+    width: calc(33.33% - 10px); /* 33.33% de largeur avec un espacement de 10px */
+    margin-bottom: 10px; /* Espacement entre les images */
+}
+
+.grand-boite {
+    width: 66.66%; /* Prend 2/3 de la largeur */
+    padding-right: 20px; /* Espacement entre les deux colonnes */
+    background-color: chocolate;
+}
+
+section .additional-section {
+    display: flex; /* Utilisation de flexbox */
+    flex-direction: column; /* Alignement vertical des images */
+    width: 33.33%; /* Prend 1/3 de la largeur */
+    padding-left: 20px; /* Espacement entre les deux colonnes */
+    background-color: rgb(210, 30, 210);
+}
+
+.additional-section img {
+    width: 80%; /* Largeur maximale pour les images */
+    margin-bottom: 10px; /* Espacement entre les images */
+}

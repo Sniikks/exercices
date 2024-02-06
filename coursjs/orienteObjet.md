@@ -229,8 +229,8 @@ class NomDeMaClasseQuiNestPasTropLongueMaisQuandMemeUnPeu {
     }
     // Je n'est pas besoin  d'ajouter le mot clé "function" avant la méthode  puisque je suis 
     // dans une classe
-    PresenterSoi() { // Ici je créer une fonction  qui va afficher le prénom et le nom de l'objet en question 
-        console.log(`Je suis ${this.Prenom} ${this.Nom}.`)
+    PresenterSoi(couleur) { // Ici je créer une fonction  qui va afficher le prénom et le nom de l'objet en question 
+        console.log(`Je suis ${this.Prenom} ${this.Nom} et j'ai la couleur ${couleur}.`)
     }
 }
 
@@ -238,5 +238,66 @@ class NomDeMaClasseQuiNestPasTropLongueMaisQuandMemeUnPeu {
 // Une Instance est une copie exacte de ma Classe avec ses propres propriétés et méthodes
 const InstanceDeClasse = new NomDeMaClasseQuiNestPasTropLongueMaisQuandMemeUnPeu("Didier", "GrandJean")
 
-InstanceDeClasse.PresenterSoi()
+InstanceDeClasse.PresenterSoi('bleu')
+```
+
+## La méthode statique
+La méthode static est une méthode qui appartient à la classe elle-même plutôt qu’à l’objet créé à partir de cette dernière. 
+La méthode statique n'est pas appelée par l'instance d'une class mais bien par la classe elle
+même. Elle peut être utilisée pour définir des méthodes qui ne dépendent pas  de l'état courant de l'objet. 
+
+Exemple : 
+```js
+class MonSuperbeClubDeFootball {
+    constructor(joueurs) {
+        this.joueurs = []
+    }        
+    static nbMax = 11
+    static DateAujourdhui() {
+        const date = new Date();
+        return `${date.getHours()}h${date.getMinutes()}h${date.getSeconds()}`;
+    }
+
+    ajoutJoueur(joueur) {
+        if (this.joueurs.length < MonSuperbeClubDeFootball.nbMax) {
+            this.joueurs.push(joueur)
+        }
+    }
+}
+
+let Club = new MonSuperbeClubDeFootball()
+console.log(MonSuperbeClubDeFootball.nbMax)
+console.log(MonSuperbeClubDeFootball.DateAujourdhui())
+// console.log(Club.DateAujourdhui())
+```
+
+## Les héritages de classe 
+On a vu les héritage d'objet, avec les classes c'est la même chose  mais on peut avoir plusieurs niveaux d'héritage.
+Lorsqu'on crée une nouvelle class en utilisant une autre class comme modèle,  on dit que cette nouvelle class hérite de celle-ci.
+
+Exemple : 
+```js
+class Ligne {
+    constructor(longueur, name){
+        this.Name=name
+        this.Longueur=longueur
+    }
+    taille() {
+        return `Cette ligne est de ${this.Longueur} cm`
+    }
+}
+// Donc Rectangle hérite de Ligne
+// Extends = j’étends la classe Ligne dans Rectangle
+class Rectangle extends Ligne {
+    constructor(longueur, largeur, nom) {
+        this.Largeur = largeur
+        super(nom, longueur) // J'appelle la constructeur de la classe étendu  (Ligne), en lui passant "nom" et "longueur" en paramètre 
+    }
+    aire() {
+        return Math.floor(this.Longueur * this.Largeur)
+    }
+}
+let Rect = new Rectangle(7, 5, 'rect1')
+Rect.aire()
+Rect.taille()
 ```

@@ -13,64 +13,176 @@
             <img src="./asset/img/Booki.png" alt="Booki">
             <!-- Boutons -->
             <div class="buttons">
-                <button class="button" id="login">Hébergements</button>
-                <button class="button" id="inscription">Activités</button>
+                <button class="button" id=".index.html">Hébergements</button>
+                <button class="button" id=".index.html">Activités</button>
             </div>
         </div>
     </div>
     
     <!-- Texte -->
     <div class="container1">
-        <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
         <p>En plein centre-ville ou en pleine nature</p>
         <!-- Recherche -->
         <div class="search-container">
-            <div class="search-icon">
-                <img src="search_icon.png" alt="">
+            <div class="logo">
+                <img src="./asset/img/map-marker-alt.png" alt="">
             </div>
-            <input type="text" id="search" placeholder="Rechercher une ville...">
-        <!-- Bouton de recherche -->
-        <button id="search-button">Rechercher</button>
-    </div>
-        <!-- Filtres -->
-        <div class="filters">
-            <div class="filter">
-                <label for="romantique">
-                    <img src="romantique_icon.png" alt="Romantique">
-                </label>
-                <input type="checkbox" id="romantique" name="romantique">
-            </div>
-            <div class="filter">
-                <label for="economique">
-                    <img src="economique_icon.png" alt="Économique">
-                </label>
-                <input type="checkbox" id="economique" name="economique">
-            </div>
-            <div class="filter">
-                <label for="animaux">
-                    <img src="animaux_icon.png" alt="Animaux">
-                </label>
-                <input type="checkbox" id="animaux" name="animaux">
-            </div>
+            <input type="text" id="search" placeholder="Marseille, France...">
+            <!-- Bouton de recherche -->
+            <button id="search-button">Rechercher</button>
         </div>
-        <p> Plus de 500 logements sont disponibles dans cette ville </p>
     </div>
-    <section class="images-section">
-        <h2> Hebergement à marseille </h2>
-        <div class='grand-boite'>
-            <img src="./asset/img/3_medium/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-        <button class="button" id="login">Afficher plus </button>
+<!-- Filtres -->
+<div class="filters">
+    <h3>Filtre</h3>
+    <div class="filter romantique" onclick="toggleFilter('romantique')">
+        <img src="./asset/img/heart.png" alt="Romantique">
+        <span>Romantique</span>
     </div>
-        <div class="additional-section">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
-            <img src="https://static.actu.fr/uploads/2020/10/salle-de-sport-fermeture-covid19-coronavirus-paris-iledefrance-perfecture-de-police-1.jpeg" alt="">
+    <div class="filter familial" onclick="toggleFilter('familial')">
+        <img src="./asset/img/men.png" alt="Familial">
+        <span>Familial</span>
     </div>
-    </section>
+    <div class="filter economique" onclick="toggleFilter('economique')">
+        <img src="./asset/img/money.png" alt="Économique">
+        <span>Économique</span>
+    </div>
+    <div class="filter animaux" onclick="toggleFilter('animaux')">
+        <img src="./asset/img/dog.png" alt="Animaux">
+        <span>Animaux</span>
+    </div>
+</div>
+        <div class="container2">
+            <!-- Photo -->
+            <img src="./asset/img/Iconn.png" alt="">
+            <!-- Texte -->
+            <p> Plus de 500 logements sont disponibles dans cette ville </p>
+        </div>
+
+        <section class="section-offers">
+            <div class="offers-main">
+                <div class="section">
+                    <div class="rectangle-18">
+                        <h2 class="title">Hébergements à Marseille</h2>
+                    </div>
+                    <div class="card-main">
+                        <div class="rectangle-19">
+                        </div>
+                        <div class="group-9">
+                            <h3 class="card-title">Nom de l'hôtel</h3>
+                            <p class="price">Prix par nuit: $XXX</p>
+                        </div>
+                    </div>
+                    <div class="card-main2">
+                        <div class="rectangle-19">
+                        </div>
+                        <div class="group-9">
+                            <h3 class="card-title">Nom de l'hôtel</h3>
+                            <p class="price">Prix par nuit: $XXX</p>
+                        </div>
+                    </div>
+                    <div class="card-main3">
+                        <div class="rectangle-19">
+                        </div>
+                        <div class="group-9">
+                            <h3 class="card-title">Nom de l'hôtel</h3>
+                            <p class="price">Prix par nuit: $XXX</p>
+                        </div>
+                    </div>
+                    <div class="card-main4">
+                        <div class="rectangle-19">
+                        </div>
+                        <div class="group-9">
+                            <h3 class="card-title">Nom de l'hôtel</h3>
+                            <p class="price">Prix par nuit: $XXX</p>
+                        </div>
+                    </div>
+                    <div class="card-main5">
+                        <div class="rectangle-19">
+                        </div>
+                        <div class="group-9">
+                            <h3 class="card-title">Nom de l'hôtel</h3>
+                            <p class="price">Prix par nuit: $XXX</p>
+                        </div>
+                    </div>
+                    <div class="card-main6">
+                        <div class="rectangle-19">
+                        </div>
+                        <div class="group-9">
+                            <h3 class="card-title">Nom de l'hôtel</h3>
+                            <p class="price">Prix par nuit: $XXX</p>
+                        </div>
+                    </div>
+
+    <div class="Section_Activites">
+        <div class="Activites_Marseille">Activités à Marseille</div>
+        <div class="Card_Activity1">
+            <div class="Rectangle_30"></div>
+            <div class="Rectangle_30b"></div>
+            <div class="La_Bonne_mere">La Bonne mère</div>
+            <div class="Rectangle_31"></div>
+            <div class="Vieux_Port">Vieux Port</div>
+        </div>
+        <div class="Card_Activity2">
+            <div class="Rectangle_30"></div>
+            <div class="Rectangle_30b"></div>
+            <div class="La_Bonne_mere">La Bonne mère</div>
+            <div class="Rectangle_31"></div>
+            <div class="Vieux_Port">Vieux Port</div>
+        </div>
+        <div class="Card_Activity3">
+            <div class="Rectangle_30"></div>
+            <div class="Rectangle_30b"></div>
+            <div class="La_Bonne_mere">La Bonne mère</div>
+            <div class="Rectangle_31"></div>
+            <div class="Vieux_Port">Vieux Port</div>
+        </div>
+        <div class="Card_Activity4">
+            <div class="Rectangle_30"></div>
+            <div class="Rectangle_30b"></div>
+            <div class="La_Bonne_mere">La Bonne mère</div>
+            <div class="Rectangle_31"></div>
+            <div class="Vieux_Port">Vieux Port</div>
+        </div>
+    </div>
+
+    <div class="Footer">
+        <div class="Rectangle_26b"></div>
+        <span class="Title_Filter" style="left: 8.19%; right: 86.46%; top: 23.56%; bottom: 65.45%;">À propos</span>
+        <a href="#" class="Footer_Link" style="left: 8.19%; right: 80.9%; top: 61.26%; bottom: 28.8%;">Conditions générales</a>
+        <a href="#" class="Footer_Link" style="left: 8.19%; right: 79.58%; top: 45.03%; bottom: 45.03%;">Fonctionnement du site</a>
+        <a href="#" class="Footer_Link" style="left: 8.19%; right: 78.33%; top: 77.49%; bottom: 12.57%;">Données et confidentialité</a>
+        <span class="Title_Filter" style="left: 37.64%; right: 50.9%; top: 23.56%; bottom: 65.45%;">Nos hébergements</span>
+        <a href="#" class="Footer_Link" style="left: 37.64%; right: 55.14%; top: 45.03%; bottom: 45.03%;">Charte qualité</a>
+        <a href="#" class="Footer_Link" style="left: 37.64%; right: 51.94%; top: 61.26%; bottom: 28.8%;">Proposer votre hôtel</a>
+        <span class="Title_Filter" style="left: 65.69%; right: 27.85%; top: 23.56%; bottom: 65.45%;">Assistance</span>
+        <a href="#" class="Footer_Link" style="left: 65.69%; right: 27.5%; top: 45.03%; bottom: 45.03%;">Centre d’aide</a>
+        <a href="#" class="Footer_Link" style="left: 65.69%; right: 26.39%; top: 61.26%; bottom: 28.8%;">Nous contacter</a>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loginButton = document.getElementById("login");
+        const inscriptionButton = document.getElementById("inscription");
+        const rectangle = document.getElementById("rectangle25");
+
+        loginButton.addEventListener("click", function() {
+            // Afficher le rectangle lors du clic sur le bouton "Hébergements"
+            rectangle.style.display = "block";
+        });
+
+        inscriptionButton.addEventListener("click", function() {
+            // Afficher le rectangle lors du clic sur le bouton "Activités"
+            rectangle.style.display = "block";
+        });
+    });
+
+    function toggleFilter(filterName) {
+    const filter = document.querySelector(`.${filterName}`);
+    filter.classList.toggle('selected');
+}
+    </script>
+
 </body>
 </html>

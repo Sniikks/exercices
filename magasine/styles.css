@@ -1,0 +1,133 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to right, rgb(185, 0, 0) 50%, rgb(226, 8, 8) 50%);
+    align-items: center; /* Centrer horizontalement */
+}
+
+header {
+    background-color: rgb(219, 0, 0); /* Fond rouge */
+    color: white; /* Texte en blanc */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav a {
+    font-size: 22px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ----------------------------------------------- */
+
+.index {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.index-title {
+    text-align: center;
+    padding: 3px; /* Réduit le rembourrage */
+    /*border: 2px solid black;*/
+    background-color: white; /* Fond blanc */
+    margin: 55px auto; /* Centre horizontalement */
+    max-width: 660px; /* Largeur maximale */
+    font-size: 22px;
+}
+
+.index-title h1 {
+    margin: 0;
+}
+
+/* ----------------------------------------------- */
+
+.flexbox-container {
+    display: flex;
+    margin-top: 8vh; /* Ajustement de la marge à gauche */
+    margin-left: 10vh; /* Ajustement de la marge à gauche */
+    flex-wrap: wrap; /* Permet à la flexbox de revenir à la ligne */
+    position: fixed; /* Position fixe pour placer la flexbox */
+    left: 0; /* Aligner la flexbox sur le côté gauche de la page */
+}
+    
+
+.flexbox-item {
+    width: 100%; /* Prend la largeur de son conteneur */
+    text-align: center;
+    margin-bottom: 20px; /* Espacement entre chaque partie de la flexbox */
+}
+
+.flexbox-item h2 {
+    font-size: 32px;
+    margin-bottom: 5px; /* Ajustement de la marge en bas du titre */
+    color: white; /* Couleur du texte du bouton */
+}
+
+.flexbox-item p {
+    font-size: 32px;
+    color: white; /* Couleur du texte du bouton */
+}
+
+.flexbox-item button {
+    padding: 10px 20px;
+    background-color: transparent; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+}

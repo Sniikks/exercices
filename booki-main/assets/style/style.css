@@ -1,0 +1,694 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* Styles pour la barre de navigation */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none; /* Enlève le soulignement des liens */
+    margin-left: 2%;
+}
+
+.nav-links a, .nav-item {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px; /* Espace entre les liens */
+    font-size: 16px;
+}
+
+.nav-links a:hover, .nav-item:hover {
+    color: #007bff; /* Couleur au survol */
+}
+.nav-item {
+    position: relative; /* Nécessaire pour positionner le pseudo-élément par rapport à cet élément */
+    padding-top: 10px; /* Espace pour le trait au-dessus */
+    /* Reste du style */
+}
+
+.nav-item::before {
+    content: ''; /* Le pseudo-élément doit avoir un contenu, même vide */
+    position: absolute;
+    top: 0; /* Aligné en haut de l'élément .nav-item */
+    left: 50%; /* Centrer le trait */
+    transform: translateX(-50%); /* Centrer le trait correctement */
+    width: 100%; /* Correspond à la largeur du lien */
+    height: 3px; /* Hauteur du trait */
+    background-color: #007bff; /* Couleur du trait */
+    display: none; /* Le trait est initialement caché */
+}
+
+.nav-item.active::before {
+    display: block; /* Le trait devient visible pour l'élément actif */
+}
+
+.recherche, .filtres, .logements, .populaires {
+    margin: 20px;
+}
+
+.recherche input, .recherche button, .filtres button {
+    /* Styles pour la barre de recherche, le bouton, et les boutons de filtres */
+}
+
+.logements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logement, .populaire {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: calc(33.333% - 20px); /* Ajustez la largeur en fonction de l'espace entre les éléments */
+}
+
+.logement img, .populaire img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #f2f2f2;
+    /* Autres styles pour le pied de page */
+}
+
+/* Réponses aux médias pour le design réactif */
+@media (max-width: 768px) {
+    .logement, .populaire {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .logement, .populaire {
+        width: 100%;
+    }
+}
+.logo img {
+    width: 61px;
+    height: 29px;
+}
+
+.search-section h1 {
+    margin-left: 3%;
+}
+.search-section p {
+    margin-left: 3%;
+}
+.search-bar {
+    display: flex;
+    align-items: center; /* Cette propriété est ajoutée pour centrer verticalement les enfants dans la barre de recherche */
+    width: 442px;
+    height: 49px;
+    margin: 10px;
+    margin-left: 3%; /* Ajoute un peu d'espace en haut et en bas, et centre horizontalement */
+    border: 1px solid #ccc;
+    border-right: none;
+     border-bottom-right-radius: 20%;
+     border-top-right-radius: 20%;
+  
+    background-color: #fff;
+}
+
+.search-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 49px;
+    background-color: #f2f2f2;
+}
+
+.search-icon-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0 10px; /* Ajusté pour enlever le padding à gauche et pour donner un padding à droite */
+    font-size: 16px;
+    line-height: 49px; /* Assurez-vous que la hauteur de ligne correspond à la hauteur de la barre pour centrer le texte */
+    margin: 0;
+    
+}
+
+#search-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0 20px; /* Padding ajusté */
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 49px;
+     /* Assurez-vous que la hauteur de ligne correspond à la hauteur de la barre pour centrer le texte */
+     border-top-right-radius: 20%;
+     border-bottom-right-radius: 20%;
+}
+
+/* Reste du CSS inchangé */
+
+/* Style pour la barre de recherche */
+#rechercheInput {
+    /* Ajoutez les styles CSS pour la barre de recherche ici */
+    /* Par exemple, vous pouvez définir la largeur, la hauteur, la police, etc. */
+    width: 200px; /* Exemple de largeur */
+    height: 30px; /* Exemple de hauteur */
+    font-family: 'Raleway'; /* Exemple de police */
+    font-size: 16px; /* Exemple de taille de police */
+    border: 1px solid #F2F2F2; /* Exemple de bordure grise */
+    border-radius: 15px; /* Exemple de bordure arrondie */
+  }
+  
+  .filters-section {
+    display: flex;
+    align-items: center; /* Alignement vertical des enfants */
+    gap: 10px; /* Espace entre le titre et le groupe de boutons */
+    margin-left: 3%;
+}
+
+.filter-title {
+    font-weight: bold;
+    font-size: 16px; /* Taille de la police pour le titre */
+    /* Pas besoin de margin-bottom car les éléments sont dans une flexbox */
+}
+
+.search-filters {
+    display: flex;
+    gap: 10px;
+    /* Le reste du style reste inchangé */
+}
+
+.filter-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Arrondi les bords pour les boutons */
+    background-color: #f8f8f8; /* Couleur de fond pour les boutons désélectionnés */
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-button:hover {
+    background-color: #e9e9e9; /* Un peu plus sombre au survol */
+}
+
+.filter-button.active {
+    background-color: #0056b3; /* Couleur de fond pour le bouton sélectionné */
+    color: white; /* Texte blanc pour le bouton sélectionné */
+}
+.search-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.filter-button {
+    display: flex; /* Pour aligner l'image et le texte */
+    align-items: center; /* Centre verticalement l'image et le texte dans le bouton */
+    gap: 5px; /* Espace entre l'image et le texte */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-button img {
+    width: 22px; /* Largeur du pictogramme */
+    height: 16.26px; /* Hauteur du pictogramme */
+}
+
+.filter-button:hover {
+    background-color: #e9e9e9;
+}
+
+.filter-button.active {
+    background-color: #0056b3;
+    color: white;
+}
+.accommodations-header {
+    display: flex;
+    align-items: center; /* Centre verticalement le vecteur et le texte */
+    gap: 10px; /* Espace entre le vecteur et le texte */
+    font-size: 16px; /* Ajustez la taille de police selon vos besoins */
+    color: #333;
+    margin: 10px 0; /* Ajustez la marge extérieure selon vos besoins */
+}
+
+.header-vector {
+    width: 24px; /* Largeur du vecteur */
+    height: 24px; /* Hauteur du vecteur */
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+    align-items: center; /* Alignement vertical des éléments */
+    
+    justify-content: space-between;
+    
+}
+.I{display: flex;
+    margin: 2%;
+    align-items: center; /* Alignement vertical des éléments */
+
+}
+.I img{
+    padding-right: 0.5%;
+}
+
+.accommodations {
+    /* Assurez-vous que cette section n'a pas de largeur fixe qui pourrait limiter ses enfants */
+    padding: 20px; /* Ajoute du padding pour un peu d'espace intérieur */
+    margin-left: 0%;
+    background-color: #f2f2f2;
+    border-radius: 5%;
+    width: 50%;
+    align-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+    justify-content: space-around; /* Espacement autour des éléments */
+    gap: 20px; /* Espace entre les éléments */
+    width: 100%;
+    
+}
+
+.card {
+    flex: 1; /* Les cartes peuvent grandir */
+    min-width: 246px; /* Largeur minimale pour chaque carte */
+    max-width: 246px; /* Largeur maximale pour empêcher les cartes de devenir trop grandes */
+    border: 1px solid #ccc;
+    align-content: center;
+    border-radius: 10px;
+    overflow: hidden; /* Cache le contenu qui dépasse */
+    margin-bottom: 20px; /* Espace au-dessous de chaque carte */
+    background-color: #f2f2f2; /* Couleur de fond des cartes */
+}
+
+.card img {
+    width: 246px; /* L'image prend la largeur totale de la carte */
+    height: 124px; /* Hauteur automatique pour maintenir le ratio */
+    border-radius: 10px 10px 0 0; /* Arrondit les coins supérieurs */
+}
+
+.card h3, .card p {
+    /* Ajoute un peu d'espace autour du texte */
+    margin: auto;
+    margin-left: 5%;
+
+}
+
+.stars {
+   margin-left: 5%;
+   margin-bottom: 5%;
+    display: flex; /* Affiche les étoiles en ligne */
+    justify-content: flex-start; /* Alignement des étoiles à gauche */
+}
+
+
+.show-more {
+    background-color: #f8f8f8; /* Couleur du bouton "Afficher plus" */
+    border: none;
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+/* Vous pouvez ajouter des styles pour :hover et :active pour .show-more ici */
+
+/* Ajoutez des requêtes media pour rendre la mise en page réactive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .accommodations, .popular {
+        width: 100%;
+    }
+}
+
+/* Autres requêtes media pour les ajustements nécessaires */
+.stars {
+    display: flex; /* Aligner les étoiles horizontalement */
+}
+
+/* Styles communs pour les étoiles */
+.stars img {
+    width: 12px; /* ou la taille exacte que vous voulez */
+    height: auto;
+}
+#stars{
+    display: flex;
+    margin-left: 10%;
+}
+#stars img {
+    width: 12px; /* ou la taille exacte que vous voulez */
+    height: 12px;
+   
+
+}
+
+/* Réinitialisez les styles si nécessaire pour la section Les plus populaires */
+.popular .stars img {
+    width: 22px; /* Assurez-vous que cette taille est la même que celle définie globalement */
+   
+}
+
+.popular {
+    /* Styles supplémentaires si nécessaires */
+    background-color: #f2f2f2;
+    width: 420px;
+    border-radius: 10px;
+    align-content: center;
+    margin: 2%;
+    height:50em ;
+}
+
+.popular h2 {
+    /* Styles pour le titre "Les plus populaires" */
+    margin-left: 6%;
+    margin-top: 5%;
+}
+
+.popular-cards {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.popular-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff; /* Ou toute autre couleur de fond appropriée */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    margin: 22px;
+
+     /* Arrondit les coins de la carte */
+}
+
+.popular-card img{
+    width: 137px; /* Largeur fixe pour l'image */
+    height: 144px; /* Hauteur fixe pour l'image */
+    border-top-left-radius: 10px; /* Arrondit le coin supérieur gauche de l'image */
+    border-bottom-left-radius: 10px; /* Arrondit le coin inférieur gauche de l'image */
+    object-fit: cover; /* S'assure que l'image couvre l'espace défini */
+}
+
+.popular-card-content {
+    padding: 10px;
+    flex-grow: 1; /* Permet au contenu de remplir l'espace restant */
+}
+.popular-card h3,p{
+    margin-left: 10%;
+
+}
+.popular-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+h2 {
+    /* Styles pour le titre "Les plus populaires" */
+}
+
+.popular-vector {
+    position: absolute;
+    right: 0; /* Aligné à droite du conteneur .popular-header */
+    height: 16px; /* Hauteur automatique pour maintenir le ratio */
+    width: 18px; /* Largeur spécifique pour le vecteur */
+    /* Ajustez la position top ou bottom si nécessaire pour l'aligner avec le texte */
+    margin-right: 5%;
+}
+.stars{
+}
+.activities h2 {
+margin-left: 3%;
+    /* Styles pour la section des activités */
+}
+.activities {
+    /* Assurez-vous que cette section n'a pas de largeur fixe qui pourrait limiter ses enfants */
+    margin: 0 auto; /* Centre la section si nécessaire */
+    padding: 20px; /* Ajoutez du padding pour un peu d'espace intérieur */
+}
+
+.activity-cards {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+    justify-content: space-around; /* Espacement autour des éléments */
+    gap: 20px; /* Espace entre les éléments */
+}
+
+.activity-card {
+    flex: 1; /* Les cartes peuvent grandir */
+    min-width: 250px; /* Largeur minimale pour chaque carte */
+    max-width: 302px; /* Largeur maximale pour empêcher les cartes de devenir trop grandes */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden; /* Cache le contenu qui dépasse */
+    margin-bottom: 20px; /* Espace au-dessous de chaque carte */
+}
+
+.activity-card img {
+    width: 100%; /* L'image prend la largeur totale de la carte */
+    height: 400px; /* Hauteur automatique pour maintenir le ratio */
+    border-radius: 10px 10px 0 0; /* Arrondit les coins supérieurs */
+}
+
+.activity-card h3 {
+    text-align: center; /* Centre le titre dans la carte */
+    padding: 10px; /* Ajoute un peu d'espace autour du texte */
+}
+
+
+footer {
+    background-color: #f2f2f2;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    margin: 2%;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+.hidden{
+    visibility: hidden; /* Caché mais occupe de l'espace */
+    opacity: 0; /* Rend l'élément transparent */
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* Conteneurs et éléments flexibles pour s'adapter à la largeur */
+    .container, .cards, .activity-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Assurez-vous que tous les éléments s'adaptent à la largeur de l'écran */
+    * {
+        max-width: 100%;
+    }
+}
+/* Ajoutez ceci à votre CSS pour modifier l'agencement des filtres en format mobile */
+@media only screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Change la direction du flex pour superposer les éléments verticalement */
+        align-items: center; /* Centre les éléments horizontalement */
+    }
+
+    .logo {
+        margin-bottom: 20px; /* Ajoute de l'espace entre le logo et les liens de navigation */
+    }
+
+    .nav-item::before {
+        top: auto; /* Désactive le positionnement en haut */
+        bottom: -3px; /* Positionne le trait sous l'élément */
+        left: 0; /* Ajuste à gauche pour couvrir toute la largeur de l'élément */
+        width: 100%; /* Ajuste la largeur à celle de l'élément */
+        transform: translateX(0); /* Annule la transformation précédente */
+    }
+
+    .nav-item.active::before {
+        display: block; /* S'assure que le trait est visible sous l'élément actif */
+    }
+    .filters-section {
+        display: flex;
+        flex-direction: column; /* Change la direction du flex pour empiler verticalement */
+        align-items: center; /* Centre les éléments horizontalement */
+        text-align: center; /* Centre le texte de tous les éléments à l'intérieur */
+    }
+
+    .filter-title {
+        width: 100%; /* Permet au titre de prendre toute la largeur */
+        margin-bottom: 10px; /* Ajoute un peu d'espace entre le titre et les boutons */
+    }
+
+    .search-filters {
+        flex-wrap: wrap; /* Permet aux boutons de filtre de passer à la ligne suivante si nécessaire */
+        justify-content: center; /* Centre les boutons de filtre */
+    }
+
+    .filter-button {
+        flex: 0 0 40%; /* Utilisez flex-grow, flex-shrink et flex-basis pour ajuster la largeur des boutons */
+        margin-bottom: 10px; /* Ajoute un peu d'espace en dessous de chaque bouton */
+    }
+    .search-bar {
+        width: 332px; /* Largeur ajustée de la barre de recherche */
+        height: 49px; /* Hauteur fixe de la barre de recherche */
+    }
+
+    .search-icon-container {
+        width: 49px; /* Largeur ajustée pour le conteneur de l'icône de recherche */
+        height: 49px; /* Hauteur ajustée pour correspondre à la hauteur de la barre */
+        /* Gardez l'icône de recherche visible */
+    }
+
+    .search-icon-container img {
+        width: 17px; /* Ajuste la taille de l'icône de recherche */
+        height: 17px; /* Ajuste la hauteur pour correspondre à la largeur */
+    }
+
+    #search-input {
+        flex-grow: 1;
+        border: none;
+        font-size: 16px; /* Taille de police ajustée pour l'input */
+        padding-left: 10px; /* Espacement à gauche pour le texte */
+    }
+
+    #search-button {
+        background-image: url('../font/Loupe.png'); /* Chemin vers le vecteur pour le bouton */
+        background-size: 17px 17px; /* Taille du vecteur dans le bouton */
+        background-repeat: no-repeat;
+        background-position: center; /* Centre le vecteur */
+        width: 49px; /* Largeur du bouton ajustée */
+        height: 49px; /* Hauteur du bouton ajustée */
+        padding: 0; /* Supprime le padding pour ajuster le bouton */
+        font-size: 0; /* Masque le texte "Rechercher" */
+        border-radius: 0 20px 20px 0; /* Arrondit les coins droits du bouton */
+    }
+    .accommodations {
+        order: 2; /* Place "Hébergements à Marseille" en second */
+    }
+
+    .popular {
+        order: 1; /* Place "Les plus populaires" en premier */
+            width: 375px; /* Définit la largeur à 375px */
+            height: 580px; /* Définit la hauteur à 580px */
+            margin: 0 auto; /* Centre la section si nécessaire */
+        
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        width: 335px; /* Définit la largeur de la carte à 335px */
+        height: 199px; /* Définit la hauteur de la carte à 199px */
+        margin-bottom: 20px; /* Espace au-dessous de chaque carte */
+    }
+
+    .card img {
+        width: 335px; /* L'image prend la largeur totale de la carte */
+        height: 124px; /* Hauteur fixée à 124px */
+        object-fit: cover; /* Assure que l'image couvre l'espace disponible sans déformation */
+    }
+    .stars img {
+        width: 12px; /* Réduit la largeur des étoiles */
+        height: auto; /* Maintient le ratio de l'image */
+    }
+    .activity-card img {
+        width: 334px; /* Définit la largeur des images à 334px */
+        height: 190px; /* Définit la hauteur des images à 190px */
+        object-fit: cover; /* Assure que l'image couvre la zone définie sans perdre ses proportions */
+    }
+    .footer-sections {
+        flex-direction: column; /* Change la direction de flex pour être en colonne */
+        align-items:start; /* Centre les éléments dans le pied de page */
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Ajoute un espace entre les sections du pied de page */
+        text-align: start; /* Centre le texte dans chaque section du pied de page */
+    }
+
+    .footer-section h4,
+    .footer-section ul li a {
+        /* Assure que les titres et les liens sont centrés */
+        text-align: start;
+    }
+    .show-more {
+        display: none; /* Cache le bouton sur les écrans de 480px de largeur ou moins */
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .nav-item::before {
+        display: none; /* Cache le trait bleu pour les tablettes */
+    }
+
+    .popular-cards {
+        display: flex;
+        flex-direction: row; /* Change l'orientation des cartes en ligne */
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante au besoin */
+        justify-content: space-between; /* Répartit l'espace entre les cartes de manière égale */
+        align-items: flex-start; /* Alignement des cartes au début de l'axe transversal */
+    }
+
+    .popular-card {
+        /* Ajustez la largeur de chaque carte pour qu'elle s'adapte correctement à l'écran de la tablette */
+        width: calc(100% - 20px); /* Exemple de réglage pour deux cartes par ligne avec un peu d'espace entre elles */
+        margin-bottom: 20px; /* Espace entre les rangées de cartes */
+    }
+}

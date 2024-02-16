@@ -1,0 +1,282 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+  
+header {
+    background-color: #003399;
+    padding: 40px 0; 
+    position: relative; 
+}
+
+.header-container {
+    width: 90%; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.oval-container {
+    position: relative; 
+    overflow: hidden;
+}
+
+#site-title {
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    background-color: white; 
+    margin: 0; 
+}
+
+#site-title::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: -10px; 
+    width: calc(100% + 20px); 
+    height: calc(100% + 20px); 
+    border-radius: 50px; 
+}
+
+.login-link {
+    background-color: #fff;
+    color: #003399; 
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+  /* Styles pour le formulaire dans le modal de connexion */
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: 1px solid #ddd;
+    border-radius: 4px; 
+}
+
+#login-form button {
+    background-color: #0056b3; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+#login-form button:hover {
+    background-color: #003d82;
+}
+
+/* Lien pour basculer vers le formulaire d'inscription */
+#login-form p {
+    text-align: center;
+    margin-top: 15px; /* Espace au-dessus du paragraphe */
+}
+
+#login-form p a {
+    color: #0056b3; /* Couleur des liens */
+    text-decoration: none;
+}
+
+#login-form p a:hover {
+    text-decoration: underline; /* Souligne au survol */
+}
+
+/* ------------------------------------------------------- */ 
+
+/* Styles pour le fond obscurci */
+.modal {
+    display: none; 
+    position: fixed; /* Reste en place lors du scroll */
+    z-index: 1; /* S'affiche au-dessus du contenu */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: none; /* Permet le scroll si nécessaire */
+    background-color: rgba(0,0,0,1); 
+  }
+  
+  /* Styles pour le contenu du modal */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%; 
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
+  
+  /* Ajouter animation */
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+
+  .modal-open {
+    overflow: hidden; /* Empêche le scroll de la page */
+    background-color: rgba(0,0,0,1); 
+  }
+  
+  .modal-open .main-nav,
+  .modal-open header,
+  .modal-open main {
+    pointer-events: none; /* Désactive les événements de la souris sur le contenu en arrière-plan */
+    user-select: none; /* Empêche la sélection du texte sur le contenu en arrière-plan */
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Style pour le formulaire et ses éléments */
+  #signup-form input, #signup-form button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  #signup-form button {
+    background-color: #003399;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #signup-form button:hover {
+    opacity: 0.8;
+  }
+  
+  #signup-form p {
+    text-align: center;
+  }
+
+/* ------------------------------------------------------- */
+
+.main-nav {
+    background-color: #0046d1;
+    overflow: hidden; /* S'assure que tout reste dans la barre de navigation */
+}
+  
+.main-nav ul {
+    list-style: none; /* Retire les puces de la liste */
+    padding: 0; /* Retire le padding par défaut */
+    margin: 0; 
+    text-align: left;
+}
+  
+.main-nav li {
+    display: inline-block; 
+}
+  
+.main-nav a {
+    margin-left: 8vh;
+    display: inline-block; /* Affiche les liens en bloc pour permettre le padding */
+    padding: 10px 15px; 
+    text-decoration: none; /* Retire le soulignement des liens */
+    color: white; 
+    font-size: 16px; 
+}
+  
+.main-nav a:hover {
+    background-color: #001a66; 
+}
+
+/* ------------------------------------------------------- */
+
+main {
+    text-align: center; 
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px; 
+  }
+  
+  .gallery-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden; /* Cache les images supplémentaires */
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
+  }
+  
+  .gallery img {
+    flex: 0 0 16.666%; /* 100% / 6 images */
+    max-width: 20%;
+    height: auto;
+    border: 2px solid #f0f0f0;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .left-arrow {
+    left: 0;
+  }
+  
+  .right-arrow {
+    right: 0;
+  }
+  
+  .indicator-dots {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  
+ 
+  @media (max-width: 600px) {
+    .gallery img {
+      width: 100%; 
+    }
+  }

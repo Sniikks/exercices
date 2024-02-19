@@ -70,6 +70,7 @@ if (isset($_POST['deconnexion'])) {
   header("Location: index.php"); 
   exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -152,17 +153,10 @@ if (isset($_POST['deconnexion'])) {
       <img src="./img/603418d44be42e467a7ba75e50b35b63.jpg" alt="Description de l'image">
       <img src="./img/caf937c7d0c5a392d8de95951ec34e83.png" alt="Description de l'image">
       <img src="./img/d0146e5fa241c1104de41b0370e2bc24.jpg" alt="Description de l'image">
-      <img src="./img/fdcff2fc7ed67bd04adcff80f3052c9f.png" alt="Description de l'image">
-      <img src="./img/603418d44be42e467a7ba75e50b35b63.jpg" alt="Description de l'image">
-      <img src="./img/caf937c7d0c5a392d8de95951ec34e83.png" alt="Description de l'image">
-      <img src="./img/d0146e5fa241c1104de41b0370e2bc24.jpg" alt="Description de l'image">
       <img src="./img/0d3a771f1537f61c30ca014323b97720.png" alt="Description de l'image">
       <img src="./img/2a3f57cb3f4b2633713700c08c6589c1.jpg" alt="Description de l'image">
-      <img src="./img/603418d44be42e467a7ba75e50b35b63.jpg" alt="Description de l'image">
       <img src="./img/caf937c7d0c5a392d8de95951ec34e83.png" alt="Description de l'image">
-      <img src="./img/603418d44be42e467a7ba75e50b35b63.jpg" alt="Description de l'image">
       <img src="./img/caf937c7d0c5a392d8de95951ec34e83.png" alt="Description de l'image">
-      <img src="./img/d0146e5fa241c1104de41b0370e2bc24.jpg" alt="Description de l'image">
       <img src="./img/d0146e5fa241c1104de41b0370e2bc24.jpg" alt="Description de l'image">
     </div>
     <button id="prev" class="arrow left-arrow">&lt;</button>
@@ -218,42 +212,72 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const dotsContainer = document.querySelector('.indicator-dots');
 
+const imagesPerPage = 5; // Nombre d'images par page
+let currentPage = 0; // La page actuelle du carrousel
 let index = 0; // L'index de l'image actuelle
 
-// Créez des points indicateurs en fonction du nombre d'images
-images.forEach((_, idx) => {
+// Calcule le nombre total de pages
+const totalPages = Math.ceil(images.length / imagesPerPage);
+
+// Crée des points indicateurs en fonction du nombre de pages
+for (let i = 0; i < totalPages; i++) {
   const dot = document.createElement('div');
   dot.classList.add('dot');
-  dot.addEventListener('click', () => moveToImage(idx));
+  dot.addEventListener('click', () => goToPage(i));
   dotsContainer.appendChild(dot);
-});
+}
 
-function updateGallery() {
-  gallery.style.transform = `translateX(-${index * 100}%)`;
-  // Mettez à jour les points actifs
+// Met à jour l'affichage des points indicateurs
+function updateDots() {
   const dots = dotsContainer.querySelectorAll('.dot');
   dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
+  dots[currentPage].classList.add('active');
 }
 
-function moveToImage(idx) {
-  index = idx;
+// Déplace le carrousel à la page spécifiée
+function goToPage(page) {
+  currentPage = page;
+  index = currentPage * imagesPerPage;
   updateGallery();
+  updateDots();
 }
 
+// Met à jour l'affichage du carrousel
+function updateGallery() {
+  const endIndex = Math.min(index + imagesPerPage, images.length);
+  gallery.innerHTML = '';
+  for (let i = index; i < endIndex; i++) {
+    gallery.appendChild(images[i].cloneNode(true));
+  }
+}
+
+// Déplace le carrousel vers la page précédente
 prevButton.addEventListener('click', () => {
-  index = index > 0 ? index - 1 : images.length - 1;
+  currentPage = currentPage > 0 ? currentPage - 1 : totalPages - 1;
+  index = currentPage * imagesPerPage;
   updateGallery();
+  updateDots();
 });
 
+// Déplace le carrousel vers la page suivante
 nextButton.addEventListener('click', () => {
-  index = index < images.length - 1 ? index + 1 : 0;
+  currentPage = currentPage < totalPages - 1 ? currentPage + 1 : 0;
+  index = currentPage * imagesPerPage;
   updateGallery();
+  updateDots();
 });
 
-// Initialisez le carrousel
+// Initialise le carrousel
 updateGallery();
+updateDots();
 
+// Actualise le carrousel toutes les 10 secondes
+setInterval(() => {
+  currentPage = currentPage < totalPages - 1 ? currentPage + 1 : 0;
+  index = currentPage * imagesPerPage;
+  updateGallery();
+  updateDots();
+}, 10000);
 
 </script>
 

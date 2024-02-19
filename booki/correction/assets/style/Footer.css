@@ -1,0 +1,31 @@
+footer {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 94%;
+    /* padding: 30px; */
+}
+footer h4 {
+    font-weight: bolder;
+}
+footer div {
+    display: flex;
+    flex-direction: column;
+}
+footer div a {
+    text-decoration: none;
+    color: black;
+    margin-top: 10px
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        background-color: #F2F2F2;
+        width: 100%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        flex-direction: column;
+        padding: 35px;
+        box-sizing: border-box;
+    }
+}

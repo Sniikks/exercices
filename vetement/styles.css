@@ -197,7 +197,7 @@ header {
 .main-nav a {
     margin-left: 8vh;
     display: inline-block; /* Affiche les liens en bloc pour permettre le padding */
-    padding: 10px 15px; 
+    padding: 10px 3px; 
     text-decoration: none; /* Retire le soulignement des liens */
     color: white; 
     font-size: 16px; 

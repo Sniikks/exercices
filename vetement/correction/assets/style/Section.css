@@ -1,9 +1,11 @@
 section {
-    background-color: #193784;
+    background-color: var(--HeaderBackground);
     position: absolute;
     right: -25%;
+    transition: right 2s;
     top: 10%;
-    height: 25%;
+    height: 280px;
+    z-index: 10;
     width: 16%;
     display: flex;    
     flex-direction: column;
@@ -19,6 +21,8 @@ section div {
 }
 
 section button {
+    cursor: pointer;
+    border: none;
     padding: 2% 10%;
     font-size: 1em;
     border-radius: 15px;
@@ -29,5 +33,5 @@ section div button {
     margin: 6% 0 0;
 }
 section div button:last-child {
-    margin-top: 11%;
+    margin-top: 20%;
 }

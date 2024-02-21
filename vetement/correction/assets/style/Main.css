@@ -1,5 +1,6 @@
 main h2 {
     text-align: center;
+    color: var(--ColorText);
     font-size: 2.7em;
 }
 .swiper {

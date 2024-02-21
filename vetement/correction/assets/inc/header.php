@@ -4,7 +4,8 @@
 <header>
     <button>Mon Site Internet</button>
     <button <?php 
-    isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo']) ? print('onclick="OpenSlideBar()"')  : print('onclick="OpenLoginMenu()"') ?> >
+    echo isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo']) ? 
+    "onclick='OpenSlideBar()'" : "onclick='OpenLoginMenu()'" ?> >
         <?php 
         // if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
         //     print($_SESSION['pseudo']);

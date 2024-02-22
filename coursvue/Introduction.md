@@ -6,7 +6,7 @@ VueJS est un framework de JavaScript qui est open-source et très populaire. Il 
 
 Pour installer VueJS il suffit d'avoir installer `Node.JS`  et `npm` (Node Package Manager). Pour cela vous pouvez consulter la documentation officielle.
 
-Il faut installer le packet VueJS via npm (Node Package Manager) : 
+(Optionel) Il faut installer le packet VueJS via npm (Node Package Manager) : 
 ```bash
 npm install -g vue --save
 ```
@@ -21,6 +21,19 @@ Pour créer le projet d'application il suffit de faire la commande `vue create <
 ```bash
 vue create premier-cours-de-vuejs
 ```
+
+## Choix Des Fonctionalité
+
+La création du projet vous propose des choix sur les fonctionnalités à inclure dans votre application
+
+`Babel`: est utilisé pour convertir le code en JavaScript compatible avec tous les navigateurs.
+`Router`: permet de définir les routes de chaque page
+`CSS Pre-processors`:  Permet d'utiliser des préprocesseurs comme SASS ou LESS
+`Linter / Formatter`: Serve à vérifier et organiser le code source
+
+On choisi généralement ces 4 fonctionnalités
+
+Préferer utiliser la version 2.x de VueJS qui 
 
 # Notre Projet
 
@@ -48,3 +61,23 @@ Le fichier `index.html` est le fichier de base du projet que on ne touche jamais
 
 `vue.config.js` : Est la configuration de vue dans notre projet
 
+## Dans `src` 
+
+On va passer le plus de temps dans ce dossier la 
+Dans le dossier `src` on y trouve plusieurs autre fichier/dossier qui vont nous être très utile : 
+
+`assets` : C'est le dossier qui stocke tout les media (image, video, musique, document, ..)
+
+`components` : Stocke tout les composants de la page (Des  parties réutilisables des pages) 
+Components sont des morceaux de page
+
+`router` : Stocke chaque route des pages 
+Router sont les routes des pages
+
+`views` : Stocke chaque pages
+Views sont les différentes page
+
+`App.vue` : C'est le fichier principal de notre projet. 
+C'est le parent de toutes les autres page
+
+`main.js` : C'est le fichier principal JavaScript de notre projet

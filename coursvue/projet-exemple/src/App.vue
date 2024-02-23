@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <h1>Bonjour je suis sur mon serveur VueJS</h1>
-
     <div>
       <article v-for="articleValue in articles" :key="articleValue.title" :id="articleValue.title[articleValue.title.length-1]">
         <h2>{{ articleValue.title }}</h2>

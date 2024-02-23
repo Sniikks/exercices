@@ -33,7 +33,11 @@ La création du projet vous propose des choix sur les fonctionnalités à inclur
 
 On choisi généralement ces 4 fonctionnalités
 
-Préferer utiliser la version 2.x de VueJS qui 
+Préferer utiliser la version 2.x de VueJS qui est moins bugué
+Pour la configuration de `Linter / Formatter` on choisi `ESLint with error prevention only`
+Pour les configuration additionel on choisi `Lint on save`
+On choisi un fichier de configuration dédié (`In dedicated config file`)
+
 
 # Notre Projet
 
@@ -45,7 +49,7 @@ Donc tout les modules que on installe en plus dans notre projet se mettraient de
 `public` : Le dossier public stocke l’icône de notre projet et le fichier `index.html`
 Le fichier `index.html` est le fichier de base du projet que on ne touche jamais sauf pour changer l’icône.
 
-`src` : est le dossier qui va contenir plus de 98% de notre site  internet, c’est là qu’on va écrire nos codes HTML, CSS et JavaScript
+`src` : est le dossier qui va contenir plus de 98% de notre site internet, c’est là qu’on va écrire nos codes HTML, CSS et JavaScript
 
 `.eslintrc.js` : est le fichier de configuration  d’Eslint, c’est un outil qui permet de vérifier si votre code respecte ou non certaines normes de codage.
 
